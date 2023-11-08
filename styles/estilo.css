@@ -38,7 +38,6 @@
 
 }
 .rodape{
-    margin-top: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
     --tw-bg-opacity: 1;
@@ -47,12 +46,30 @@
 .rodape p{
     color: white;
 }
+.home_desc{
+    max-width: 10px;
+}
 
+#btn_ux{
+    font-weight: bold;
+    border: 2px gray solid;
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+#btn_ux:hover{
+    border: 2px rgb(157, 109, 55) solid;
+    background-color: rgb(157, 109, 55);
+}
 #home{
     margin-top: 8rem;
     margin-bottom: 15rem;
 }
+#about{
+    margin-top: 15rem;
+}
 #teste{
-    margin-right: 200px;
-    margin-left: 200px;
+    margin-right: 100px;
+    margin-left: 100px;
 }

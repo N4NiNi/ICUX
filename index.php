@@ -24,7 +24,7 @@
                         <a class="menu_op nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">UX Toolkit</a>
+                        <a class="nav-link" href="uxtoolkit.php">UX Toolkit</a>
                     </li>
                 </ul>
 
@@ -41,9 +41,9 @@
                 <div id="teste" class="row">
                     <h2 class="text-center">UX ToolKit</h2>
                     <img class="col-6" alt src="imgs\illustration1.6dc90c9a.svg" width="664" height="463" decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
-                    <div class="col-6 d-flex flex-column justify-content-center align-items-center"> 
-                        <p class="">The UX Toolkit is a collection of tools for different stages of the user experience design process. You can select a specific stage of your project, such as research, ideation, prototyping, or evaluation, and receive a set of recommended tools that can be used during that stage. Additionally, the UX Toolkit includes the Helper UX feature that allows you to answer a series of questions and receive a tailored set of tools based on your responses.</p>
-                        <a target="_blank" href="/uxtoolkit"><button class="btn_ux btn btn-outline-secondary">UX ToolKit</button></a>
+                    <div class="col-6 d-flex flex-column justify-content-center align-items-center" style="max-width: 500px;"> 
+                        <p>The UX Toolkit is a collection of tools for different stages of the user experience design process. You can select a specific stage of your project, such as research, ideation, prototyping, or evaluation, and receive a set of recommended tools that can be used during that stage. Additionally, the UX Toolkit includes the Helper UX feature that allows you to answer a series of questions and receive a tailored set of tools based on your responses.</p>
+                        <a target="_blank" href="/uxtoolkit"><button id="btn_ux" class="btn_ux btn btn-outline-secondary">UX ToolKit</button></a>
                     </div>
                 </div>
             </section>
@@ -52,9 +52,9 @@
                 <div id="teste" class="row">
                     <h2 class="text-center">About</h2>
                     <img class="col-6" alt="" src="imgs\uxLerisLogo.15a026cd_2.svg" width="340" height="340" decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
-                    <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-6 d-flex flex-column justify-content-center align-items-center" style="max-width: 500px;">
                     <p>User eXperience – Laboratory of Studies in Networks, Innovation and Software is a research group that belongs to LERIS. LERIS is the main laboratory and it is localized at Department of Computer Science in the Federal University of São Carlos – Sorocaba, Brazil (UFSCar). UXLeris researchers work to approximate academic research to practical issues in the software industry by conducting experimental and empirical studies. </p> 
-                    <a target="_blank" href="http://uxleris.sor.ufscar.br/"><button class="btn btn-outline-secondary btn_ux">More Info</button></a>
+                    <a target="_blank" href="http://uxleris.sor.ufscar.br/"><button id="btn_ux" class="btn btn-outline-secondary">More Info</button></a>
                         
                     </div>
                 </div>

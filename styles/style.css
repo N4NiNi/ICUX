@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Righteous&display=swap');
+
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-centre {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.heading-font {
+    font-family: 'Righteous', sans-serif;
+}
+
+p,
+button,
+a,
+input,
+.body-font {
+    font-family: 'Raleway', sans-serif;
+}
+
+p,
+button,
+a,
+input,
+#personality-stats-div h2 {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.small-heading {
+    font-size: 36px;
+}
+
+.weight-500 {
+    font-weight: 500;
+}
+
+.weight-600 {
+    font-weight: 600;
+}
+
+.weight-700 {
+    font-weight: 700;
+}
+
+
+/* Start/Restart Game Buttons */
+
+.btn-game-main {
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: inset 1px 0px 3px 1px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    color: black;
+}
+
+#start-game-btn,
+#go-home-btn {
+    background-color: rgb(246, 200, 147);
+    color: black;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+#restart-game-btn {
+    background-color: #d1d1d1;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+#start-again-btn {
+    background-color: #FCADAD;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+#restart-button-div,
+#start-again-button-div {
+    margin-top: 60px;
+}
+
+.btn-game-main,
+#name-input {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+
+/* Background */
+#background-div {
+    background: linear-gradient(180deg, #FBFBFB 1%, rgb(157, 109, 55)90%);
+    margin: 0 auto;
+}
+
+
+/* Logo */
+
+#logo-div img {
+    width: 220px;
+    margin-top: 50px;
+}
+
+
+/* Footer */
+
+#cloud-div {
+    height: 450px;
+    background-image: url("/imgs/MobileUX-pana.png");
+    background-position: 50% 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: relative;
+    left: 10%;
+    max-width: 80%;
+}
+.rodape2{
+    align-items: center;
+    justify-content: center;
+}
+
+#footer-contents {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    align-items: baseline;
+}
+
+#footer-contents p,
+#social-links> :first-child {
+    margin-right: 20px;
+}
+
+#social-links a {
+    text-decoration: none;
+    font-size: 32px;
+    color: black;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+#social-links a:hover {
+    color: #FFF;
+}
+
+
+/* Welcome Page */
+
+#welcome-div {
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+#welcome-div h1 {
+    margin-bottom: 30px;
+}
+
+#start-button-div {
+    margin: 60px 0;
+}
+
+#name-input {
+    display: block;
+    margin: 0 auto;
+    min-width: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* Game */
+
+#progress-div {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 400px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+#progress-text {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.progressbar {
+    height: 15px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+#progressbar-bg {
+    width: 100%;
+    background-color: #F7F0F0;
+}
+
+#progressbar-fg {
+    background-color: rgb(157, 109, 55);
+    z-index: 2;
+    width: 10%;
+}
+
+#question-text {
+    font-size: 26px;
+    margin-bottom: 40px;
+    padding: 0 25px;
+}
+
+#answer-div,
+#answer-tie-div {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+#answer-div {
+    width: 70%;
+    max-width: 960px;
+    justify-content: space-between;
+}
+
+.btn-choice {
+    background-color: #4D93BB;
+    color: white;
+    width: 48%;
+    height: 90px;
+    padding: 18px 20px;
+    border: none;
+    box-shadow: 2px -2px 4px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    transition: background-color 0.25s ease-in-out;
+    -moz-transition: background-color 0.25s ease-in-out;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    -o-transition: background-color 0.25s ease-in-out;
+}
+
+
+/* Game Tie Breaker styling */
+
+#answer-tie-div {
+    column-gap: 20px;
+}
+
+#answer-tie-div-hide {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#tie-break-title {
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 25px;
+}
+
+#tie-break-text {
+    margin-bottom: 30px;
+}
+
+.question-photo {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: 2px -2px 4px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    transition: background-color 0.25s ease-in-out;
+    -moz-transition: background-color 0.25s ease-in-out;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    -o-transition: background-color 0.25s ease-in-out;
+}
+
+.question-photo:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: inherit;
+    border-radius: inherit;
+}
+
+.culture {
+    background-image: url("../images/personality/culture.jpg");
+}
+
+.foodie {
+    background-image: url("../images/personality/foodie.jpg");
+}
+
+.people {
+    background-image: url("../images/personality/people.jpg");
+}
+
+.remote {
+    background-image: url("../images/personality/remote.jpg");
+}
+
+.thrill {
+    background-image: url("../images/personality/thrill.jpg");
+}
+
+.wildlife {
+    background-image: url("../images/personality/wildlife.jpg");
+}
+
+
+/* Results Page */
+
+#personality-div,
+#country-map-div {
+    background-color: white;
+}
+
+#country-info-div {
+    background-color: #AEE2FF;
+}
+
+#country-highlights-div {
+    background-color: #407694;
+}
+
+.results-container {
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.15);
+}
+
+#personality-div,
+#country-highlights-div,
+#country-info-div {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#personality-div,
+#country-info-div {
+    margin-top: 60px;
+}
+
+#personality-div {
+    padding: 40px;
+}
+
+#personality-stats-div {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#country-info-div,
+#country-highlights-div {
+    padding: 50px 40px;
+}
+
+#personality-div,
+#country-map-div {
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -o-border-radius: 24px;
+}
+
+#personality-heading {
+    margin-bottom: 20px;
+}
+
+#stats-key-chart-div {
+    margin-top: 15px;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+.stat-key-div {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 6px;
+    min-width: 175px;
+}
+
+.stat-type {
+    font-size: 14px;
+}
+
+.stat-key {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.yellow {
+    background-color: #FFE55A;
+}
+
+.green {
+    background-color: #9EE58C;
+}
+
+.pink {
+    background-color: #E7A7F1;
+}
+
+.orange {
+    background-color: #FFC289;
+}
+
+.purple {
+    background-color: #ACAAFF;
+}
+
+.red {
+    background-color: #FDA18D;
+}
+
+#pie-chart {
+    height: 170px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bug Fix for chart.js failing to load on older browsers - div */
+.error-background {
+    background-color: rgba(231, 231, 231, 1);
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Bug Fix for chart.js failing to load on older browsers - text */
+#pie-chart p {
+    padding: 20px;
+    font-size: 14px;
+}
+
+#country-info-div {
+    border-radius: 24px 24px 0 0;
+}
+
+#country-heading {
+    font-size: 20px;
+}
+
+#country-heading-place {
+    font-family: 'Righteous', sans-serif;
+    font-size: 64px;
+    line-height: 70px;
+}
+
+#results-image {
+    width: 100%;
+    margin: 40px 0;
+    border-radius: 24px;
+}
+
+#country-highlights-div {
+    border-radius: 0 0 24px 24px;
+}
+
+#country-highlights-div>h2,
+#country-highlights-div>p {
+    color: white;
+}
+
+#country-highlights-div>p {
+    margin-top: 8px;
+}
+
+#country-map-div {
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#map {
+    background-color: #ffffff;
+    height: 450px;
+    border: 3px solid #FFFFFF;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -o-border-radius: 24px;
+    position: relative;
+    pointer-events: all;
+    overflow: hidden;
+}
+
+/* Bug Fix for overflowing map on border radius corners on Safari */
+#map>div>div {
+    overflow: hidden;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -o-border-radius: 24px;
+}
+
+/* Overlay inset shadow technique adapted from https://bavotasan.com/2011/adding-inset-shadow-to-image-css3/ */
+#map::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 2px -2px 18px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -o-border-radius: 24px;
+    overflow: hidden;
+}
+
+#highlight-content-div {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+}
+
+#highlight-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#highlight-photo-div {
+    padding-top: 30px;
+    border-radius: 0 0 24px 24px;
+}
+
+.highlight-photo {
+    width: 25%;
+    height: auto;
+}
+
+#highlight-photo-1 {
+    border-radius: 0 0 0 24px;
+}
+
+#highlight-photo-4 {
+    border-radius: 0 0 24px 0;
+}
+
+#start-again-button-div p {
+    margin-bottom: 20px;
+}
+
+
+/* 404 Page */
+
+#error-div {
+    width: 70%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#error-div h1 {
+    margin-bottom: 20px;
+}
+
+#error-div p {
+    margin-bottom: 30px;
+}
+
+/* Media Queries */
+
+/* Med-Large Devices */
+@media (max-width: 992px) {
+    #answer-div {
+        width: 80%;
+    }
+
+    #personality-div,
+    #country-highlights-div,
+    #country-info-div {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+}
+
+/* Medium Devices */
+@media (max-width: 768px) {
+    .highlight-photo {
+        width: 50%;
+    }
+
+    #highlight-photo-1 {
+        border-radius: 0;
+    }
+
+    #highlight-photo-3 {
+        border-radius: 0 0 0 12px;
+    }
+
+    #highlight-photo-4 {
+        border-radius: 0 0 12px 0;
+    }
+
+    #personality-div,
+    #country-highlights-div,
+    #country-info-div {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    #country-highlights-div {
+        padding-bottom: 40px;
+    }
+}
+
+/* Small Devices */
+@media (max-width: 576px) {
+    
+    /* Small Devices - Main Elements */
+    .small-heading {
+        font-size: 24px;
+    }
+
+    #logo-div img {
+        width: 155px;
+        margin-top: 30px;
+    }
+
+    #cloud-div {
+        height: 280px;
+        background-image: url("/imgs/MobileUX-pana.png");
+        background-position: center bottom;
+        background-position-y: 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* Small Devices - Welcome */
+    #welcome-div {
+        width: 85%;
+        margin-top: 20px;
+    }
+
+    #welcome-div>h1 {
+        margin-bottom: 10px;
+    }
+
+    #start-button-div {
+        margin: 20px 0 0 0;
+    }
+
+
+    /* Game */
+    #answer-div {
+        width: 85%;
+        display: block;
+    }
+
+    #answer-div,
+    #answer-tie-div {
+        display: block;
+    }
+
+    #progress-div {
+        margin-top: 20px;
+        width: 85%;
+        padding-bottom: 35px;
+    }
+
+    #progress-text {
+        margin-bottom: 10px;
+    }
+
+    #question-text {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn-choice {
+        width: 100%;
+        height: initial;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .btn-choice-tie {
+        margin: 5px;
+    }
+
+    #restart-button-div {
+        margin-top: 40px;
+    }
+
+    .question-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+
+    /* Small Devices - Results */
+    #personality-div,
+    #country-highlights-div,
+    #country-info-div {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #highlight-content-div {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #personality-div {
+        padding: 20px;
+    }
+
+    #personality-div,
+    #country-info-div {
+        margin-top: 30px;
+    }
+
+    #country-info-div {
+        padding: 30px 20px;
+    }
+
+    #country-highlights-div {
+        padding: 30px 20px 20px 20px;
+    }
+
+    #results-image {
+        margin: 30px 0;
+    }
+
+    #country-highlights-div>h2 {
+        margin-top: 10px;
+    }
+
+    #country-heading {
+        font-size: 14px;
+    }
+
+    #country-heading-place {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    #start-again-button-div {
+        margin-top: 40px;
+    }
+}
+
+/* Smallest devices */
+@media (max-width: 450px) {
+    #cloud-div {
+        height: 250px;
+    }
+
+    #footer-contents p,
+    #social-links> :first-child {
+        margin-right: 10px;
+    }
+}
+
+
+/* Hover effects - only on hover devices */
+@media (hover: hover) {
+    .btn-choice:hover {
+        background-color: #407694;
+    }
+
+    #restart-game-btn:hover {
+        background-color: rgb(157, 109, 55);
+    }
+
+    #start-game-btn:hover,
+    #go-home-btn:hover,
+    #start-again-btn:hover {
+        background-color: rgb(157, 109, 55);
+    }
+
+    .question-photo:hover {
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+}
+
+
+/* DOM Manipulation Classes */
+
+.selected,
+.selected:hover {
+    background-color: #FC7070;
+}
+
+.hidden {
+    display: none;
+}

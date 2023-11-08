@@ -66,12 +66,10 @@
             <div class="" id="answer-div-hide">
                 <h2 class="weight-500 body-font" id="question-text">Question</h2>
                 <div id="answer-div">
-                    <button class="btn-choice weight-500 flex-center">Answer 1</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 2</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 3</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 4</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 5</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 6</button>
+                    <button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>
+                    <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
+                    <button id="2" class="btn-choice weight-500 flex-center">Answer 3</button>
+                    <button id="3" class="btn-choice weight-500 flex-center">Answer 4</button>
                 </div>
             </div>
             <div class="hidden" id="answer-tie-div-hide">
@@ -234,8 +232,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
-    <script src="scripts\questions_array.js"></script>
-    <script src="scripts\countries_array.js"></script>
+    <script src="scripts\perguntas_array.js"></script>
+    <script src="scripts\uxtools_array.js"></script>
     <script src="scripts\personalities_array.js"></script>
     <script src="scripts\personalities_array.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
@@ -245,7 +243,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp3bbw0F5d1sjzp5iet_vlxKb0RrevMCA&callback=initMap">
     </script>
 
-    <script src="scripts\quiz.js"></script>
+    <script src="scripts\ux_quiz.js"></script>
 
 
 </body>
