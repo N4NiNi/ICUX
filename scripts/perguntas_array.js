@@ -1,3 +1,31 @@
+const atividadesMap = new Map([
+    [0, "Teste A/B"],
+    [1, "SUS"],
+    [2, "TESTE DE USABILIDADE"],
+    [3, "Matriz CSD"],
+    [4, "Mapa de Afinidade"],
+    [5, "Brainstorm"],
+    [6, "Design Participativo"],
+    [7, "Survey"],
+    [8, "Questionario"],
+    [9, "Entrevista"],
+    [10, "Segmentação de Mercado"],
+    [11, "Analise de Sentimento"],
+    [12, "Desk Research"],
+    [13, "Observação"],
+    [14, "Investigação Contextual"],
+    [15, "Etnografia"],
+    [16, "Estudo de Campo"],
+    [17, "Diary Studies"],
+    [18, "Focous Group"],
+    [19, "Teste em Arvore"],
+    [20, "RITE"],
+    [21, "In-The-Moment Snippets"],
+    [22, "Card Sorting"],
+    [23, "Percurso Cognitivo"],
+    [24, "Heuristicas de Nielsen"]
+  ]);
+
 const createQuestion0 = () => {
     return [{
         questionNumber: 1,
