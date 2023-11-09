@@ -70,6 +70,7 @@
                     <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
                     <button id="2" class="btn-choice weight-500 flex-center">Answer 3</button>
                     <button id="3" class="btn-choice weight-500 flex-center">Answer 4</button>
+                    <button id="4" class="btn-choice weight-500 flex-center">Answer 5</button>
                 </div>
             </div>
             <div class="hidden" id="answer-tie-div-hide">

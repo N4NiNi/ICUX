@@ -1,31 +1,31 @@
 const atividadesMap = new Map([
-    [0, "Teste A/B"],
-    [1, "SUS"],
-    [2, "TESTE DE USABILIDADE"],
-    [3, "Matriz CSD"],
-    [4, "Mapa de Afinidade"],
-    [5, "Brainstorm"],
-    [6, "Design Participativo"],
-    [7, "Survey"],
-    [8, "Questionario"],
-    [9, "Entrevista"],
-    [10, "Segmentação de Mercado"],
-    [11, "Analise de Sentimento"],
-    [12, "Desk Research"],
-    [13, "Observação"],
-    [14, "Investigação Contextual"],
-    [15, "Etnografia"],
-    [16, "Estudo de Campo"],
-    [17, "Diary Studies"],
-    [18, "Focous Group"],
-    [19, "Teste em Arvore"],
-    [20, "RITE"],
-    [21, "In-The-Moment Snippets"],
-    [22, "Card Sorting"],
-    [23, "Percurso Cognitivo"],
-    [24, "Heuristicas de Nielsen"]
+    ["Teste A/B", 0],
+    ["SUS", 1],
+    ["TESTE DE USABILIDADE", 2],
+    ["Matriz CSD", 3],
+    ["Mapa de Afinidade", 4],
+    ["Brainstorm", 5],
+    ["Design Participativo", 6],
+    ["Survey", 7],
+    ["Questionario", 8],
+    ["Entrevista", 9],
+    ["Segmentação de Mercado", 10],
+    ["Analise de Sentimento", 11],
+    ["Desk Research", 12],
+    ["Observação", 13],
+    ["Investigação Contextual", 14],
+    ["Etnografia", 15],
+    ["Estudo de Campo", 16],
+    ["Diary Studies", 17],
+    ["Focous Group", 18],
+    ["Teste em Arvore", 19],
+    ["RITE", 20],
+    ["In-The-Moment Snippets", 21],
+    ["Card Sorting", 22],
+    ["Percurso Cognitivo", 23],
+    ["Heuristicas de Nielsen", 24]
   ]);
-
+console.log(atividadesMap.get(0));
 const createQuestion0 = () => {
     return [{
         questionNumber: 1,
@@ -69,21 +69,21 @@ const createQuestion1 = () => {
                 answerText: "Descobrir e explorar hipóteses",
                 answerType: "wildlife",
                 nextques: 0,
-                ferramenta: "Matriz CSD"
+                ferramenta: [atividadesMap.get("Matriz CSD")]
             },
             {
                 answerNumber: 2,
                 answerText: "Ferramenta para organizar e categorizar idéias",
                 answerType: "people",
                 nextques: 0,
-                ferramenta: "Mapa de Afinidade"
+                ferramenta: [atividadesMap.get("Mapa de Afinidade")]
             },
             {
                 answerNumber: 3,
                 answerText: "Gerar possíveis soluções reunindo ideias da equipe",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: "Brainstorm"
+                ferramenta: [atividadesMap.get("Brainstorm")]
             },
         ]
     },
@@ -106,7 +106,7 @@ const createQuestion2 = () => {
                 answerText: "Testar ou Avaliar um protótipo com usuários reais?",
                 answerType: "remote",
                 nextques: 0,
-                ferramenta: "Teste A/B"
+                ferramenta: [atividadesMap.get("Teste A/B")]
             },
         ]
     },
@@ -123,14 +123,14 @@ const createQuestion3 = () => {
                 answerText: "Testar um protótipo com usuários?",
                 answerType: "food",
                 nextques: 0,
-                ferramenta: "Teste de usabilidade"
+                ferramenta: [atividadesMap.get("TESTE DE USABILIDADE")]
             },
             {
                 answerNumber: 2,
                 answerText: "Avaliar usuários após eles usarem um produto?",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: "SUS"
+                ferramenta: [atividadesMap.get("SUS")]
             },
         ]
     },
@@ -165,7 +165,7 @@ const createQuestion4 = () => {
                 answerText: "Entender o raciocínio do usuário",
                 answerType: "thrill",
                 nextques: 0,
-                ferramenta: "Card sorting"
+                ferramenta: [atividadesMap.get("Card Sorting")]
             },
         ]
     },
@@ -188,28 +188,28 @@ const createQuestion5 = () => {
                 answerText: "De Poucos usuários",
                 answerType: "people",
                 nextques: 0,
-                ferramenta: "Entrevista"
+                ferramenta: [atividadesMap.get("Entrevista")]
             },
             {
                 answerNumber: 3,
                 answerText: "Determinar um grupo específico",
                 answerType: "remote",
                 nextques: 0,
-                ferramenta: "Segmentação de mercado"
+                ferramenta: [atividadesMap.get("Segmentação de Mercado")]
             },
             {
                 answerNumber: 4,
                 answerText: "Emoções e Sentimentos",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: "Análise de sentimento"
+                ferramenta: [atividadesMap.get("Analise de Sentimento")]
             },
             {
                 answerNumber: 5,
                 answerText: "Usar dados disponíveis",
                 answerType: "food",
                 nextques: 0,
-                ferramenta: "Desk research"
+                ferramenta: [atividadesMap.get("Desk Research")]
             },
         ]
     },
@@ -226,7 +226,7 @@ const createQuestion6 = () => {
                 answerText: "Sim",
                 answerType: "people",
                 nextques: 0,
-                ferramenta: "Design participativo"
+                ferramenta: [atividadesMap.get("Design Participativo")]
             },
             {
                 answerNumber: 2,
@@ -249,14 +249,14 @@ const createQuestion7 = () => {
                 answerText: "Sim!",
                 answerType: "remote",
                 nextques: 0,
-                ferramenta: "Survey"
+                ferramenta: [atividadesMap.get("Survey")]
             },
             {
                 answerNumber: 2,
                 answerText: "Não!",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: "Questionário"
+                ferramenta: [atividadesMap.get("Questionario")]
             },
         ]
     },
@@ -273,14 +273,14 @@ const createQuestion8 = () => {
                 answerText: "Individual",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: "Entrevista"
+                ferramenta: [atividadesMap.get("Entrevista")]
             },
             {
                 answerNumber: 2,
                 answerText: "Em grupo",
                 answerType: "people",
                 nextques: 0,
-                ferramenta: "Focous group"
+                ferramenta: [atividadesMap.get("Focous Group")]
             },
             {
                 answerNumber: 3,
@@ -303,21 +303,21 @@ const createQuestion9 = () => {
                 answerText: "Registrar diariamente as atividades do uso",
                 answerType: "thrill",
                 nextques: 0,
-                ferramenta: "Diary Studies"
+                ferramenta: [atividadesMap.get("Diary Studies")]
             },
             {
                 answerNumber: 2,
                 answerText: "Estudar o meio em que atuam",
                 answerType: "food",
                 nextques: 0,
-                ferramenta: ["Etnografia", "Estudo de campo"]
+                ferramenta: [atividadesMap.get("Etnografia"), atividadesMap.get("Estudo de Campo")]
             },
             {
                 answerNumber: 3,
                 answerText: "Observar o uso da aplicação",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: ["Observação", "Investigação Contextual"]
+                ferramenta: [atividadesMap.get("Observação"), atividadesMap.get("Investigação Contextual")]
             },
         ]
     },
@@ -334,7 +334,7 @@ const createQuestion10 = () => {
                 answerText: "Avaliar a estrutura de um site?",
                 answerType: "thrill",
                 nextques: 0,
-                ferramenta: "Teste de árvore"
+                ferramenta: [atividadesMap.get("Teste em Arvore")]
             },
             {
                 answerNumber: 2,
@@ -357,14 +357,14 @@ const createQuestion11 = () => {
                 answerText: "Sim",
                 answerType: "thrill",
                 nextques: 0,
-                ferramenta: "Rite"
+                ferramenta: [atividadesMap.get("RITE")]
             },
             {
                 answerNumber: 2,
                 answerText: "Não",
                 answerType: "food",
                 nextques: 0,
-                ferramenta: ["Teste de usabilidade", "In-the-moment snippets"]
+                ferramenta: [atividadesMap.get("TESTE DE USABILIDADE"), atividadesMap.get("In-The-Moment Snippets")]
             },
         ]
     },
@@ -381,21 +381,21 @@ const createQuestion12 = () => {
                 answerText: "Testar ou avaliar os fluxos da navegação!",
                 answerType: "thrill",
                 nextques: 0,
-                ferramenta: "Percurso cognitivo"
+                ferramenta: [atividadesMap.get("Percurso Cognitivo")]
             },
             {
                 answerNumber: 2,
                 answerText: "Melhorar a navegabilidade de uma aplicação!",
                 answerType: "food",
                 nextques: 0,
-                ferramenta: "Heuristicas de Nielsen"
+                ferramenta: [atividadesMap.get("Heuristicas de Nielsen")]
             },
             {
                 answerNumber: 3,
                 answerText: "Testar ou avaliar a estrutura de um site!",
                 answerType: "culture",
                 nextques: 0,
-                ferramenta: "Teste de árvore"
+                ferramenta: [atividadesMap.get("Teste em Arvore")]
             },
         ]
     },

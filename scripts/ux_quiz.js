@@ -16,6 +16,8 @@ function startGame(event) {
     const answerDiv = document.getElementById("answer-div-hide");
     const answerTieDiv = document.getElementById("answer-tie-div-hide");
 
+    const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
+
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
     const personalityHeading = document.getElementById("personality-heading");
@@ -89,12 +91,26 @@ function startGame(event) {
 
     // Populate the questions and answers & move on progress bar
     function addQuestionContent(index) {
-        console.log(currentQuestion);
         let current_Question = currentQuestion[index];
+        let answers = current_Question.answers;
+
+        for(let i=0; i < answer_qtd.length; i++){
+            answer_qtd[i].classList.remove("hidden");
+        }
+
+        let qtd_question = answer_qtd.length - answers.length;
+        if(answers.length < answer_qtd.length){
+            for(let i=0; i < qtd_question; i++){
+                answer_qtd[answer_qtd.length - i - 1].classList.toggle("hidden");
+            }
+        }
+
+        console.log(currentQuestion);
+        
         // populate question
         questionText.innerText = current_Question.questionText;
         // populate answers
-        let answers = current_Question.answers;
+        
         for (let i = 0; i < answers.length; i++) {
             choices[i].innerText = answers[i].answerText;
         }
@@ -142,6 +158,9 @@ function startGame(event) {
                         
                     } else {
                         // Então ja chegou na resposta
+                        console.log(currentQuestion[0].answers[target.id].ferramenta)
+                        tool_match(currentQuestion[0].answers[target.id].ferramenta)
+
                     }
                 }, 500);
         } else {
@@ -174,52 +193,16 @@ function startGame(event) {
     }
 
     // Calculates user personality & reveals results
-    function findTopPersonality() {
+    function tool_match(id) {
 
-        // updates personality scores in personalities array
-        for (let i = 0; i < personalities.length; i++) {
-            personalities[i].score = elementCount(personalityTally, personalities[i].type);
-        }
-
-        // Checks for a tie
-        let topPersonalityArray = [];
-        checkForTie(topPersonalityArray);
-
-        // if not tied reveal results, if tied run tie breaker & reveal results
-        let topPersonality;
-        if (topPersonalityArray.length > 1) {
-
-            showTieBreaker(topPersonalityArray);
-
-            // sets the topPersonality personality based on clicked image
-            for (let i = 0; i < tieChoices.length; i++) {
-                tieChoices[i].addEventListener("click", function () {
-
-                    // adds the winning tie breaker personality to the personalityTally (for results calculations)                       
-                    let tieWinner = tieChoices[i].getAttribute("data-type");
-                    personalityTally.push(tieWinner);
-
-                    // updates scores again post tie-break selection
-                    for (let i = 0; i < personalities.length; i++) {
-                        personalities[i].score = elementCount(personalityTally, personalities[i].type);
-                    }
-
-                    // sets winning personality based on last item in personalityTally
-                    topPersonality = personalityTally[personalityTally.length - 1];
-
-                    // Reveals results
-                    showResults(topPersonality);
-                });
-            }
-
-        } else {
+            
 
             // if not tied - sets the winning personality
-            topPersonality = topPersonalityArray[0];
+            //topPersonality = topPersonalityArray[0];
 
             // Reveals results
             showResults(topPersonality);
-        }
+
     }
 
     // Helper functions for findTopPersonality
