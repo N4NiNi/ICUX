@@ -1,4 +1,5 @@
 const countries = [{
+    id: 7,
     name: "Survey",
     image: "nz_main.jpg",
     alt: "Mt Cook and Lake Tekapo, New Zealand",
@@ -135,8 +136,9 @@ const countries = [{
     ]
 },
 {
+    id: 8,
     name: "Questionário",
-    image: "imgs\ux_tools_img\questionario.jpg",
+    image: "imgs/ux_tools_img/questionario.jpg",
     alt: "Woman with colourful skull facepaint and head-dress",
     text: [
         "Em um questionário, uma série de perguntas é apresentada para coletar informações específicas de um respondente. Pode abranger uma variedade de formatos, como escolha múltipla, respostas abertas ou escalas de classificação. Os questionários são ferramentas versáteis, utilizadas em pesquisas, entrevistas e coleta de dados para obter insights quantitativos e qualitativos.",
@@ -272,6 +274,7 @@ const countries = [{
     ]
 },
 {
+    id: 6,
     name: "Design Participativo",
     image: "peru_main.jpg",
     alt: "Children in bright ponchos with an alpaca",
@@ -408,8 +411,9 @@ const countries = [{
     ]
 },
 {
+    id: 9,
     name: "Entrevista",
-    image: "imgs\ux_tools_img\entrevista.jpg",
+    image: "imgs/ux_tools_img/entrevista.jpg",
     alt: "Tourists outside a Chinese temple",
     text: [
         "Entrevistas são como janelas para a mente dos usuários. No contexto de UX, elas são uma ferramenta valiosa para coletar informações detalhadas sobre as experiências, necessidades e comportamentos dos usuários. Essas conversas diretas permitem aos designers aprofundar sua compreensão, fazendo perguntas específicas e explorando as respostas de maneira mais rica. Pode envolver entrevistas individuais ou em grupo, presenciais ou remotas. ",
@@ -544,8 +548,9 @@ const countries = [{
     ]
 },
 {
+    id: 10,
     name: "Segmentação de mercado",
-    image: "imgs\ux_tools_img\segmentacao_mercado.jpg",
+    image: "imgs/ux_tools_img/segmentacao_mercado.jpg",
     alt: "Zebras in long, yellow grass",
     text: [
         "A segmentação de mercado é como dividir uma torta para atender diferentes gostos. É uma estratégia de marketing onde um mercado é dividido em segmentos menores com características e necessidades semelhantes. Isso permite que as empresas personalizem suas estratégias para atender melhor a cada grupo. Os critérios de segmentação podem incluir demografia, comportamento do consumidor, geografia ou psicografia.",
@@ -680,8 +685,9 @@ const countries = [{
     ]
 },
 {
+    id: 11,
     name: "Análise de sentimento",
-    image: "imgs\ux_tools_img\analise_sentimento.jpg",
+    image: "imgs/ux_tools_img/analise_sentimento.jpg",
     alt: "Group of yurts in a vast plain",
     text: [
         "A análise de sentimento é uma ferramenta poderosa na caixa de ferramentas de UX. Ela utiliza tecnologias como processamento de linguagem natural para avaliar e compreender as emoções expressas pelos usuários em dados textuais, como avaliações, comentários ou feedbacks. Isso permite que as equipes de UX identifiquem padrões emocionais e entendam como os usuários se sentem em relação a um produto ou serviço. ",
@@ -816,6 +822,7 @@ const countries = [{
     ]
 },
 {
+    id: 12,
     name: "Desk Research",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -952,6 +959,7 @@ const countries = [{
     ]
 },
 {
+    id: 13,
     name: "Observação",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1088,6 +1096,7 @@ const countries = [{
     ]
 },
 {
+    id: 14,
     name: "Investigação Contextual",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1224,6 +1233,7 @@ const countries = [{
     ]
 },
 {
+    id: 15,
     name: "Etnografia",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1360,6 +1370,7 @@ const countries = [{
     ]
 },
 {
+    id: 16,
     name: "Estudo de campo",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1496,6 +1507,7 @@ const countries = [{
     ]
 },
 {
+    id: 17,
     name: "Diary studies",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1632,6 +1644,7 @@ const countries = [{
     ]
 },
 {
+    id: 18,
     name: "Focous Group",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1768,6 +1781,7 @@ const countries = [{
     ]
 },
 {
+    id: 19,
     name: "Teste de árvore",
     image: "imgs/ux_tools_img/testearvore.jpg",
     alt: "Group of yurts in a vast plain",
@@ -1904,6 +1918,7 @@ const countries = [{
     ]
 },
 {
+    id: 20,
     name: "Rite",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2040,6 +2055,7 @@ const countries = [{
     ]
 },
 {
+    id: 2,
     name: "Teste de usabilidade",
     image: "imgs/ux_tools_img/usabilidade.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2176,6 +2192,7 @@ const countries = [{
     ]
 },
 {
+    id: 21,
     name: "IN-THE-MOMENT-SNIPPETS",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2312,6 +2329,7 @@ const countries = [{
     ]
 },
 {
+    id: 22,
     name: "Card Sorting",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2448,6 +2466,7 @@ const countries = [{
     ]
 },
 {
+    id: 23,
     name: "Percurso cognitivo",
     image: "kyrg_main.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2584,6 +2603,7 @@ const countries = [{
     ]
 },
 {
+    id: 24,
     name: "Heuristicas de Nielsen",
     image: "imgs/ux_tools_img/nielsen.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2720,6 +2740,7 @@ const countries = [{
     ]
 },
 {
+    id: 0,
     name: "Teste A/B",
     image: "imgs/ux_tools_img/testeAB.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2856,6 +2877,7 @@ const countries = [{
     ]
 },
 {
+    id: 1,
     name: "SUS",
     image: "imgs/ux_tools_img/sus.jpg",
     alt: "Group of yurts in a vast plain",
@@ -2992,6 +3014,7 @@ const countries = [{
     ]
 },
 {
+    id: 3,
     name: "Matriz CSD",
     image: "imgs/ux_tools_img/matrizcsd.png",
     alt: "Group of yurts in a vast plain",
@@ -3128,6 +3151,7 @@ const countries = [{
     ]
 },
 {
+    id: 4,
     name: "Mapa de afinidade",
     image: "imgs/ux_tools_img/mapa_afinidade.jpg",
     alt: "Group of yurts in a vast plain",
@@ -3264,6 +3288,7 @@ const countries = [{
     ]
 },
 {
+    id: 5,
     name: "Brainstorm",
     image: "imgs/ux_tools_img/brainstorm.jpg",
     alt: "Group of yurts in a vast plain",

@@ -20,36 +20,17 @@ function startGame(event) {
 
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
-    const personalityHeading = document.getElementById("personality-heading");
-    const personalityTextP1 = document.getElementById("personality-text-p1");
-    const personalityTextP2 = document.getElementById("personality-text-p2");
-    const personalityTextP3 = document.getElementById("personality-text-p3");
-    const pieDiv = document.getElementById("pie-chart");
-    const pieColorKey = Array.from(document.getElementsByClassName("stat-key"));
-    const pieTypesText = Array.from(document.getElementsByClassName("stat-type"));
-    const piePercentages = Array.from(document.getElementsByClassName("stat-percent"));
     const resultsCountry = document.getElementById("country-heading-place");
     const resultsImage = document.getElementById("results-image");
     const resultsTextP1 = document.getElementById("country-text-para1");
     const resultsTextP2 = document.getElementById("country-text-para2");
-    const highlightCountryName = document.getElementById("highlight-country-name");
     const startAgainBtn = document.getElementById("start-again-btn");
 
     // declaring other variables
-    let maxQuestions = 4;
+    let maxQuestions = 10;
     let username;
-    let personalityTally = [];
     let currentQuestion = question0; 
 
-    /* index of points matches index of country in countries_array
-     * [New Zealand, Mexico, Peru, China, Zambia, Kyrgyzstan]*/
-    let userTotal = [0, 0, 0, 0, 0, 0];
-    let wildlifePoints = [0, 1, 0, 0, 3, 2];
-    let thrillPoints = [3, 0, 1, 0, 2, 0];
-    let culturePoints = [0, 0, 3, 2, 0, 1];
-    let foodPoints = [2, 3, 0, 1, 0, 0];
-    let peoplePoints = [1, 2, 0, 3, 0, 0];
-    let remotePoints = [0, 0, 2, 0, 1, 3];
 
 
     // Username submission & Start Quiz Functionality ------------------------------------------ //
@@ -159,7 +140,7 @@ function startGame(event) {
                     } else {
                         // Então ja chegou na resposta
                         console.log(currentQuestion[0].answers[target.id].ferramenta)
-                        tool_match(currentQuestion[0].answers[target.id].ferramenta)
+                        tool_match(currentQuestion[0].answers[target.id].ferramenta[0])
 
                     }
                 }, 500);
@@ -194,15 +175,9 @@ function startGame(event) {
 
     // Calculates user personality & reveals results
     function tool_match(id) {
-
-            
-
-            // if not tied - sets the winning personality
-            //topPersonality = topPersonalityArray[0];
-
             // Reveals results
-            showResults(topPersonality);
-
+            let index = findUXIndexById(id)
+            showResults(index);
     }
 
     // Helper functions for findTopPersonality
@@ -253,43 +228,15 @@ function startGame(event) {
     // Results Page Functionality ------------------------------------------------------------------------------ //
 
     // Reveal Results
-    function showResults(topPersonality) {
+    function showResults(id) {
 
         // hide game div & reveal results divs, scroll to top of page
         gameDiv.classList.toggle("hidden");
         resultsDiv.classList.toggle("hidden");
         scrollToTop();
+        // popular ferramenta recomendada
+        populateUXTOOL(id);
 
-        // populate personality heading and text
-        populatePersonalityText(topPersonality);
-
-        // sort the personalities by score (reverse order)
-        let reverseSortedPersonalities = sortPersonalityScores();
-
-        // convert scores to percentages
-        let percentageArray = [];
-        calculatePiePersonalities(reverseSortedPersonalities, percentageArray);
-
-        // populates the names and percentages for the pie key
-        populatePieKeyData(reverseSortedPersonalities, percentageArray);
-
-        // create colour key for pie & populate key colours
-        let keyColors = calculatePieColours(reverseSortedPersonalities);
-
-        // create labels for pie
-        let pieLabels = calculatePieLabels(reverseSortedPersonalities);
-
-        // Populates the 3rd paragraph of the personality text
-        populatePersonalityParaThree(reverseSortedPersonalities, percentageArray);
-
-        // calculates the winning country based on personalityTally
-        let topCountryIndex = chooseCountry();
-
-        // populates the country results
-        populateCountry(topCountryIndex);
-
-        // runs Google Map API (function stored in map.js)
-        initMap(topCountryIndex);
 
         // start again game button - reload page
         startAgainBtn.addEventListener('click', function () {
@@ -297,204 +244,38 @@ function startGame(event) {
         });
 
         // Builds pie chart - doesn't work on Safari IOS 12 and earlier - try/catch to handle error styling (see bugs in TESTING.md)
-        try {
-            // build piechart
-            // uses chart.js library https://www.chartjs.org/
-            buildPie(percentageArray, keyColors, pieLabels);
-        } catch (err) {
-            pieDiv.classList.add("error-background");
-            pieDiv.innerHTML = "<p class='text-centre'>Sorry!<br>Your browser version doesn't support our pie charts.</p>";
-        }
+        // try {
+        //     // build piechart
+        //     // uses chart.js library https://www.chartjs.org/
+        //     buildPie(percentageArray, keyColors, pieLabels);
+        // } catch (err) {
+        //     pieDiv.classList.add("error-background");
+        //     pieDiv.innerHTML = "<p class='text-centre'>Sorry!<br>Your browser version doesn't support our pie charts.</p>";
+        // }
     }
 
     // Helper Functions for showResults()
 
-    // Populates personality heading and text
-    function populatePersonalityText(topPersonality) {
-        for (let i = 0; i < personalities.length; i++) {
-            if (personalities[i].type === topPersonality) {
-                personalityHeading.innerText = `${username.value}, YOU ARE ${personalities[i].prefix}... ${personalities[i].name}`;
-                personalityTextP1.innerText = personalities[i].text[0];
-                personalityTextP2.innerText = personalities[i].text[1];
-            }
-        }
-    }
-
-    // sort the personalities by score (reverse order)
-    function sortPersonalityScores() {
-        let sorted = personalities.sort(compareScores);
-        // reverse order of sorted personalities
-        let reversed = sorted.reverse();
-        return reversed;
-    }
-
-    // helper function for sortPersonalityScores (for ordering)
-    function compareScores(a, b) {
-        return a.score - b.score;
-    }
-
-    // Creates an array of the score percentages for the pie key
-    function calculatePiePersonalities(reverseSortedPersonalities, percentageArray) {
-
-        // calculate sum of all scores
-        let scoresTotal = 0;
-        for (let i = 0; i < reverseSortedPersonalities.length; i++) {
-            scoresTotal += reverseSortedPersonalities[i].score;
-        }
-
-        // calculate percentages for each personality
-        // adds them to an array & works out sum of all % (to manage rounding issues)
-        let percentagesTotal = 0;
-        for (let i = 0; i < reverseSortedPersonalities.length; i++) {
-            percentageArray.push(calcPercent(reverseSortedPersonalities[i].score, scoresTotal));
-            percentagesTotal += calcPercent(reverseSortedPersonalities[i].score, scoresTotal);
-        }
-
-        // If scores add up to 100% add difference to top score
-        let percentDifference = 100 - percentagesTotal;
-        if (percentDifference !== 0) {
-            percentageArray[0] += percentDifference;
-        }
-        return percentageArray;
-    }
-
-    // helper function for calculatePiePersonalities - calculate percentage
-    function calcPercent(score, total) {
-        return Math.floor((score / total) * 100);
-    }
-
-    // populates the names and percentages for the pie key
-    function populatePieKeyData(reverseSortedPersonalities, percentageArray) {
-        for (let i = 0; i < reverseSortedPersonalities.length; i++) {
-            pieTypesText[i].innerText = reverseSortedPersonalities[i].name;
-            piePercentages[i].innerText = `: ${percentageArray[i]}%`;
-        }
-    }
-
-    // calculates and populates the colours for the pie chart and key
-    // returns colours for pie chart
-    function calculatePieColours(reverseSortedPersonalities) {
-        let colors = [];
-        for (let i = 0; i < reverseSortedPersonalities.length; i++) {
-            pieColorKey[i].classList.add(reverseSortedPersonalities[i].color);
-            colors.push(reverseSortedPersonalities[i].colorCode);
-        }
-        return colors;
-    }
-
-    // calculates the values for the hover pie labels
-    function calculatePieLabels(reverseSortedPersonalities) {
-        let labels = [];
-        for (let i = 0; i < reverseSortedPersonalities.length; i++) {
-            labels.push((reverseSortedPersonalities[i].name));
-        }
-        return labels;
-    }
-
-    // Populates the 3rd paragraph of the personality text
-    function populatePersonalityParaThree(reverseSortedPersonalities, percentageArray) {
-        if (percentageArray[1] < 15) {
-            personalityTextP3.innerText = `Check our our recommendations below to see which destination suits all these aspects your personality!`;
-        } else if (percentageArray[2] < 15) {
-            personalityTextP3.innerHTML = `But we humans are complex creatures, you also scored highly as ${reverseSortedPersonalities[1].prefix} <strong>${reverseSortedPersonalities[1].name}</strong>. Check our our recommendations below
-                    to see which destination suits all these aspects your personality!`;
-        } else {
-            personalityTextP3.innerHTML = `But we humans are complex creatures, you also scored highly as ${reverseSortedPersonalities[1].prefix} <strong>${reverseSortedPersonalities[1].name}</strong> and <strong>${reverseSortedPersonalities[2].name}</strong>. Check our our recommendations below
-                    to see which destination suits all these aspects your personality!`;
-        }
-    }
-
-    // calculates winning country based on user answers in personalityTally
-    function chooseCountry() {
-        for (let i = 0; i < personalityTally.length; i++) {
-            switch (personalityTally[i]) {
-                case "wildlife":
-                    for (let i = 0; i < userTotal.length; i++) {
-                        userTotal[i] += wildlifePoints[i];
-                    }
-                    break;
-                case "thrill":
-                    for (let i = 0; i < userTotal.length; i++) {
-                        userTotal[i] += thrillPoints[i];
-                    }
-                    break;
-                case "culture":
-                    for (let i = 0; i < userTotal.length; i++) {
-                        userTotal[i] += culturePoints[i];
-                    }
-                    break;
-                case "food":
-                    for (let i = 0; i < userTotal.length; i++) {
-                        userTotal[i] += foodPoints[i];
-                    }
-                    break;
-                case "people":
-                    for (let i = 0; i < userTotal.length; i++) {
-                        userTotal[i] += peoplePoints[i];
-                    }
-                    break;
-                case "remote":
-                    for (let i = 0; i < userTotal.length; i++) {
-                        userTotal[i] += remotePoints[i];
-                    }
-                    break;
-            }
-        }
-        let winningIndex = userTotal.indexOf(Math.max(...userTotal));
-        return winningIndex;
-    }
-
     // populates the country results
-    function populateCountry(topCountryIndex) {
-        resultsCountry.innerText = `${countries[topCountryIndex].name}!`;
-        resultsImage.src = `assets/images/countries/main/${countries[topCountryIndex].image}`;
-        resultsImage.alt = countries[topCountryIndex].alt;
-        resultsTextP1.innerText = countries[topCountryIndex].text[0];
-        resultsTextP2.innerText = countries[topCountryIndex].text[1];
-        highlightCountryName.innerText = countries[topCountryIndex].name;
+    function populateUXTOOL(UxToolIndex) {
+        //buscar ferramenta com o id
+
+        console.log(UxToolIndex);
+        resultsCountry.innerText = `${countries[UxToolIndex].name}!`;
+        resultsImage.src = `${countries[UxToolIndex].image}`;
+        resultsImage.alt = countries[UxToolIndex].alt;
+        resultsTextP1.innerText = countries[UxToolIndex].text[0];
+        resultsTextP2.innerText = countries[UxToolIndex].text[1];
+        //highlightCountryName.innerText = countries[topCountryIndex].name;
     }
 
-    // build piechart
-    // uses chart.js library https://www.chartjs.org/
-    function buildPie(percentageArray, keyColors, pieLabels) {
-        var yValues = percentageArray;
-        var barColors = keyColors;
-
-        new Chart("myChart", {
-            type: "pie",
-            data: {
-                labels: pieLabels,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues,
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: true,
-                        boxPadding: 5,
-                        backgroundColor: 'rgba(17, 66, 92, 0.9)',
-                        titleFont: 'Raleway, sans-serif',
-                        /** Adds clickable sections on pie chart
-                         * Tooltip popup formatting callback taken from
-                         * https://stackoverflow.com/questions/46317867/how-to-append-text-or-symbol-to-tooltip-of-chart-js
-                         * https://stackoverflow.com/questions/44632529/how-do-you-hide-the-title-of-a-chart-tooltip
-                         */
-                        callbacks: {
-                            title: () => null,
-                            label: function (context) {
-                                return context.label + ': ' + context.formattedValue + '%';
-                            }
-                        }
-                    }
-                }
+    function findUXIndexById(id) {
+        for (let i = 0; i < countries.length; i++) {
+            if (countries[i].id === id) {
+                return i; // Retorna o índice quando encontra o id
             }
-        });
+        }
+        return -1; // Retorna -1 se o ID não for encontrado
     }
+
 }

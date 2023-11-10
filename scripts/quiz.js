@@ -273,27 +273,27 @@ function startGame(event) {
         resultsDiv.classList.toggle("hidden");
         scrollToTop();
 
-        // populate personality heading and text
-        populatePersonalityText(topPersonality);
+        // // populate personality heading and text
+        // populatePersonalityText(topPersonality);
 
-        // sort the personalities by score (reverse order)
-        let reverseSortedPersonalities = sortPersonalityScores();
+        // // sort the personalities by score (reverse order)
+        // let reverseSortedPersonalities = sortPersonalityScores();
 
-        // convert scores to percentages
-        let percentageArray = [];
-        calculatePiePersonalities(reverseSortedPersonalities, percentageArray);
+        // // convert scores to percentages
+        // let percentageArray = [];
+        // calculatePiePersonalities(reverseSortedPersonalities, percentageArray);
 
-        // populates the names and percentages for the pie key
-        populatePieKeyData(reverseSortedPersonalities, percentageArray);
+        // // populates the names and percentages for the pie key
+        // populatePieKeyData(reverseSortedPersonalities, percentageArray);
 
-        // create colour key for pie & populate key colours
-        let keyColors = calculatePieColours(reverseSortedPersonalities);
+        // // create colour key for pie & populate key colours
+        // let keyColors = calculatePieColours(reverseSortedPersonalities);
 
-        // create labels for pie
-        let pieLabels = calculatePieLabels(reverseSortedPersonalities);
+        // // create labels for pie
+        // let pieLabels = calculatePieLabels(reverseSortedPersonalities);
 
-        // Populates the 3rd paragraph of the personality text
-        populatePersonalityParaThree(reverseSortedPersonalities, percentageArray);
+        // // Populates the 3rd paragraph of the personality text
+        // populatePersonalityParaThree(reverseSortedPersonalities, percentageArray);
 
         // calculates the winning country based on personalityTally
         let topCountryIndex = chooseCountry();
