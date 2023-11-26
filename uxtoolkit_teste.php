@@ -82,19 +82,43 @@
 
         <!-- Results -->
         <div class="hidden" id="results-div">
-            <!-- Personality Results -->
+            <!-- Results -->
 
-            <!-- Country Results - General -->
-            <div class="results-container" id="country-info-div">
+            <!-- uxtool Results - General -->
+            <div class="results-container" id="uxtool-info-div">
                 <div class="text-centre heading-font">
-                    <h2 id="country-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
-                    <h3 id="country-heading-place" class="uppercase">UXTOOL</h3>
+                    <h2 id="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
+                    <h3 id="uxtool-heading-place" class="uppercase">UXTOOL</h3>
+                </div>
+                <div class="img-resul-div">
+                    <img src="assets/images/uxtool/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
+                </div>
+                <p id="uxtool-text-para1"></p>
+                <br>
+                <p id="uxtool-text-para2"></p>
+
+                <div class="saiba_mais">
+                    <h5 id="uxtool-about-title">Saiba mais com profissionais!</h5>
+                    <p id="uxtool-about-text"></p>
+
+                </div>
+                <div class="materiais">
+                    <h5 id="uxtool-materiais-title">Materias Utilizados</h5>
+                    <p id="uxtool-materiais-desc">Para realizar</p>
+                    <p id="uxtool-materiais-desc-place">a ferramenta</p>
+                    <p id="uxtool-materiais-desc-2"> você vai precisar de:</p>
+                    <div id="materials-cols">
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                    </div>
                 </div>
 
-                <img src="assets/images/countries/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
-                <p id="country-text-para1"></p>
-                <br>
-                <p id="country-text-para2"></p>
+                <div id="execucao">
+                    <h5 id="uxtool-exec-title">Como executar</h5>
+                    <h5 id="uxtool-exec-title-place">a ferrameta</h5>
+                    <p id="uxtool-exec-desc"> você vai precisar de:</p>
+                </div>
             </div>
             <!-- Restart Game Button -->
             <div class="text-centre" id="start-again-button-div">

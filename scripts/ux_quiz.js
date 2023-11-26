@@ -8,22 +8,18 @@ function startGame(event) {
     const gameDiv = document.getElementById("game-div");
     const questionText = document.getElementById("question-text");
     const choices = Array.from(document.getElementsByClassName("btn-choice"));
-    const tieChoices = Array.from(document.getElementsByClassName("btn-choice-tie"));
-    const progressDiv = document.getElementById("progress-div");
     const progressText = document.getElementById("progress-text");
     const progressBar = document.getElementById("progressbar-fg");
     const restartGameBtn = document.getElementById("restart-game-btn");
-    const answerDiv = document.getElementById("answer-div-hide");
-    const answerTieDiv = document.getElementById("answer-tie-div-hide");
 
     const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
 
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
-    const resultsCountry = document.getElementById("country-heading-place");
+    const resultsuxtool = document.getElementById("uxtool-heading-place");
     const resultsImage = document.getElementById("results-image");
-    const resultsTextP1 = document.getElementById("country-text-para1");
-    const resultsTextP2 = document.getElementById("country-text-para2");
+    const resultsTextP1 = document.getElementById("uxtool-text-para1");
+    const resultsTextP2 = document.getElementById("uxtool-text-para2");
     const startAgainBtn = document.getElementById("start-again-btn");
     // declaring other variables
     let maxQuestions = 10;
@@ -121,17 +117,11 @@ function startGame(event) {
             choice.classList.remove("selected");
             if (choice == target) {
                 choice.classList.add("selected");
-                //logPersonalities(choice);
                 // Verifique se a pergunta atual tem a propriedade nextques
                 setTimeout(function () {
                     if (currentQuestion[0].answers[target.id].nextques != 0) {
                         // Atualiza a pergunta atual com a próxima pergunta
                         currentQuestion = currentQuestion[0].answers[target.id].nextques;
-                        // Adicione a nova pergunta ao array de perguntas
-                        //questions.unshift(currentQuestion[0]);
-                        // remove o botão atual da tela
-                        //removeQuestionContent();
-                        // Adicione a nova pergunta à tela
                         addQuestionContent(0);
                         choice.classList.remove("selected");
                         enableButtons();
@@ -153,17 +143,6 @@ function startGame(event) {
 
     // Helper Functions for selectAndSubmit
 
-    // logs personality type for each answer to an array
-    function logPersonalities(choice) {
-        // iterates through answers in questions_array
-        // currentQuestion.answers.forEach(answer => {
-        //     // matches the selected answer to the same answer in the questions array
-        //     if (choice.innerText === answer.answerText) {
-        //         // adds the personality type to an array
-        //         personalityTally.push(answer.answerType);
-        //     }
-        // });
-    }
 
     // re-enable the buttons after question answered
     function enableButtons() {
@@ -187,42 +166,6 @@ function startGame(event) {
     }
 
     // Helper functions for findTopPersonality
-
-    // Checks for tied personality results
-    function checkForTie(topPersonalityArray) {
-
-        // creates an array of the number of times each personality occurs
-        let scoreArray = [];
-        for (let i = 0; i < personalities.length; i++) {
-            scoreArray.push(personalities[i].score);
-        }
-
-        // calculate the maximum number of times any personality type appears
-        let maxPersonalityScore = Math.max(...scoreArray);
-
-        // create an array of the winning personalities
-        for (let i = 0; i < personalities.length; i++) {
-            if (personalities[i].score === maxPersonalityScore) {
-                topPersonalityArray.push(personalities[i].type);
-            }
-        }
-    }
-
-    // Reveals Tie Breaker
-    function showTieBreaker(topPersonalityArray) {
-
-        // reveals photos for tied personalities
-        for (let i = 0; i < tieChoices.length; i++) {
-            if (topPersonalityArray.includes(tieChoices[i].getAttribute("data-type"))) {
-                tieChoices[i].classList.remove("hidden");
-            }
-        }
-
-        // hides the main questions div and reveals the tie-breaker div
-        answerDiv.classList.add("hidden");
-        progressDiv.classList.add("hidden");
-        answerTieDiv.classList.remove("hidden");
-    }
 
     // Function to check for number of times an element occurs in an array
     // function adapted from https://linuxhint.com/count-array-element-occurrences-in-javascript/#:~:text=To%20count%20element%20occurrences%20in,%E2%80%9Cfor%2Dof%E2%80%9D%20loop.
@@ -249,35 +192,25 @@ function startGame(event) {
             window.location.reload();
         });
 
-        // Builds pie chart - doesn't work on Safari IOS 12 and earlier - try/catch to handle error styling (see bugs in TESTING.md)
-        // try {
-        //     // build piechart
-        //     // uses chart.js library https://www.chartjs.org/
-        //     buildPie(percentageArray, keyColors, pieLabels);
-        // } catch (err) {
-        //     pieDiv.classList.add("error-background");
-        //     pieDiv.innerHTML = "<p class='text-centre'>Sorry!<br>Your browser version doesn't support our pie charts.</p>";
-        // }
     }
 
     // Helper Functions for showResults()
 
-    // populates the country results
+    // populates the uxtool results
     function populateUXTOOL(UxToolIndex) {
         //buscar ferramenta com o id
 
         console.log(UxToolIndex);
-        resultsCountry.innerText = `${countries[UxToolIndex].name}!`;
-        resultsImage.src = `${countries[UxToolIndex].image}`;
-        resultsImage.alt = countries[UxToolIndex].alt;
-        resultsTextP1.innerText = countries[UxToolIndex].text[0];
-        resultsTextP2.innerText = countries[UxToolIndex].text[1];
-        //highlightCountryName.innerText = countries[topCountryIndex].name;
+        resultsuxtool.innerText = `${uxtool[UxToolIndex].name}!`;
+        resultsImage.src = `${uxtool[UxToolIndex].image}`;
+        resultsImage.alt = uxtool[UxToolIndex].alt;
+        resultsTextP1.innerText = uxtool[UxToolIndex].text[0];
+        resultsTextP2.innerText = uxtool[UxToolIndex].text[1];
     }
 
     function findUXIndexById(id) {
-        for (let i = 0; i < countries.length; i++) {
-            if (countries[i].id === id) {
+        for (let i = 0; i < uxtool.length; i++) {
+            if (uxtool[i].id === id) {
                 return i; // Retorna o índice quando encontra o id
             }
         }

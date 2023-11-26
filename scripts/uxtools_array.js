@@ -1,4 +1,4 @@
-const countries = [{
+const uxtool = [{
     id: 7,
     name: "Survey",
     image: "nz_main.jpg",

@@ -359,15 +359,15 @@ a {
 /* Results Page */
 
 #personality-div,
-#country-map-div {
+#uxtool-map-div {
     background-color: white;
 }
 
-#country-info-div {
+#uxtool-info-div {
     background-color: rgb(226, 216, 205);
 }
 
-#country-highlights-div {
+#uxtool-highlights-div {
     background-color: #407694;
 }
 
@@ -376,14 +376,14 @@ a {
 }
 
 #personality-div,
-#country-highlights-div,
-#country-info-div {
+#uxtool-highlights-div,
+#uxtool-info-div {
     margin-left: 100px;
     margin-right: 100px;
 }
 
 #personality-div,
-#country-info-div {
+#uxtool-info-div {
     margin-top: 60px;
 }
 
@@ -396,13 +396,13 @@ a {
     width: 100%;
 }
 
-#country-info-div,
-#country-highlights-div {
+#uxtool-info-div,
+#uxtool-highlights-div {
     padding: 50px 40px;
 }
 
 #personality-div,
-#country-map-div {
+#uxtool-map-div {
     border-radius: 24px;
     -webkit-border-radius: 24px;
     -moz-border-radius: 24px;
@@ -482,40 +482,46 @@ a {
     font-size: 14px;
 }
 
-#country-info-div {
+#uxtool-info-div {
     border-radius: 24px 24px 0 0;
 }
 
-#country-heading {
+#uxtool-heading {
     font-size: 20px;
 }
 
-#country-heading-place {
+#uxtool-heading-place {
     font-family: 'Righteous', sans-serif;
     font-size: 64px;
     line-height: 70px;
 }
 
 #results-image {
-    width: 100%;
+    width: 50%;
     margin: 40px 0;
     border-radius: 24px;
 }
+.img-resul-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-#country-highlights-div {
+}
+
+#uxtool-highlights-div {
     border-radius: 0 0 24px 24px;
 }
 
-#country-highlights-div>h2,
-#country-highlights-div>p {
+#uxtool-highlights-div>h2,
+#uxtool-highlights-div>p {
     color: white;
 }
 
-#country-highlights-div>p {
+#uxtool-highlights-div>p {
     margin-top: 8px;
 }
 
-#country-map-div {
+#uxtool-map-div {
     margin: 0 auto;
     margin-top: 40px;
 }
@@ -620,8 +626,8 @@ a {
     }
 
     #personality-div,
-    #country-highlights-div,
-    #country-info-div {
+    #uxtool-highlights-div,
+    #uxtool-info-div {
         margin-left: 60px;
         margin-right: 60px;
     }
@@ -646,13 +652,13 @@ a {
     }
 
     #personality-div,
-    #country-highlights-div,
-    #country-info-div {
+    #uxtool-highlights-div,
+    #uxtool-info-div {
         margin-left: 40px;
         margin-right: 40px;
     }
 
-    #country-highlights-div {
+    #uxtool-highlights-div {
         padding-bottom: 40px;
     }
 }
@@ -744,8 +750,8 @@ a {
 
     /* Small Devices - Results */
     #personality-div,
-    #country-highlights-div,
-    #country-info-div {
+    #uxtool-highlights-div,
+    #uxtool-info-div {
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -760,15 +766,15 @@ a {
     }
 
     #personality-div,
-    #country-info-div {
+    #uxtool-info-div {
         margin-top: 30px;
     }
 
-    #country-info-div {
+    #uxtool-info-div {
         padding: 30px 20px;
     }
 
-    #country-highlights-div {
+    #uxtool-highlights-div {
         padding: 30px 20px 20px 20px;
     }
 
@@ -776,15 +782,15 @@ a {
         margin: 30px 0;
     }
 
-    #country-highlights-div>h2 {
+    #uxtool-highlights-div>h2 {
         margin-top: 10px;
     }
 
-    #country-heading {
+    #uxtool-heading {
         font-size: 14px;
     }
 
-    #country-heading-place {
+    #uxtool-heading-place {
         font-size: 36px;
         line-height: 36px;
     }
