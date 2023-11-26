@@ -36,7 +36,7 @@
     </header>
     <!-- Background Gradient & Logo -->
     <div id="background-div">
-        <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="The Travel Personality Quiz"></div>
+        <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="UXTOOL"></div>
 
         <!-- Welcome -->
         <div class="text-centre" id="welcome-div">

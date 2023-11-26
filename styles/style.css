@@ -263,7 +263,7 @@ a {
 }
 
 .btn-choice {
-    background-color: #4D93BB;
+    background-color: rgb(157, 109, 55);
     color: white;
     width: 48%;
     height: 90px;
@@ -364,7 +364,7 @@ a {
 }
 
 #country-info-div {
-    background-color: #AEE2FF;
+    background-color: rgb(226, 216, 205);
 }
 
 #country-highlights-div {
@@ -810,7 +810,7 @@ a {
 /* Hover effects - only on hover devices */
 @media (hover: hover) {
     .btn-choice:hover {
-        background-color: #407694;
+        background-color: rgb(128, 84, 34);
     }
 
     #restart-game-btn:hover {
@@ -834,7 +834,7 @@ a {
 
 .selected,
 .selected:hover {
-    background-color: #FC7070;
+    background-color: rgb(107, 61, 9);
 }
 
 .hidden {

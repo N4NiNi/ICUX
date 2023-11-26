@@ -25,7 +25,6 @@ function startGame(event) {
     const resultsTextP1 = document.getElementById("country-text-para1");
     const resultsTextP2 = document.getElementById("country-text-para2");
     const startAgainBtn = document.getElementById("start-again-btn");
-
     // declaring other variables
     let maxQuestions = 10;
     let username;
@@ -140,7 +139,7 @@ function startGame(event) {
                     } else {
                         // Então ja chegou na resposta
                         console.log(currentQuestion[0].answers[target.id].ferramenta)
-                        tool_match(currentQuestion[0].answers[target.id].ferramenta[0])
+                        tool_match(currentQuestion[0].answers[target.id].ferramenta)
 
                     }
                 }, 500);
@@ -176,7 +175,14 @@ function startGame(event) {
     // Calculates user personality & reveals results
     function tool_match(id) {
             // Reveals results
-            let index = findUXIndexById(id)
+            let index;
+            let index2;
+
+            index2 = 0;
+            index = findUXIndexById(id[0]);
+            if(id.length > 1){
+                index_2 = findUXIndexById(id[1]);
+            }
             showResults(index);
     }
 

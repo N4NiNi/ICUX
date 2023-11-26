@@ -36,7 +36,7 @@
     </header>
     <!-- Background Gradient & Logo -->
     <div id="background-div">
-        <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="The Travel Personality Quiz"></div>
+        <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="UXTOOLKIT"></div>
 
         <!-- Welcome -->
         <div class="text-centre" id="welcome-div">
@@ -76,7 +76,7 @@
 
 
             <div class="" id="restart-button-div">
-                <button class="btn-game-main" id="restart-game-btn">Restart Quiz</button>
+                <button class="btn-game-main" id="restart-game-btn">Restart</button>
             </div>
         </div>
 
