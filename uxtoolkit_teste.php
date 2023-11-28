@@ -102,22 +102,52 @@
                     <p id="uxtool-about-text"></p>
 
                 </div>
-                <div class="materiais">
-                    <h5 id="uxtool-materiais-title">Materias Utilizados</h5>
-                    <p id="uxtool-materiais-desc">Para realizar</p>
-                    <p id="uxtool-materiais-desc-place">a ferramenta</p>
-                    <p id="uxtool-materiais-desc-2"> você vai precisar de:</p>
-                    <div id="materials-cols">
-                        <div class=""></div>
-                        <div class=""></div>
-                        <div class=""></div>
+                <div class="container materiais">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                        <p id="uxtool-materiais-desc">Para realizar a ferramenta/método você vai precisar de:</p>
+                        </div>
+                    </div>
+                    <div id="materials-cols" class="row">
+                        <div id="card-col" class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="imgs\materiais\lapis.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 id="uxtool-materiais-title" class="card-title">Lápis</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-col" class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="imgs\materiais\caneta.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 id="uxtool-materiais-title" class="card-title">Caneta</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-col" class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="imgs\materiais\papel.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 id="uxtool-materiais-title" class="card-title">Papel</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div id="execucao">
-                    <h5 id="uxtool-exec-title">Como executar</h5>
-                    <h5 id="uxtool-exec-title-place">a ferrameta</h5>
-                    <p id="uxtool-exec-desc"> você vai precisar de:</p>
+                    <h4 class="heading-font" id="uxtool-exec-title">COMO EXECUTAR A FERRAMENTA/MÉTODO?</h4>
+                    <div class="exec_center">
+                        <div id="exec_content">
+                            <p id="uxtool-exec-desc"> Reuna um conjunto de usuários que represente o público-alvo do projeto. Entregue a cada um deles material para desenho (papel, canetas, lápis de cor, etc).</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Restart Game Button -->

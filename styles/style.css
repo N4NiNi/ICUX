@@ -370,10 +370,51 @@ a {
 #uxtool-highlights-div {
     background-color: #407694;
 }
+#uxtool-materiais-title,
+#uxtool-exec-title,
+#uxtool-materiais-desc
+{
+    text-align: center;
+}
+
+#materials-cols{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#card-col{
+    max-width: max-content;
+}
+#execucao{
+    margin-top: 30px;
+}
+#exec_content{
+    border-radius: 5px;
+    padding: 15px 100px 10px 100px;
+    border-top:5px solid;
+    border-top-color: rgb(157, 109, 55);
+    background: linear-gradient(180deg, #FBFBFB 0%, rgb(231, 221, 209)100%);
+    max-width: 80%;
+
+    box-shadow: 1px 5px 20px #888888;
+}
+.exec_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .results-container {
     box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.15);
 }
+.materiais-desc{
+    display: flex;
+}
+.materiais{
+    justify-content: center;
+    align-items: center;
+}
+
 
 #personality-div,
 #uxtool-highlights-div,
