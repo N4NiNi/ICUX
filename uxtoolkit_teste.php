@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<header id="header" class="fixed-top">
+<header id="header" class="">
         <nav class="navbar navbar-expand-lg navbar-dark ">
             <div class="container-fluid">
                 <div class="logo_bloco mr-auto">
@@ -37,11 +37,11 @@
     </header>
     <!-- Background Gradient & Logo -->
     <div id="background-div">
-        <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="UXTOOLKIT"></div>
+       <!-- <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="UXTOOLKIT"></div> -->
 
         <!-- Welcome -->
         <div class="text-centre" id="welcome-div">
-            <h1 class="small-heading heading-font">UX TOOLKIT!</h1>
+            <h1 class="small-heading heading-font">UX TOOLKIT</h1>
             <p>Olá, tudo bem meu nome é XXXX e vou te ajudar a escolher a melhor ferramenta para o seu trabalho!
                 <br><br>Farei algumas perguntas e com isso irei te direcionar para melhor ferramenta!
                 <br><br>Aperte em iniciar!
@@ -95,15 +95,28 @@
                 <div class="img-resul-div">
                     <img src="assets/images/uxtool/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
                 </div>
-                <p id="uxtool-text-para1"></p>
-                <br>
-                <p id="uxtool-text-para2"></p>
+                <div class="container" id="bloco_what_about">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>
+                            <div id="what_is">
+                                <p id="uxtool-text-para1"></p>
+                                <p id="uxtool-text-para2"></p>
+                            </div>
+                        </div>
 
-                <div class="saiba_mais">
-                    <h5 id="uxtool-about-title">Saiba mais com profissionais!</h5>
-                    <p id="uxtool-about-text"></p>
+                        <div class="col">
+                            <h4 class="heading-font uppercase" id="uxtool-about-title">Saiba mais com profissionais!</h4>
+                            <div id="about_more">
+                                
+                                <p id="uxtool-about-text">Livro: Interação Humano-Computador (Simone Barbosa)</p>
+                                <p id="uxtool-about-text">Métodos criativos de User Research para Startups (Brasil UX Design).</p>
+                            </div>
 
+                        </div>
+                    </div>
                 </div>
+
                 <div class="container materiais">
                     <div class="row">
                         <div class="col">
