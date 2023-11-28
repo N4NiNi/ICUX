@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles\estilo.css">
     <link rel="stylesheet" href="styles\style.css">
 </head>
+
 <body>
 <header id="header" class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -56,6 +57,7 @@
         </div>
 
         <!-- Game -->
+        
         <div class="text-centre hidden" id="game-div">
             <div class="" id="progress-div">
                 <p id="progress-text"></p>
@@ -157,6 +159,8 @@
             </div>
         </div>
 
+        
+
         <footer class="rodape2">
             <div id="cloud-div">
 
@@ -195,6 +199,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
+    <script src="scripts\loading.js"></script>
     <script src="scripts\perguntas_array.js"></script>
     <script src="scripts\uxtools_array.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
@@ -202,6 +207,8 @@
 
     <script src="scripts\ux_quiz.js"></script>
 
-
+    
 </body>
+<!-- Loading -->
+
 </html>

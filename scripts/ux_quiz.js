@@ -162,7 +162,11 @@ function startGame(event) {
             if(id.length > 1){
                 index_2 = findUXIndexById(id[1]);
             }
-            showResults(index);
+            showLoading(function() {
+                showResults(index); // Chama showResults após o término do carregamento
+            });
+            //showLoading();
+            //showResults(index);
     }
 
     // Helper functions for findTopPersonality
