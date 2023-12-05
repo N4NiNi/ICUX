@@ -2,11 +2,12 @@
 
 require_once 'vendor/autoload.php';
 
-
+use Bolt\Bolt;
+use Bolt\helpers\Auth;
 
 // Create connection class and specify target host and port
 
-$conn = new \Bolt\connection\Socket();
+$conn = new \Bolt\connection\Socket('neo4j', 7687);
 
 // Create new Bolt instance and provide connection object
 
@@ -37,11 +38,12 @@ foreach ($protocol->getResponses() as $response) {
       $neo4j = $response->getContent()[0];
       //$resp = var_dump($neo4j);
     }
-  }
-  echo "oi";
-  $string = var_export($neo4j, true);
-  echo $string;
-  $json = json_encode($string, JSON_UNESCAPED_UNICODE);
+}
+
+$string = var_export($neo4j, true);
+echo $string;
+$json = json_encode($string, JSON_UNESCAPED_UNICODE);
+echo $json;
 
 //var_dump($rows);
 //var_dump($stats);

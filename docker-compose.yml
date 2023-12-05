@@ -1,4 +1,17 @@
+version: '3'
+
 services:
+  php-server:
+    build:
+      context: .
+      dockerfile: php-server.Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./your-php-file.php:/var/www/html/your-php-file.php
+    depends_on:
+      - neo4j
+
   neo4j:
     image: neo4j
     container_name: neo4j
