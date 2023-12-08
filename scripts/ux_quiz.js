@@ -92,8 +92,8 @@ function startGame(event) {
         }
         // set progress bar
         let questionNumber = current_Question.questionNumber;
-        progressText.innerHTML = `Question ${questionNumber} of ${maxQuestions}`;
-        progressBar.style.width = `${questionNumber / maxQuestions * 100}%`;
+        //progressText.innerHTML = `Question ${questionNumber} of ${maxQuestions}`;
+        //progressBar.style.width = `${questionNumber / maxQuestions * 100}%`;
     }
 
     // User selects answer

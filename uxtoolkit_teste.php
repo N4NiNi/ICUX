@@ -14,7 +14,7 @@
 
 <body>
 <header id="header" class="">
-        <nav class="navbar navbar-expand-lg navbar-dark ">
+        <nav class="navbar navbar-expand-lg navbar-dark " style="margin-bottom: 50px;">
             <div class="container-fluid">
                 <div class="logo_bloco mr-auto">
                     <img src="imgs\uxLerisLogo.15a026cd.svg" alt="Logo" class="navbar-logo">
@@ -42,8 +42,8 @@
         <!-- Welcome -->
         <div class="text-centre" id="welcome-div">
             <h1 class="small-heading heading-font">UX TOOLKIT</h1>
-            <p>Olá, tudo bem meu nome é XXXX e vou te ajudar a escolher a melhor ferramenta para o seu trabalho!
-                <br><br>Farei algumas perguntas e com isso irei te direcionar para melhor ferramenta!
+            <p>Olá, tudo bem meu nome é XXXX e vou te ajudar a escolher a melhor ferramenta/método para o seu trabalho!
+                <br><br>Farei algumas perguntas e com isso irei te direcionar para melhor ferramenta-método!
                 <br><br>Aperte em iniciar!
             </p>
             <!-- Name Input & Start Game -->
@@ -59,11 +59,11 @@
         <!-- Game -->
         
         <div class="text-centre hidden" id="game-div">
-            <div class="" id="progress-div">
+            <!--<div class="" id="progress-div">
                 <p id="progress-text"></p>
                 <div class="progressbar" id="progressbar-fg"></div>
                 <div class="progressbar" id="progressbar-bg"></div>
-            </div>
+            </div> -->
 
             <div class="" id="answer-div-hide">
                 <h2 class="weight-500 body-font" id="question-text">Question</h2>

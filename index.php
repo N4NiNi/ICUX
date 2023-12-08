@@ -24,7 +24,7 @@
                         <a class="menu_op nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="uxtoolkit.php">UX Toolkit</a>
+                        <a class="nav-link" href="uxtoolkit_teste.php">UX Toolkit</a>
                     </li>
                 </ul>
 
@@ -43,7 +43,7 @@
                     <img class="col-6" alt src="imgs\illustration1.6dc90c9a.svg" width="664" height="463" decoding="async" data-nimg="1" loading="lazy" style="color:transparent">
                     <div class="col-6 d-flex flex-column justify-content-center align-items-center" style="max-width: 500px;"> 
                         <p>The UX Toolkit is a collection of tools for different stages of the user experience design process. You can select a specific stage of your project, such as research, ideation, prototyping, or evaluation, and receive a set of recommended tools that can be used during that stage. Additionally, the UX Toolkit includes the Helper UX feature that allows you to answer a series of questions and receive a tailored set of tools based on your responses.</p>
-                        <a target="_blank" href="/uxtoolkit"><button id="btn_ux" class="btn_ux btn btn-outline-secondary">UX ToolKit</button></a>
+                        <a target="_blank" href="/uxtoolkit_teste.php"><button id="btn_ux" class="btn_ux btn btn-outline-secondary">UX ToolKit</button></a>
                     </div>
                 </div>
             </section>
