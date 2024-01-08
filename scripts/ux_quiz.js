@@ -82,7 +82,7 @@ function startGame(event) {
             }
         }
 
-        console.log(currentQuestion);
+        //console.log(currentQuestion);
         
         // populate question
         questionText.innerText = current_Question.questionText;
@@ -120,7 +120,8 @@ function startGame(event) {
                 choice.classList.add("selected");
                 // Verifique se a pergunta atual tem a propriedade nextques
                 setTimeout(function () {
-                    if (currentQuestion.answers[target.id].nextques != "null") {
+                    console.log(currentQuestion.answers[target.id].nextques);
+                    if (currentQuestion.answers[target.id].nextques != null) {
                         // Atualiza a pergunta atual com a próxima pergunta
                         let idx = currentQuestion.answers[target.id].nextques - 1;
                         currentQuestion = ux_pergunta[idx];
@@ -160,10 +161,10 @@ function startGame(event) {
             let index2;
 
             index2 = 0;
-            index = findUXIndexById(id[0]);
-            if(id.length > 1){
+            index = findUXIndexById(id);
+            /*if(id.length > 1){
                 index_2 = findUXIndexById(id[1]);
-            }
+            }*/
             showLoading(function() {
                 showResults(index); // Chama showResults após o término do carregamento
             });
@@ -215,8 +216,11 @@ function startGame(event) {
     }
 
     function findUXIndexById(id) {
+        let id_n = parseInt(id, 10);
         for (let i = 0; i < uxtool.length; i++) {
-            if (uxtool[i].id === id) {
+            console.log(uxtool[i].id);
+            if (uxtool[i].id === id_n) {
+                console.log("achei familia");
                 return i; // Retorna o índice quando encontra o id
             }
         }

@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 // Lógica de conexão ao banco de dados
 $servername = "localhost";
 $username = "root";
@@ -143,10 +140,5 @@ if(file_exists($js_file)) {
 } else {
     echo "Erro ao criar o arquivo uxtool.js";
 }
-echo "<script>";
-echo "const uxdata = $question_json;";
-echo "console.log(uxdata);";
-echo "</script>";
-
 
 ?>
