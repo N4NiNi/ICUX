@@ -24,7 +24,8 @@ function startGame(event) {
     // declaring other variables
     let maxQuestions = 10;
     let username;
-    let currentQuestion = question0; 
+    //let currentQuestion_ = question0;
+    let currentQuestion = ux_pergunta[0]; 
 
 
 
@@ -67,7 +68,7 @@ function startGame(event) {
 
     // Populate the questions and answers & move on progress bar
     function addQuestionContent(index) {
-        let current_Question = currentQuestion[index];
+        let current_Question = currentQuestion;
         let answers = current_Question.answers;
 
         for(let i=0; i < answer_qtd.length; i++){
@@ -119,17 +120,18 @@ function startGame(event) {
                 choice.classList.add("selected");
                 // Verifique se a pergunta atual tem a propriedade nextques
                 setTimeout(function () {
-                    if (currentQuestion[0].answers[target.id].nextques != 0) {
+                    if (currentQuestion.answers[target.id].nextques != "null") {
                         // Atualiza a pergunta atual com a próxima pergunta
-                        currentQuestion = currentQuestion[0].answers[target.id].nextques;
+                        let idx = currentQuestion.answers[target.id].nextques - 1;
+                        currentQuestion = ux_pergunta[idx];
                         addQuestionContent(0);
                         choice.classList.remove("selected");
                         enableButtons();
                         
                     } else {
                         // Então ja chegou na resposta
-                        console.log(currentQuestion[0].answers[target.id].ferramenta)
-                        tool_match(currentQuestion[0].answers[target.id].ferramenta)
+                        console.log(currentQuestion.answers[target.id].ferramenta)
+                        tool_match(currentQuestion.answers[target.id].ferramenta)
 
                     }
                 }, 500);
