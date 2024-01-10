@@ -2,7 +2,8 @@
     include("conexao.php");
     if(isset($_POST['bibliografia'])){
         $bibliografia = $_POST['bibliografia'];
-        $conn->query("INSERT INTO bibliografia (Descricao_autor) VALUES ('$bibliografia');") or die($conn->error);
+        $link = $_POST['link'];
+        $conn->query("INSERT INTO bibliografia (Descricao_autor, link) VALUES ('$bibliografia', '$link');") or die($conn->error);
         echo "<script> alert('Pergunta cadastrada com sucesso!');</script>";
     }
 ?>
@@ -16,7 +17,11 @@
         <form method="POST" action="">
             <p>
                 <label for="nome_biblio"> Bibliografia/Autor:</label>
-                <input id="nome_biblio" name="bibliografia" type="text">
+                <input id="nome_biblio" name="bibliografia" type="text" required>
+            </p>
+            <p>
+                <label for="link"> Link de acesso:</label>
+                <input id="link" name="link" type="text" required>
             </p>
             
             <button type="submit">Cadastrar</button>
