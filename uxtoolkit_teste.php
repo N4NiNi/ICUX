@@ -101,16 +101,16 @@
                             <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>
                             <div id="what_is">
                                 <p id="uxtool-text-para1"></p>
-                                <p id="uxtool-text-para2"></p>
                             </div>
                         </div>
 
                         <div class="col">
                             <h4 class="heading-font uppercase" id="uxtool-about-title">Saiba mais com profissionais!</h4>
                             <div id="about_more">
-                                
+                                <!--
                                 <p id="uxtool-about-text">Livro: Interação Humano-Computador (Simone Barbosa)</p>
                                 <p id="uxtool-about-text">Métodos criativos de User Research para Startups (Brasil UX Design).</p>
+                                -->
                             </div>
 
                         </div>
@@ -129,6 +129,7 @@
                         </div>
                     </div>
                     <div id="materials-cols" class="row">
+                        <!--
                         <div id="card-col" class="col">
                             <div class="card" style="width: 18rem;">
                                 <img src="imgs\materiais\lapis.jpg" class="card-img-top" alt="...">
@@ -153,6 +154,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
 

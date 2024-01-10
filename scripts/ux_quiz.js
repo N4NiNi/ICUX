@@ -19,7 +19,10 @@ function startGame(event) {
     const resultsuxtool = document.getElementById("uxtool-heading-place");
     const resultsImage = document.getElementById("results-image");
     const resultsTextP1 = document.getElementById("uxtool-text-para1");
-    const resultsTextP2 = document.getElementById("uxtool-text-para2");
+    const resultsAboutMore = document.getElementById("about_more");
+    const resultsMaterialDiv = document.getElementById("materials-cols");
+    const resultsExec = document.getElementById("uxtool-exec-desc");
+
     const startAgainBtn = document.getElementById("start-again-btn");
     // declaring other variables
     let maxQuestions = 10;
@@ -211,15 +214,64 @@ function startGame(event) {
         resultsuxtool.innerText = `${uxtool[UxToolIndex].name}!`;
         resultsImage.src = `${uxtool[UxToolIndex].image}`;
         resultsImage.alt = uxtool[UxToolIndex].alt;
-        resultsTextP1.innerText = uxtool[UxToolIndex].text[0];
-        resultsTextP2.innerText = uxtool[UxToolIndex].text[1];
+        resultsTextP1.innerHTML = uxtool[UxToolIndex].desc;
+        resultsExec.innerHTML = uxtool[UxToolIndex].exec;
+
+
+        uxtool[UxToolIndex].text_profissionais.forEach(item => {
+            let p = document.createElement('p');
+            p.id = 'uxtool-about-text';
+            let a = document.createElement('a');
+            a.href = item.Link;
+            a.textContent = item.Descricao;
+            p.appendChild(a);
+            resultsAboutMore.appendChild(p);
+        });
+
+        uxtool[UxToolIndex].materiais.forEach(item => {
+            let cardcol = document.createElement('div');
+            cardcol.id = 'card-col';
+            cardcol.className = 'col';
+
+            let card = document.createElement('div');
+            card.className = 'card';
+            card.style.width = "18rem";
+
+            let img_card = document.createElement('img');
+            img_card.className = 'card-img-top';
+            img_card.src = item.image;
+
+            let card_body = document.createElement('div');
+            card_body.className = 'card-body';
+
+            let materialTitle = document.createElement('h5');
+            materialTitle.id = 'uxtool-materiais-title';
+            materialTitle.className = 'card-title';
+            materialTitle.innerText = item.nome_material;
+            //criar div com id card-col e class col
+                //criar div com class card e style: width: 18 rem;
+                    //criar img pegando o caminho do material e class card-img-top
+                    //criar div com class card-body
+                        //criar h5 com id uxtool-materiais-title e class card-title
+
+            card_body.appendChild(materialTitle);
+            card.appendChild(img_card);
+            card.appendChild(card_body);
+            cardcol.appendChild(card);
+            resultsMaterialDiv.appendChild(cardcol);
+            
+        });
+
+
+
+        //resultsTextP2.innerText = uxtool[UxToolIndex].text[1];
     }
 
     function findUXIndexById(id) {
         let id_n = parseInt(id, 10);
         for (let i = 0; i < uxtool.length; i++) {
             console.log(uxtool[i].id);
-            if (uxtool[i].id === id_n) {
+            if (uxtool[i].id == id_n) {
                 console.log("achei familia");
                 return i; // Retorna o índice quando encontra o id
             }

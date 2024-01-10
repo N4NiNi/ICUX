@@ -38,14 +38,28 @@
     //ao apertar atualizar
 
     if(isset($_POST['nomeFerramenta'])){
-        $caminho = $row['Imagem'];
         $arquivo = $_FILES['arquivo'];
+        $caminho = $row['Imagem'];
+        $nomedoArquivo = $arquivo['name'];
+        $extensao = strtolower(pathinfo($nomedoArquivo, PATHINFO_EXTENSION));
+        
+        
+        if($caminho == null){
+            $pasta = "imgs/ux_tools_img/";
+            $novoNomedoArquivo = uniqid();
+            $caminho = $pasta . $novoNomedoArquivo . "." . $extensao;
+        }
+        
         if($arquivo['error'] != 4){
             if($arquivo['error'])
                 die("Falha ao enviar arquivo");
     
             if($arquivo['size'] > 5242880)
                 die("Arquivo maior que 5MB!!");
+
+            if($extensao != "jpg" && $extensao != "png"){
+                die("Tipo de arquivo invalido, use apenas jpg ou png!");
+            }
 
             $success = move_uploaded_file($arquivo["tmp_name"], $caminho);
         }
@@ -73,6 +87,7 @@
             }
             $conn->commit();
             $conn->close();
+            include("atualiza_json.php");
             echo "<script> 
             alert('Ferramenta/método editado com sucesso!');
             window.location.href='view_ferramenta.php';
@@ -154,7 +169,8 @@ function getBibliografia($id) {
         <input type="text" id="nomeFerramenta" name="nomeFerramenta" value= "<?php echo $row['Nome']; ?>" required><br>
 
         <label for="descFerramenta">Descrição:</label><br>
-        <input type="text" id="descFerramenta" name="descFerramenta" value="<?php echo $row['Descricao']; ?>" required><br>
+        <textarea type="text" id="descFerramenta" name="descFerramenta" value="<?php echo $row['Descricao']; ?>" style="width: 100%; max-width: 500px;" required><?php echo $row['Descricao']; ?>
+        </textarea><br>
 
         <label for="imagem_material"> Selecione uma imagem de capa:</label><br>
         <input id="imagem_material" name="arquivo" type="file"><br>
@@ -163,7 +179,8 @@ function getBibliografia($id) {
         <input type="text" id="descImg" name="descImg" value="<?php echo $row['desc_imagem']; ?>" required><br>
 
         <label for="descExec">Como executar o método/ferramenta:</label><br>
-        <input type="text" id="descExec" name="descExec" value="<?php echo $row['Como_executar']; ?>" required><br>
+        <textarea type="text" id="descExec" name="descExec" value="<?php echo $row['Como_executar']; ?>" style="width: 100%; max-width: 500px;" required><?php echo $row['Como_executar']; ?>
+        </textarea><br>
 
         <label for="materiais">Materiais:</label><br>
         <div id="materiais">
@@ -197,6 +214,16 @@ function getBibliografia($id) {
 
         <input type="submit" value="Cadastrar">
     </form>
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+        new nicEditor({maxHeight : 500}).panelInstance('descFerramenta');
+        new nicEditor({maxHeight : 500}).panelInstance('descExec');
+        
+    });
+    //]]>
+    </script>
 
     <script>
         var contador = <?php echo count($materiais); ?>;

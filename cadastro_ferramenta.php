@@ -117,7 +117,8 @@ function getBibliografia() {
         <input type="text" id="nomeFerramenta" name="nomeFerramenta" required><br>
 
         <label for="descFerramenta">Descrição:</label><br>
-        <input type="text" id="descFerramenta" name="descFerramenta" required><br>
+        <textarea type="text" id="descFerramenta" name="descFerramenta" style="width: 100%; max-width: 500px;" required>
+        </textarea><br>
 
         <label for="imagem_material"> Selecione uma imagem de capa:</label><br>
         <input id="imagem_material" name="arquivo" type="file" required><br>
@@ -126,7 +127,8 @@ function getBibliografia() {
         <input type="text" id="descImg" name="descImg" required><br>
 
         <label for="descExec">Como executar o método/ferramenta:</label><br>
-        <input type="text" id="descExec" name="descExec" required><br>
+        <textarea type="text" id="descExec" name="descExec" style="width: 100%; max-width: 500px;" required>
+        </textarea><br>
 
         <label for="materiais">Materiais:</label><br>
         <div id="materiais">
@@ -143,6 +145,17 @@ function getBibliografia() {
         <button type="button" id="adicionar_b">Adicionar</button>
         <input type="submit" value="Cadastrar">
     </form>
+
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+        new nicEditor({maxHeight : 500}).panelInstance('descFerramenta');
+        new nicEditor({maxHeight : 500}).panelInstance('descExec');
+        
+    });
+    //]]>
+    </script>
 
     <script>
         var contador = 0;
