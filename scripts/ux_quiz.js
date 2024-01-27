@@ -1,6 +1,18 @@
 // Start Game Button - activates all game functionality
 function startGame(event) {
 
+    event.preventDefault();
+    $.get("start_session.php", function(data) {
+        // Armazenar o ID da sessão
+        sessionStorage.setItem("sessionId", data);
+
+        // Resto do código...
+    });
+
+    const secm = sessionStorage.getItem('sessionId');
+    console.log(secm);
+
+
     // declaring consts for Welcome Page DOM Objects
     const welcomeDiv = document.getElementById("welcome-div");
 
@@ -121,6 +133,7 @@ function startGame(event) {
             choice.classList.remove("selected");
             if (choice == target) {
                 choice.classList.add("selected");
+                registerAnswer(secm,currentQuestion.answers[target.id].answerID, currentQuestion.answers[target.id].ferramenta);
                 // Verifique se a pergunta atual tem a propriedade nextques
                 setTimeout(function () {
                     console.log(currentQuestion.answers[target.id].nextques);
@@ -277,6 +290,16 @@ function startGame(event) {
             }
         }
         return -1; // Retorna -1 se o ID não for encontrado
+    }
+
+    function registerAnswer(sessionId,answerId, uxToolId) {
+        $.post("register_answer.php", { session_id: sessionId, answer_id: answerId, ux_tool_id: uxToolId });
+    }
+
+    function getTimeline() {
+        $.get("get_timeline.php", { session_id: sessionId }, function(data) {
+            // Aqui você pode gerar a linha do tempo com os dados recebidos
+        });
     }
 
 }

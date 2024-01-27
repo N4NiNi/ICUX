@@ -53,6 +53,7 @@
         
                 // Se todas as consultas foram bem-sucedidas, confirme a transação
                 $conn->commit();
+                include("atualiza_json.php");
                 echo "<script> alert('Ferramenta/método cadastrado com sucesso!');</script>";
             } catch (Exception $e) {
                 // Se ocorreu um erro, reverta a transação

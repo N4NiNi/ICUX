@@ -116,7 +116,8 @@ if ($result->num_rows > 0) {
                         "answerNumber" => $row_sub["answernumber"],
                         "answerText" => $row_sub["Resposta"],
                         "nextques" => $row_sub["fk_PerguntaDireciona_ID"],
-                        "ferramenta" => $row_sub["fk_Uxtool_ID"]
+                        "ferramenta" => $row_sub["fk_Uxtool_ID"],
+                        "answerID" => $row_sub["ID"]
                     );
                     $ux_answer[] = $answers;
             }
