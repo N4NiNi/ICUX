@@ -18,13 +18,17 @@ function startGame(event) {
 
     // declaring consts for Game DOM Objects
     const gameDiv = document.getElementById("game-div");
-    const questionText = document.getElementById("question-text");
-    const choices = Array.from(document.getElementsByClassName("btn-choice"));
+    const questionText = Array.from(document.getElementsByClassName("question-text"));
+    console.log(questionText);
+    const choices = Array.from(document.getElementsByClassName("btn-choicex"));
+    const choicestxt = Array.from(document.getElementsByClassName("btn-choice-txt"));
+    const desc_choices = Array.from(document.getElementsByClassName("desc-choice-txt"));
     const progressText = document.getElementById("progress-text");
     const progressBar = document.getElementById("progressbar-fg");
     const restartGameBtn = document.getElementById("restart-game-btn");
 
     const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
+    console.log(answer_qtd);
 
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
@@ -100,11 +104,17 @@ function startGame(event) {
         //console.log(currentQuestion);
         
         // populate question
-        questionText.innerText = current_Question.questionText;
+        
+
+        for(let i=0; i < questionText.length; i++){
+            questionText[i].innerText = current_Question.questionText;
+        }
         // populate answers
         
         for (let i = 0; i < answers.length; i++) {
-            choices[i].innerText = answers[i].answerText;
+            //choices[i].innerText = answers[i].answerText;
+            choicestxt[i].innerText = answers[i].answerText;
+            desc_choices[i].innerText = answers[i].descText; 
         }
         // set progress bar
         let questionNumber = current_Question.questionNumber;
@@ -143,7 +153,7 @@ function startGame(event) {
                         currentQuestion = ux_pergunta[idx];
                         addQuestionContent(0);
                         choice.classList.remove("selected");
-                        enableButtons();
+                        //enableButtons();
                         
                     } else {
                         // Então ja chegou na resposta
@@ -170,6 +180,20 @@ function startGame(event) {
         });
     }
 
+    window.changeText = function(id) {
+        let answers = currentQuestion.answers;
+        console.log(answers[1].roboText);
+        for(let i=0; i<questionText.length;i++){
+            questionText[i].innerText = answers[id].roboText;
+        }
+    }
+    
+    window.originalText = function() {
+        for(let i=0; i<questionText.length;i++){
+            questionText[i].innerText = currentQuestion.questionText;
+        }
+    }
+
     // Calculates user personality & reveals results
     function tool_match(id) {
             // Reveals results
@@ -187,6 +211,8 @@ function startGame(event) {
             //showLoading();
             //showResults(index);
     }
+
+    
 
     // Helper functions for findTopPersonality
 
