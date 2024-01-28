@@ -26,8 +26,10 @@ function startGame(event) {
     const progressText = document.getElementById("progress-text");
     const progressBar = document.getElementById("progressbar-fg");
     const restartGameBtn = document.getElementById("restart-game-btn");
+    const timelinediv = document.getElementById("timeline");
 
     const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
+    const icons_qtd = [document.getElementById("i-0"), document.getElementById("i-1"), document.getElementById("i-2"), document.getElementById("i-3"), document.getElementById("i-4")];
     console.log(answer_qtd);
 
     // declaring consts for Results DOM Objects
@@ -44,7 +46,8 @@ function startGame(event) {
     let maxQuestions = 10;
     let username;
     //let currentQuestion_ = question0;
-    let currentQuestion = ux_pergunta[0]; 
+    let currentQuestion = ux_pergunta[0];
+    let iconid = 0;
 
 
 
@@ -120,6 +123,21 @@ function startGame(event) {
         let questionNumber = current_Question.questionNumber;
         //progressText.innerHTML = `Question ${questionNumber} of ${maxQuestions}`;
         //progressBar.style.width = `${questionNumber / maxQuestions * 100}%`;
+        let circletime = document.createElement('div');
+        let icontime = document.createElement('i');
+
+        icontime.className = icons_qtd[iconid].className;
+        
+        circletime.className = "circle";
+        circletime.appendChild(icontime);
+
+        timelinediv.insertBefore(circletime, timelinediv.firstChild);
+        
+        //timelinediv.appendChild(circletime);
+
+
+
+
     }
 
     // User selects answer
@@ -144,6 +162,7 @@ function startGame(event) {
             if (choice == target) {
                 choice.classList.add("selected");
                 registerAnswer(secm,currentQuestion.answers[target.id].answerID, currentQuestion.answers[target.id].ferramenta);
+                iconid = target.id;
                 // Verifique se a pergunta atual tem a propriedade nextques
                 setTimeout(function () {
                     console.log(currentQuestion.answers[target.id].nextques);

@@ -84,84 +84,91 @@
                     
                     
                     
-                </div>    
-                <div id="answer-div">
-                    <!--<button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>
-                    <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
-                    <button id="2" class="btn-choice weight-500 flex-center">Answer 3</button>
-                    <button id="3" class="btn-choice weight-500 flex-center">Answer 4</button>
-                    <button id="4" class="btn-choice weight-500 flex-center">Answer 5</button> -->
-
-
-                    <div class="container" id="respostas_cont">
-                        <div class="row align-middle">
-                            <div onmouseover="changeText(0)" onmouseout="originalText()" class="col-md-6 col-lg-6 column" >
-                                <div id="0" class="cardr card  gr-1 btn-choicex" >
-                                    <div class="txt">
-                                        <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                        <p class="desc-choice-txt">Visual communication and problem-solving</p>
-                                    </div>
-                                    
-                                    <div class="ico-card">
-                                        <i class="fa fa-lightbulb-o"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div onmouseover="changeText(1)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
-                                <div id="1" class="cardr card gr-2 btn-choicex">
-                                    <div class="txt">
-                                        <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                        <p class="desc-choice-txt">How design is implemented on the web.</p>
-                                    </div>
-                                    
-                                    <div class="ico-card">
-                                    <i class="fa fa-user"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div onmouseover="changeText(2)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
-                                <div id="2" class="cardr card gr-3 btn-choicex">
-                                    <div class="txt">
-                                        <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                        <p class="desc-choice-txt">User Interface and User Experience Design.</p>
-                                    </div>
-                                    
-                                    <div class="ico-card">
-                                        <i class="fa fa-code-fork"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div onmouseover="changeText(3)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
-                                <div id="3" class="cardr card gr-4 btn-choicex">
-                                    <div class="txt">
-                                        <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                        <p class="desc-choice-txt">User Interface and User Experience Design.</p>
-                                    </div>
-                                    
-                                    <div class="ico-card">
-                                        <i class="fa fa-desktop"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div onmouseover="changeText(4)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
-                                <div id="4" class="cardr card gr-4 btn-choicex">
-                                    <div class="txt">
-                                        <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                        <p class="desc-choice-txt">User Interface and User Experience Design.</p>
-                                    </div>
-                                    
-                                    <div class="ico-card">
-                                        <i class="fa fa-empire"></i>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div class="container">
+                    <div class="row" id="answer-timeline">
+                        <div class="col-auto" id="timeline">
                             
+                        </div>   
+                        <div class="col" id="answer-div">
+                            <!--<button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>
+                            <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
+                            <button id="2" class="btn-choice weight-500 flex-center">Answer 3</button>
+                            <button id="3" class="btn-choice weight-500 flex-center">Answer 4</button>
+                            <button id="4" class="btn-choice weight-500 flex-center">Answer 5</button> -->
+
+
+                            <div class="container" id="respostas_cont">
+                                <div class="row align-middle">
+                                    <div onmouseover="changeText(0)" onmouseout="originalText()" class="col-md-6 col-lg-6 column" >
+                                        <div id="0" class="cardr card  gr-1 btn-choicex" >
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">Visual communication and problem-solving</p>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-0" class="fa fa-lightbulb-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div onmouseover="changeText(1)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="1" class="cardr card gr-2 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">How design is implemented on the web.</p>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                            <i id="i-1" class="fa fa-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div onmouseover="changeText(2)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="2" class="cardr card gr-3 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">User Interface and User Experience Design.</p>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-2" class="fa fa-code-fork"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div onmouseover="changeText(3)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="3" class="cardr card gr-4 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">User Interface and User Experience Design.</p>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-3" class="fa fa-desktop"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div onmouseover="changeText(4)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="4" class="cardr card gr-4 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">User Interface and User Experience Design.</p>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-4" class="fa fa-empire"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
                 </div>
             </div>
 

@@ -247,7 +247,10 @@ a {
 }
 
 #answer-div{
-    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 6.5rem;
+    margin-right: 6.5rem;
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
