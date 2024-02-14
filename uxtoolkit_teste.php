@@ -88,7 +88,9 @@
                 <div class="container">
                     <div class="row" id="answer-timeline">
                         <div class="col-auto" id="timeline">
-                            
+                            <div class="circle" data-currentquestion="1">
+                                <i class="fa fa-flag-o"></i>
+                            </div>
                         </div>   
                         <div class="col" id="answer-div">
                             <!--<button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>

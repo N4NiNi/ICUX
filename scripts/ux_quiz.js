@@ -10,7 +10,6 @@ function startGame(event) {
     });
 
     const secm = sessionStorage.getItem('sessionId');
-    console.log(secm);
 
 
     // declaring consts for Welcome Page DOM Objects
@@ -19,9 +18,9 @@ function startGame(event) {
     // declaring consts for Game DOM Objects
     const gameDiv = document.getElementById("game-div");
     const questionText = Array.from(document.getElementsByClassName("question-text"));
-    console.log(questionText);
     const choices = Array.from(document.getElementsByClassName("btn-choicex"));
     const choicestxt = Array.from(document.getElementsByClassName("btn-choice-txt"));
+    
     const desc_choices = Array.from(document.getElementsByClassName("desc-choice-txt"));
     const progressText = document.getElementById("progress-text");
     const progressBar = document.getElementById("progressbar-fg");
@@ -30,7 +29,6 @@ function startGame(event) {
 
     const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
     const icons_qtd = [document.getElementById("i-0"), document.getElementById("i-1"), document.getElementById("i-2"), document.getElementById("i-3"), document.getElementById("i-4")];
-    console.log(answer_qtd);
 
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
@@ -48,6 +46,9 @@ function startGame(event) {
     //let currentQuestion_ = question0;
     let currentQuestion = ux_pergunta[0];
     let iconid = 0;
+    let timelinecount = 0;
+    let circles = Array.from(document.getElementsByClassName("circle"));
+    
 
 
 
@@ -104,7 +105,6 @@ function startGame(event) {
             }
         }
 
-        //console.log(currentQuestion);
         
         // populate question
         
@@ -123,32 +123,65 @@ function startGame(event) {
         let questionNumber = current_Question.questionNumber;
         //progressText.innerHTML = `Question ${questionNumber} of ${maxQuestions}`;
         //progressBar.style.width = `${questionNumber / maxQuestions * 100}%`;
-        let circletime = document.createElement('div');
-        let icontime = document.createElement('i');
+        if(index != 1){
+            if(timelinecount != 0){
+                let circletime = document.createElement('div');
+                let icontime = document.createElement('i');
 
-        icontime.className = icons_qtd[iconid].className;
-        
-        circletime.className = "circle";
-        circletime.appendChild(icontime);
+                icontime.className = icons_qtd[iconid].className;
+                
+                circletime.className = "circle";
+                circletime.setAttribute('data-currentquestion', currentQuestion.questionNumber);
+                circletime.appendChild(icontime);
 
-        timelinediv.insertBefore(circletime, timelinediv.firstChild);
-        
-        //timelinediv.appendChild(circletime);
+                timelinediv.insertBefore(circletime, timelinediv.firstChild);
+            }
+            timelinecount++;
+            circles = Array.from(document.getElementsByClassName("circle"));
+            
+            backAnswer();
+            console.log(circles);
+            //timelinediv.appendChild(circletime);
+        }
 
 
 
 
     }
 
+
+
     // User selects answer
     function handleAnswer() {
+        
         choices.forEach(choice => {
             choice.addEventListener('click', () => {
                 selectAndSubmit(choice);
                 setTimeout(scrollToTop, 500);
             });
         });
+
+        
+        
     }
+
+    function backAnswer(){
+        circles.forEach((circle, index) => {
+            circle.addEventListener('click', () => {
+                let id_question = findQuestionID(circle.dataset.currentquestion);
+                currentQuestion = ux_pergunta[id_question];
+                addQuestionContent(1);
+                setTimeout(scrollToTop, 500);
+                console.log(index);
+                console.log("---");
+                // Remover todos os círculos acima do círculo clicado
+                for(let i = 0; i < index; i++) {
+                    circles[i].remove();
+                }
+            });
+        });
+    }
+    
 
 
     // Helper functions for handleAnswer
@@ -165,7 +198,6 @@ function startGame(event) {
                 iconid = target.id;
                 // Verifique se a pergunta atual tem a propriedade nextques
                 setTimeout(function () {
-                    console.log(currentQuestion.answers[target.id].nextques);
                     if (currentQuestion.answers[target.id].nextques != null) {
                         // Atualiza a pergunta atual com a próxima pergunta
                         let idx = currentQuestion.answers[target.id].nextques - 1;
@@ -176,7 +208,6 @@ function startGame(event) {
                         
                     } else {
                         // Então ja chegou na resposta
-                        console.log(currentQuestion.answers[target.id].ferramenta)
                         tool_match(currentQuestion.answers[target.id].ferramenta)
 
                     }
@@ -201,7 +232,6 @@ function startGame(event) {
 
     window.changeText = function(id) {
         let answers = currentQuestion.answers;
-        console.log(answers[1].roboText);
         for(let i=0; i<questionText.length;i++){
             questionText[i].innerText = answers[id].roboText;
         }
@@ -268,7 +298,6 @@ function startGame(event) {
     function populateUXTOOL(UxToolIndex) {
         //buscar ferramenta com o id
 
-        console.log(UxToolIndex);
         resultsuxtool.innerText = `${uxtool[UxToolIndex].name}!`;
         resultsImage.src = `${uxtool[UxToolIndex].image}`;
         resultsImage.alt = uxtool[UxToolIndex].alt;
@@ -328,9 +357,17 @@ function startGame(event) {
     function findUXIndexById(id) {
         let id_n = parseInt(id, 10);
         for (let i = 0; i < uxtool.length; i++) {
-            console.log(uxtool[i].id);
             if (uxtool[i].id == id_n) {
-                console.log("achei familia");
+                return i; // Retorna o índice quando encontra o id
+            }
+        }
+        return -1; // Retorna -1 se o ID não for encontrado
+    }
+
+    function findQuestionID(id) {
+        let id_n = parseInt(id, 10);
+        for (let i = 0; i < ux_pergunta.length; i++) {
+            if (ux_pergunta[i].questionNumber == id_n) {
                 return i; // Retorna o índice quando encontra o id
             }
         }
