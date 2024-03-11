@@ -372,6 +372,15 @@
 }
 #respostas_cont{
   margin-top: -65px;
+  margin-bottom: -205px;
+  
+}
+#box_cont{
+  min-height: 430px;
+  background-image: url("../imgs/toybox.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 @media (max-width: 768px) {
 
@@ -416,10 +425,10 @@
 }
 
 
-.circle {position: relative; border: 2px solid #999; border-radius: 100%; width: 50px; line-height: 50px; text-align: center; margin-top: 50px; background-color: #fff; z-index: 2;}
+.circle {position: relative; border: 2px solid #999; border-radius: 100%; width: 50px; line-height: 50px; text-align: center; margin-top: 50px; background-color: #fff;z-index: 5;}
 .circle:first-child {margin-top: 0;}
-.circle:before {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: -78%; z-index: 1; top: -62px; margin-left: -1px; border-color: transparent #999 transparent transparent; border-radius: 50%;}
-.circle:after {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: 40%; z-index: 1; top: -37px; margin-left: -1px; border-color: transparent transparent transparent #999; border-radius: 50%;}
+.circle:before {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: -78%; z-index: 1; top: -62px; margin-left: -1px; border-color: transparent rgb(157, 109, 55) transparent transparent; border-radius: 50%; background-image: url("../imgs/pegadasmarrom.png"); background-repeat: no-repeat; background-size: 20%; background-position-y: center; background-position-x: right;}
+.circle:after {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: 40%; z-index: 1; top: -37px; margin-left: -1px; border-color: transparent transparent transparent rgb(157, 109, 55); border-radius: 50%; background-image: url("../imgs/pegadasmarrom.png"); background-repeat: no-repeat; background-size: 20%; background-position-y: center;}
 .circle:first-child:before {display: none;}
 .circle:hover{
   cursor: pointer;
@@ -427,4 +436,5 @@
   filter: 
     drop-shadow(0px 0px 0.2rem black)
     drop-shadow(0px 0px 1rem var(--bbColor));
+  z-index: 4;
 }
