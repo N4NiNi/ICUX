@@ -21,7 +21,7 @@ function startGame(event) {
     const choices = Array.from(document.getElementsByClassName("btn-choicex"));
     const choicestxt = Array.from(document.getElementsByClassName("btn-choice-txt"));
     
-    const desc_choices = Array.from(document.getElementsByClassName("desc-choice-txt"));
+    //const desc_choices = Array.from(document.getElementsByClassName("desc-choice-txt"));
     const progressText = document.getElementById("progress-text");
     const progressBar = document.getElementById("progressbar-fg");
     const restartGameBtn = document.getElementById("restart-game-btn");
@@ -117,7 +117,7 @@ function startGame(event) {
         for (let i = 0; i < answers.length; i++) {
             //choices[i].innerText = answers[i].answerText;
             choicestxt[i].innerText = answers[i].answerText;
-            desc_choices[i].innerText = answers[i].descText; 
+            //desc_choices[i].innerText = answers[i].descText; 
         }
         // set progress bar
         let questionNumber = current_Question.questionNumber;
