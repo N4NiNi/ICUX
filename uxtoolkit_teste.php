@@ -18,7 +18,7 @@
 
 <body>
 <header id="header" class="">
-        <nav class="navbar navbar-expand-lg navbar-dark " style="margin-bottom: 30px;">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <div class="logo_bloco mr-auto">
                     <img src="imgs\uxLerisLogo.15a026cd.svg" alt="Logo" class="navbar-logo">
@@ -40,7 +40,8 @@
         </nav>
     </header>
     <!-- Background Gradient & Logo -->
-    <div id="background-div">
+    <div id="background-div2">
+    <div id="box-id" class="">
        
         <div class="text-centre" id="welcome-div">
             <h1 class="small-heading heading-font">UX TOOLKIT</h1>
@@ -102,9 +103,9 @@
 
                             <div class="container" id="respostas_cont">
                                 <div class="row align-middle">
-                                    <div onmouseover="changeText(0)" onmouseout="originalText()" class="col-md-6 col-lg-6 column" >
-                                        <div class="btn_mask">
-                                            <div id="0" class="cardr squarecard gr-1 btn-choicex" >
+                                    <div id="col1" class="col-md-6 col-lg-6 column" >
+                                        <div id="1-mask" class="btn_mask">
+                                            <div onmouseover="changeText(0)" onmouseout="originalText()" id="0" class="cardr squarecard gr-1 btn-choicex" >
                                                 <div class="txt">
                                                     <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
                                                     
@@ -116,9 +117,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div onmouseover="changeText(1)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
-                                    <div class="btn_mask">
-                                        <div id="1" class="cardr circlecard gr-2 btn-choicex">
+                                    <div id="col2" class="col-md-6 col-lg-6 column">
+                                    <div id="2-mask" class="btn_mask">
+                                        <div onmouseover="changeText(1)" onmouseout="originalText()" id="1" class="cardr circlecard gr-2 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
                                                 
@@ -131,9 +132,9 @@
                                     </div>
                                     </div>
 
-                                    <div onmouseover="changeText(2)" onmouseout="originalText()" class="col-md-6 col-lg-6 column positionr">
-                                    <div class="btn_mask">
-                                        <div id="2" class="cardr rombuscard gr-3 btn-choicex">
+                                    <div  id="col3" class="col-md-6 col-lg-6 column positionr">
+                                    <div id="3-mask" class="btn_mask">
+                                        <div onmouseover="changeText(2)" onmouseout="originalText()" id="2" class="cardr rombuscard gr-3 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
                                                 
@@ -146,9 +147,9 @@
                                     </div>
                                     </div>
 
-                                    <div onmouseover="changeText(3)" onmouseout="originalText()" class="col-md-6 col-lg-6 column positionl">
-                                    <div class="btn_mask">
-                                        <div id="3" class="cardr hexacard gr-4 btn-choicex">
+                                    <div id="col4" class="col-md-6 col-lg-6 column positionl">
+                                    <div id="4-mask" class="btn_mask">
+                                        <div onmouseover="changeText(3)" onmouseout="originalText()" id="3" class="cardr hexacard gr-4 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
                                                 
@@ -161,8 +162,9 @@
                                     </div>
                                     </div>
 
-                                    <div onmouseover="changeText(4)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
-                                        <div id="4" class="cardr decagoncard gr-5 btn-choicex">
+                                    <div id="col5" class="col-md-6 col-lg-6 column">
+                                        <div id="5-mask" class="btn_mask">
+                                        <div onmouseover="changeText(4)" onmouseout="originalText()" id="4" class="cardr squarecard gr-1 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
                                             </div>
@@ -170,6 +172,7 @@
                                             <div class="ico-card">
                                                 <i id="i-4" class="fa fa-empire"></i>
                                             </div>
+                                        </div>
                                         </div>
                                     </div>
                                     
@@ -288,6 +291,7 @@
 
             </div>
         </footer>
+    </div>
     </div>
     <footer class="rodape">
             <div class="container">

@@ -17,6 +17,8 @@ function startGame(event) {
 
     // declaring consts for Game DOM Objects
     const gameDiv = document.getElementById("game-div");
+    const boxDiv = document.getElementById("box-id");
+    const mascote = document.getElementById("mascote-img");
     const questionText = Array.from(document.getElementsByClassName("question-text"));
     const choices = Array.from(document.getElementsByClassName("btn-choicex"));
     const choicestxt = Array.from(document.getElementsByClassName("btn-choice-txt"));
@@ -29,7 +31,7 @@ function startGame(event) {
 
     const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
     const icons_qtd = [document.getElementById("i-0"), document.getElementById("i-1"), document.getElementById("i-2"), document.getElementById("i-3"), document.getElementById("i-4")];
-
+    const col_qtd = [document.getElementById("col1"), document.getElementById("col2"), document.getElementById("col3"), document.getElementById("col4"), document.getElementById("col5")];
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
     const resultsuxtool = document.getElementById("uxtool-heading-place");
@@ -76,8 +78,10 @@ function startGame(event) {
         alert(`Please enter your name to play, real or imaginary!`);
     } else {
         // starts gameplay
+        boxDiv.classList.toggle("box-div");
         welcomeDiv.classList.toggle("hidden");
         gameDiv.classList.toggle("hidden");
+        
         addQuestionContent(0);
         handleAnswer();
         // adds restart button - reload page
@@ -95,13 +99,41 @@ function startGame(event) {
         let answers = current_Question.answers;
 
         for(let i=0; i < answer_qtd.length; i++){
+            col_qtd[i].classList.remove("hidden");
             answer_qtd[i].classList.remove("hidden");
+            col_qtd[i].classList.add("col-md-6", "col-lg-6");
+            
+
+
+            
         }
 
         let qtd_question = answer_qtd.length - answers.length;
         if(answers.length < answer_qtd.length){
             for(let i=0; i < qtd_question; i++){
+                console.log(answers.length);
+                col_qtd[answer_qtd.length - i - 1].classList.toggle("hidden");
                 answer_qtd[answer_qtd.length - i - 1].classList.toggle("hidden");
+                console.log(i);
+                
+                
+            }
+        }
+
+        for(let i=0; i< answers.length; i++){
+            if (i == answers.length - 1 && answers.length % 2 != 0) {
+                    console.log("entrei");
+                    col_qtd[i].classList.remove("col-md-6", "col-lg-6");
+                    col_qtd[i].classList.add("col-md-12", "col-lg-12");
+                    boxDiv.style.backgroundPositionY = "-20px";
+            }else{
+                col_qtd[i].classList.remove("col-md-12", "col-lg-12");
+                col_qtd[i].classList.add("col-md-6", "col-lg-6");
+            }
+            if(answers.length < 5){
+                boxDiv.style.backgroundPositionY = "-230px";
+            }else{
+                boxDiv.style.backgroundPositionY = "-30px";
             }
         }
 
@@ -117,7 +149,6 @@ function startGame(event) {
         for (let i = 0; i < answers.length; i++) {
             //choices[i].innerText = answers[i].answerText;
             choicestxt[i].innerText = answers[i].answerText;
-            //desc_choices[i].innerText = answers[i].descText; 
         }
         // set progress bar
         let questionNumber = current_Question.questionNumber;
@@ -230,16 +261,36 @@ function startGame(event) {
         });
     }
 
+    function verifyemotion(emotion){
+        if(emotion == "Normal"){
+            return "imgs/helper.webp";
+        }
+        if(emotion === "Duvida"){
+            return "imgs/helper.webp";
+        }
+        if(emotion === "Alegria"){
+            return "imgs/helper_happy.png";
+        }
+        if(emotion === "Levantando"){
+            return "imgs/helper.webp";
+        }
+    }
+
     window.changeText = function(id) {
         let answers = currentQuestion.answers;
+        let reacao;
         for(let i=0; i<questionText.length;i++){
             questionText[i].innerText = answers[id].roboText;
+            reacao = verifyemotion(answers[id].reacao);
+            mascote.src = reacao;
         }
     }
     
     window.originalText = function() {
         for(let i=0; i<questionText.length;i++){
             questionText[i].innerText = currentQuestion.questionText;
+            reacao = verifyemotion("Normal");
+            mascote.src = reacao;
         }
     }
 
@@ -280,6 +331,7 @@ function startGame(event) {
         // hide game div & reveal results divs, scroll to top of page
         gameDiv.classList.toggle("hidden");
         resultsDiv.classList.toggle("hidden");
+        boxDiv.classList.toggle("box-div");
         scrollToTop();
         // popular ferramenta recomendada
         populateUXTOOL(id);

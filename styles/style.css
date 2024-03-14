@@ -122,8 +122,16 @@ a {
 
 
 /* Background */
-#background-div {
-    background: linear-gradient(180deg, #FFF 0%, rgb(157, 109, 55)90%);
+#background-div2 {
+    background: linear-gradient(180deg, #ffffff 0%, rgb(157, 109, 55)30%);
+    padding-top: 50px;
+    
+}
+.box-div {
+    background-image: url("../imgs/toybox2.png");
+    background-position-x: center;
+    background-position-y: -230px;
+    
 }
 
 
@@ -188,7 +196,6 @@ a {
     width: 70%;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 60px;
 }
 
 #welcome-div h1 {

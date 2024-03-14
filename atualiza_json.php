@@ -116,7 +116,7 @@ if ($result->num_rows > 0) {
                         "answerNumber" => $row_sub["answernumber"],
                         "answerText" => $row_sub["Resposta"],
                         "roboText" => $row_sub["r_detalhes"],
-                        "descText" => $row_sub["descricao_resposta"],
+                        "reacao" => $row_sub["reacao"],
                         "nextques" => $row_sub["fk_PerguntaDireciona_ID"],
                         "ferramenta" => $row_sub["fk_Uxtool_ID"],
                         "answerID" => $row_sub["ID"]

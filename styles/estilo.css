@@ -348,15 +348,11 @@
 }
 #respostas_cont{
   margin-top: -65px;
-  margin-bottom: -205px;
+  margin-bottom: -280px;
   
 }
 #box_cont{
-  min-height: 430px;
-  background-image: url("../imgs/toybox.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  min-height: 700px;
 }
 @media (max-width: 768px) {
 
@@ -469,12 +465,4 @@
   height: var(--cardsize);
   width: var(--cardsize);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-.positionl{
-  position: relative;
-  right: 60px;
-}
-.positionr{
-  position: relative;
-  left: 60px;
 }
