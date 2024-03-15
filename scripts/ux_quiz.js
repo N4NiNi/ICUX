@@ -162,6 +162,8 @@ function startGame(event) {
                 icontime.className = icons_qtd[iconid].className;
                 
                 circletime.className = "circle";
+                circletime.setAttribute('onmouseover', 'changeTextLine()');
+                circletime.setAttribute('onmouseout', 'originalText()');
                 circletime.setAttribute('data-currentquestion', currentQuestion.questionNumber);
                 circletime.appendChild(icontime);
 
@@ -266,13 +268,13 @@ function startGame(event) {
             return "imgs/helper.webp";
         }
         if(emotion === "Duvida"){
-            return "imgs/helper.webp";
+            return "imgs/helper_question.png";
         }
         if(emotion === "Alegria"){
             return "imgs/helper_happy.png";
         }
         if(emotion === "Levantando"){
-            return "imgs/helper.webp";
+            return "imgs/helper_congrats.png";
         }
     }
 
@@ -289,10 +291,39 @@ function startGame(event) {
     window.originalText = function() {
         for(let i=0; i<questionText.length;i++){
             questionText[i].innerText = currentQuestion.questionText;
-            reacao = verifyemotion("Normal");
+            reacao = verifyemotion("Duvida");
             mascote.src = reacao;
         }
     }
+
+    window.changeTextLine = function() {
+        // Seleciona todos os elementos com a classe 'circle'
+        var circles = document.querySelectorAll('.circle');
+    
+        // Itera sobre cada elemento
+        circles.forEach(function(circle, i) {
+            // Adiciona o evento 'onmouseover'
+            circle.onmouseover = function() {
+                // Verifica o valor de 'data-currentquestion'
+                var curQuestion = circle.getAttribute('data-currentquestion');
+    
+                for(let i=0; i<questionText.length;i++){
+                    if (curQuestion == 1) {
+                        questionText[i].innerText = "Aqui vai ser armazenado toda sua jornada, esse é o ponto inicial!";
+                        reacao = verifyemotion("Alegria");
+                        mascote.src = reacao;
+                    } else if (curQuestion > 1) {
+                        questionText[i].innerText = "Caso não tenha gostado do caminho que seguiu, você pode clicar em um desses círculos para voltar nas perguntas anteriores!";
+                        reacao = verifyemotion("Levantando");
+                        mascote.src = reacao;
+                    }
+                }
+                // Atualiza o texto do elemento <p> com base no valor de 'data-currentquestion'
+                
+            };
+        });
+    };
+    
 
     // Calculates user personality & reveals results
     function tool_match(id) {

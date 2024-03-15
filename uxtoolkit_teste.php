@@ -44,11 +44,21 @@
     <div id="box-id" class="">
        
         <div class="text-centre" id="welcome-div">
-            <h1 class="small-heading heading-font">UX TOOLKIT</h1>
-            <p>Olá, tudo bem meu nome é XXXX e vou te ajudar a escolher a melhor ferramenta/método para o seu trabalho!
-                <br><br>Farei algumas perguntas e com isso irei te direcionar para melhor ferramenta-método!
-                <br><br>Aperte em iniciar!
-            </p>
+
+            <div class="mascote-balao">
+                    <div class="questionbox" id="balloon-mobilex">
+                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="balloon-mobile">
+                            <h2 class="weight-500 body-font title question-text" id="question-text_inicio">Olá! Sou PedrUX. Vou te acompanhar nas escolhas das técnicas e ferramentas mais adequadas para o seu projeto. Que tal começarmos com o seu nome?</h2>
+                        </div>
+                    </div>
+                    <img src="imgs\helper_happy.png" id="mascote-img_inicio">
+                    <div class="questionbox" id="ballon-desktopx">
+                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" id="ballon-desktop_inicio">
+                            <h2 class="weight-500 body-font title question-text" id="question-text_inicio">Olá! Sou PedrUX. Vou te acompanhar nas escolhas das técnicas e ferramentas mais adequadas para o seu projeto. Que tal começarmos com o seu nome?</h2>
+                        </div>
+                    </div>
+            </div>
+
             <!-- Name Input & Start Game -->
             <div class="text-centre" id="start-button-div">
                 <form id="start-form" method="POST" onsubmit="startGame(event)">
@@ -76,7 +86,7 @@
                             <h2 class="weight-500 body-font title question-text" id="question-text">Question</h2>
                         </div>
                     </div>
-                    <img src="imgs\helper.webp" id="mascote-img">
+                    <img src="imgs\helper_question.png" id="mascote-img">
                     <div class="questionbox" id="ballon-desktopx">
                         <div speech-bubble pleft abottom style="--bbColor:#ffffff" id="balloon-desktop">
                             <h2 class="weight-500 body-font title question-text" id="question-text">Question</h2>
@@ -89,7 +99,7 @@
                 <div class="container">
                     <div class="row" id="answer-timeline">
                         <div class="col-auto" id="timeline">
-                            <div class="circle" data-currentquestion="1">
+                            <div onmouseover="changeTextLine()" onmouseout="originalText()" class="circle" data-currentquestion="1">
                                 <i class="fa fa-flag-o"></i>
                             </div>
                         </div>   

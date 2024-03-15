@@ -85,7 +85,7 @@
 	 background: linear-gradient(170deg, #b4ec51 0%, #429321 100%);
 }
  .gr-3 {
-	 background: linear-gradient(170deg, #c86dd7 0%, #3023ae 100%);
+	 background: linear-gradient(170deg, #f5b5ff 0%, #3023ae 100%);
 }
 .gr-4 {
   background: linear-gradient(170deg, #ffbc02 0%, #ca8a00 100%);
@@ -117,6 +117,10 @@
 .btn-choicex:hover i {
   opacity: 0.2;
   color: rgb(0, 0, 0);
+  
+}
+.btn-choicex:hover .btn-choice-txt {
+  color: white;
   
 }
 
@@ -319,9 +323,10 @@
   align-items: center;
   justify-content: center;
 }
-#mascote-img{
+#mascote-img, #mascote-img_inicio{
   width: 300px;
 }
+
 .mascote-balao{
   display: flex;
   flex-direction: row;
@@ -342,6 +347,12 @@
 #ballon-desktopx{
   margin-left: -83px;
   margin-bottom: 187px;
+}
+#ballon-desktop_inicio{
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 180px;
+  min-height: 180px;
 }
 #balloon-mobile {
   display: none;
