@@ -180,7 +180,7 @@
                                             </div>
                                             
                                             <div class="ico-card">
-                                                <i id="i-4" class="fa fa-empire"></i>
+                                                <i id="i-4" class="fa fa-desktop"></i>
                                             </div>
                                         </div>
                                         </div>

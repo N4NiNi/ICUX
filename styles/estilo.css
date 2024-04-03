@@ -81,14 +81,92 @@
  .gr-1 {
 	 background: linear-gradient(170deg, #01e4f8 0%, #1d3ede 100%);
 }
+
+.grb-1 {
+  background: linear-gradient(170deg, #80f4fc 0%, #1d3ede 100%);
+}
+.grb-2 {
+  background: linear-gradient(170deg, #04e2ff 10%, #22208f 90%);
+}
+.grb-3 {
+  background: linear-gradient(170deg, rgb(94, 239, 252) 20%, #1d3ede 80%);
+}
+.grb-4 {
+  background: linear-gradient(170deg, #01e4f8 0%, #1d3ede 100%);
+}
+.grb-5 {
+  background: linear-gradient(170deg, #01e4f8 0%, #1202f5 100%);
+}
+.grb-6 {
+  background: linear-gradient(170deg, #01e4f8 0%, #002afa 100%);
+}
+
+
  .gr-2 {
 	 background: linear-gradient(170deg, #b4ec51 0%, #429321 100%);
 }
+
+.grg-1 {
+  background: linear-gradient(170deg, #b4ec51 0%, #27690d 100%);
+}
+.grg-2 {
+  background: linear-gradient(170deg, #5cf78b 0%, #24610b 100%);
+}
+.grg-3 {
+  background: linear-gradient(170deg, #4aee4a 0%, #1c4b09 100%);
+}
+.grg-4 {
+  background: linear-gradient(170deg, #5bffc8 0%, #317715 100%);
+}
+.grg-5 {
+  background: linear-gradient(170deg, #b9dd18 0%, #33a107 100%);
+}
+.grg-6 {
+  background: linear-gradient(170deg, #b4ec51 0%, #429321 100%);
+}
+
  .gr-3 {
 	 background: linear-gradient(170deg, #f5b5ff 0%, #3023ae 100%);
 }
+
+.grp-1 {
+  background: linear-gradient(170deg, #ff3be5 0%, #3023ae 100%);
+}
+.grp-2 {
+  background: linear-gradient(170deg, #f5b5ff 10%, #a629cc 70%);
+}
+.grp-3 {
+  background: linear-gradient(170deg, #f5b5ff 0%, #3023ae 100%);
+}
+.grp-4 {
+  background: linear-gradient(170deg, #f5b5ff 0%, #3023ae 100%);
+}
+.grp-5 {
+  background: linear-gradient(170deg, #f5b5ff 0%, #3023ae 100%);
+}
+.grp-6 {
+  background: linear-gradient(170deg, #f5b5ff 0%, #3023ae 100%);
+}
 .gr-4 {
   background: linear-gradient(170deg, #ffbc02 0%, #ca8a00 100%);
+}
+.gry-1 {
+  background: linear-gradient(170deg, #d5f132 0%, #be7c01 100%);
+}
+.gry-2 {
+  background: linear-gradient(170deg, #d0ff00 0%, #ff7220 100%);
+}
+.gry-3 {
+  background: linear-gradient(170deg, #ff8902 0%, #fffb01 100%);
+}
+.gry-4 {
+  background: linear-gradient(170deg, #ffbc02 0%, #ca8a00 100%);
+}
+.gry-5 {
+  background: linear-gradient(170deg, #eeff00 0%, #ca8a00 100%);
+}
+.gry-6 {
+  background: linear-gradient(170deg, #ffcc3e 0%, #ff5202 100%);
 }
  * {
 	 transition: 0.5s;

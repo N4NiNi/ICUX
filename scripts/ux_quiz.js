@@ -92,7 +92,31 @@ function startGame(event) {
 
 
     // Quiz Functionality --------------------------------------------------------------------- //
-
+    function lightenColor(color, factor) {
+        // Converte a cor hexadecimal para RGB
+        const hexToRgb = (hex) => {
+            const bigint = parseInt(hex.slice(1), 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return [r, g, b];
+        };
+    
+        // Converte RGB para hexadecimal
+        const rgbToHex = (rgb) => {
+            return `#${((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1)}`;
+        };
+    
+        // Calcula a nova cor clareada
+        const startColor = hexToRgb(color);
+        const endColor = hexToRgb("#1d3ede"); // Cor final (escuro)
+        const newColor = startColor.map((channel, i) => {
+            const diff = endColor[i] - channel;
+            return Math.round(channel + diff * factor);
+        });
+    
+        return rgbToHex(newColor);
+    }
     // Populate the questions and answers & move on progress bar
     function addQuestionContent(index) {
         let current_Question = currentQuestion;
@@ -144,11 +168,90 @@ function startGame(event) {
         for(let i=0; i < questionText.length; i++){
             questionText[i].innerText = current_Question.questionText;
         }
+
+        if(currentQuestion.questionNumber == 1 || currentQuestion.questionNumber == 2 || currentQuestion.questionNumber == 5 || currentQuestion.questionNumber == 13){
+            for (let i = 0; i < choices.length; i++) {
+                choices[i].classList.remove("squarecard", "circlecard", "rombuscard", "hexacard");
+                choices[i].classList.remove("gr-1", "gr-2", "gr-3", "gr-4");
+                choices[i].classList.remove("grb-1", "grb-2", "grb-3", "grb-4", "grb-5", "grb-6");
+                choices[i].classList.remove("grg-1", "grg-2", "grg-3", "grg-4", "grg-5", "grg-6");
+                choices[i].classList.remove("gry-1", "gry-2", "gry-3", "gry-4", "gry-5", "gry-6");
+                choices[i].classList.remove("grp-1", "grp-2", "grp-3", "grp-4", "grp-5", "grp-6");
+                icons_qtd[i].classList.remove("fa-lightbulb-o", "fa-user", "fa-code-fork", "fa-desktop");
+            }
+        }
+
+        if(currentQuestion.questionNumber == 1){
+            
+            choices[0].classList.add("gr-1","squarecard");
+            choices[1].classList.add("gr-2","circlecard");
+            choices[2].classList.add("gr-3","rombuscard");
+            choices[3].classList.add("gr-4","hexacard");
+
+
+
+            icons_qtd[0].classList.add("fa-lightbulb-o");
+            icons_qtd[1].classList.add("fa-user");
+            icons_qtd[2].classList.add("fa-code-fork");
+            icons_qtd[3].classList.add("fa-desktop");
+            
+        }
+
+        if(currentQuestion.questionNumber == 2){
+            for (let i = 0; i < choices.length; i++) {
+                choices[i].classList.add("squarecard");
+                icons_qtd[i].classList.add("fa-lightbulb-o");
+            }
+            choices[0].classList.add("grb-1");
+            choices[1].classList.add("grb-2");
+            choices[2].classList.add("grb-3");
+            choices[3].classList.add("grb-4");
+            choices[4].classList.add("grb-5");
+        }
+
+        if(currentQuestion.questionNumber == 5){
+            for (let i = 0; i < choices.length; i++) {
+                choices[i].classList.add("gr-2","circlecard");
+                icons_qtd[i].classList.add("fa-user");
+            }
+            choices[0].classList.add("grg-1");
+            choices[1].classList.add("grg-2");
+            choices[2].classList.add("grg-3");
+            choices[3].classList.add("grg-4");
+            choices[4].classList.add("grg-5");
+        }
+
+        if(currentQuestion.questionNumber == 3){
+            for (let i = 0; i < choices.length; i++) {
+                choices[i].classList.add("gr-3","rombuscard");
+                icons_qtd[i].classList.remove("fa-lightbulb-o");
+                icons_qtd[i].classList.add("fa-code-fork");
+            }
+            choices[0].classList.add("grp-1");
+            choices[1].classList.add("grp-2");
+            choices[2].classList.add("grp-3");
+            choices[3].classList.add("grp-4");
+            choices[4].classList.add("grp-5");
+        }
+
+        if(currentQuestion.questionNumber == 13){
+            for (let i = 0; i < choices.length; i++) {
+                choices[i].classList.add("gr-4","hexacard");
+                icons_qtd[i].classList.add("fa-desktop");
+            }
+            choices[0].classList.add("gry-1");
+            choices[1].classList.add("gry-2");
+            choices[2].classList.add("gry-3");
+            choices[3].classList.add("gry-4");
+            choices[4].classList.add("gry-5");
+        }
+        
         // populate answers
         
         for (let i = 0; i < answers.length; i++) {
             //choices[i].innerText = answers[i].answerText;
             choicestxt[i].innerText = answers[i].answerText;
+            
         }
         // set progress bar
         let questionNumber = current_Question.questionNumber;
