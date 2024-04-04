@@ -22,6 +22,9 @@ function startGame(event) {
     const questionText = Array.from(document.getElementsByClassName("question-text"));
     const choices = Array.from(document.getElementsByClassName("btn-choicex"));
     const choicestxt = Array.from(document.getElementsByClassName("btn-choice-txt"));
+    const resultsuxtool = Array.from(document.getElementsByClassName("uxtool-heading-place"));
+    const backgrounddiv = document.getElementById("backgroundID");
+    const backgroundresult = document.getElementById("uxtoolbg");
     
     //const desc_choices = Array.from(document.getElementsByClassName("desc-choice-txt"));
     const progressText = document.getElementById("progress-text");
@@ -34,7 +37,7 @@ function startGame(event) {
     const col_qtd = [document.getElementById("col1"), document.getElementById("col2"), document.getElementById("col3"), document.getElementById("col4"), document.getElementById("col5")];
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
-    const resultsuxtool = document.getElementById("uxtool-heading-place");
+    const resultsuxtool_ = document.getElementById("uxtool-heading-place");
     const resultsImage = document.getElementById("results-image");
     const resultsTextP1 = document.getElementById("uxtool-text-para1");
     const resultsAboutMore = document.getElementById("about_more");
@@ -69,6 +72,130 @@ function startGame(event) {
             behavior: 'smooth'
         });
     }
+
+    function particle(creation_tick,start,end,duration,lifespan,velocity){
+        this.creation_tick = creation_tick,
+        this.start = start,
+        this.age = 0;
+        this.end = end,
+        this.duration = duration,
+        this.lifespan = lifespan,
+        this.velocity = velocity,
+        this.appearance_params = {
+          scale: [2.0,0],
+          opacity: [1,0]
+        }
+      }
+      
+      const particle_container = document.getElementById("particle_container");
+      var particles = [];
+      var tick = 0;
+      
+      
+      var start_timestamp, previous_timestamp;
+      function doParticles(TS){
+        if(start_timestamp === undefined){
+          start_timestamp = TS;
+        }
+        const elapsed = TS - previous_timestamp;
+      
+        // if(tick % 1 === 0){
+        if(previous_timestamp !== TS){
+          particle_container.innerHTML = "";
+          
+          particles.forEach(function(p, i){
+            if(p.age < p.lifespan){
+              drawParticle(lerp(p.start, p.end, (p.age / p.lifespan)), (p.age / p.lifespan), p.appearance_params);
+              p.age += p.velocity * (elapsed * 0.05);
+            }
+            
+            if(tick > p.creation_tick + p.lifespan){
+              particles.splice(i,1);
+            }
+          });
+        }
+        
+        previous_timestamp = TS;
+        tick++;
+        window.requestAnimationFrame(doParticles);
+      }
+      window.requestAnimationFrame(doParticles);
+      
+      
+      function createEmitter() {
+        console.log("teste");
+        var max_particles = 100;
+        var max_distance = 300;
+        var fixed_position = [45, 30];
+        var fixed_position2 = [50, 30];
+        var fixed_position3 = [55, 30];
+        var fixed_position4 = [60, 30]; // Coordenadas fixas (x, y)
+        
+        for (let i = 0; i < max_particles; i++) {
+          createParticle(fixed_position, max_distance);
+          createParticle(fixed_position2, max_distance);
+          createParticle(fixed_position3, max_distance);
+          createParticle(fixed_position4, max_distance);
+        }
+      }
+      
+      function createParticle(start, max_distance){
+        var creation_tick = tick;
+        var ofs = [start[0],start[1]];
+        var end = polarToCartesian((Math.random() * 360), (Math.random() * max_distance), ofs);
+        var duration = 100;
+        var lifespan = 100;
+        var velocity = 0.3;
+        
+        var part = new particle(creation_tick,start,end,duration,lifespan,velocity);
+        particles.push(part);
+      }
+      
+      function drawParticle(pos, age, appearance_params){
+        //var fragment_node = document.createDocumentFragment();
+        var node = document.createElement("div");
+        node.style.left = pos[0] + "%";
+        node.style.top = pos[1] + "%";
+        var transform_properties = ["translate", "translateX", "translateY", "scale", "scaleX", "scaleY", "scaleZ", "rotate", "rotateX", "rotateY", "rotateZ"];
+        Object.keys(appearance_params).forEach(function(k){
+          if(transform_properties.includes(k)){
+            node.style.transform = k + "(" + lerp([appearance_params[k][0]], [appearance_params[k][1]], age) + ")";
+          }else{
+            node.style[k] = lerp([appearance_params[k][0]], [appearance_params[k][1]], age);
+          }
+        });
+        
+        particle_container.appendChild(node);
+      }
+      
+      function polarToCartesian(angle, length, offset){
+        var output = [offset[0],offset[1]];
+        var rad = degToRad(angle);
+        output[0] += length * Math.cos(rad);
+        output[1] += length * Math.sin(rad);
+        return output;
+      }
+      function degToRad(deg){
+        return deg * (Math.PI / 180);
+      }
+      
+      function lerp(P, Q, t){
+        var output = [];
+        if(t < 0){t = 0;}
+        if(t > 1){t = 1;}
+        
+        var i = 0;
+        while(i < P.length){
+          output.push(P[i] + (t * (Q[i] - P[i])));
+          i++;
+        }
+        return output;
+      }
+      
+      function changeColour(c){
+        document.getElementById("particle_container").style.color = (c.includes("#") ? c : "#" + c);
+      }
+      
 
     // capturing user name
     username = document.getElementById("name-input");
@@ -292,6 +419,7 @@ function startGame(event) {
         
         choices.forEach(choice => {
             choice.addEventListener('click', () => {
+                
                 selectAndSubmit(choice);
                 setTimeout(scrollToTop, 500);
             });
@@ -344,7 +472,13 @@ function startGame(event) {
                         
                     } else {
                         // Então ja chegou na resposta
-                        tool_match(currentQuestion.answers[target.id].ferramenta)
+
+                        
+
+                        tool_match(currentQuestion.answers[target.id].ferramenta, target.lastElementChild.lastElementChild);
+                        
+
+
 
                     }
                 }, 500);
@@ -429,7 +563,7 @@ function startGame(event) {
     
 
     // Calculates user personality & reveals results
-    function tool_match(id) {
+    function tool_match(id, icon) {
             // Reveals results
             let index;
             let index2;
@@ -440,6 +574,44 @@ function startGame(event) {
                 index_2 = findUXIndexById(id[1]);
             }*/
             showLoading(function() {
+                if(icon.className.includes('fa-lightbulb-o')){
+                    backgrounddiv.classList.remove("background-div2");
+                    backgrounddiv.classList.add("background-result-blue");
+
+                    backgroundresult.classList.remove("uxtool-infoc-div");
+                    backgroundresult.classList.add("background-info-blue");
+
+                    changeColour('1DD5EC');
+                    
+                }
+                if(icon.className.includes('fa-user')){
+                    backgrounddiv.classList.remove("background-div2");
+                    backgrounddiv.classList.add("background-result-green");
+
+                    backgroundresult.classList.remove("uxtool-infoc-div");
+                    backgroundresult.classList.add("background-info-green");
+                    
+                    changeColour('409933');
+                }
+                if(icon.className.includes('fa-code-fork')){
+                    backgrounddiv.classList.remove("background-div2");
+                    backgrounddiv.classList.add("background-result-purple");
+
+                    backgroundresult.classList.remove("uxtool-infoc-div");
+                    backgroundresult.classList.add("background-info-purple");
+                    changeColour('993399');
+                    
+                }
+                if(icon.className.includes('fa-desktop')){
+                    backgrounddiv.classList.remove("background-div2");
+                    backgrounddiv.classList.add("background-result-gold");
+
+                    backgroundresult.classList.remove("uxtool-infoc-div");
+                    backgroundresult.classList.add("background-info-gold");
+
+                    changeColour('DAA520');
+                    
+                }
                 showResults(index); // Chama showResults após o término do carregamento
             });
             //showLoading();
@@ -469,6 +641,8 @@ function startGame(event) {
         scrollToTop();
         // popular ferramenta recomendada
         populateUXTOOL(id);
+        //changeColour('1DD5EC');
+        createEmitter();
 
 
         // start again game button - reload page
@@ -483,8 +657,10 @@ function startGame(event) {
     // populates the uxtool results
     function populateUXTOOL(UxToolIndex) {
         //buscar ferramenta com o id
-
-        resultsuxtool.innerText = `${uxtool[UxToolIndex].name}!`;
+        for(const c of resultsuxtool){
+            c.innerText = `${uxtool[UxToolIndex].name}!`;
+        }
+        
         resultsImage.src = `${uxtool[UxToolIndex].image}`;
         resultsImage.alt = uxtool[UxToolIndex].alt;
         resultsTextP1.innerHTML = uxtool[UxToolIndex].desc;

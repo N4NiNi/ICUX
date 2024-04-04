@@ -14,9 +14,11 @@
     <link rel="stylesheet" href="styles\estilo.css">
     <link rel="stylesheet" href="styles\style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles\dom-particles.css">
 </head>
 
 <body>
+
 <header id="header" class="">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
@@ -40,7 +42,7 @@
         </nav>
     </header>
     <!-- Background Gradient & Logo -->
-    <div id="background-div2">
+    <div id="backgroundID" class="background-div2">
     <div id="box-id" class="">
        
         <div class="text-centre" id="welcome-div">
@@ -207,15 +209,29 @@
             <!-- Results -->
 
             <!-- uxtool Results - General -->
-            <div class="results-container" id="uxtool-info-div">
-                <div class="text-centre heading-font">
-                    <h2 id="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
-                    <h3 id="uxtool-heading-place" class="uppercase">UXTOOL</h3>
+            <div id="uxtoolbg" class="results-container uxtool-info-div uxtool-infoc-div" onload="createEmitter()">
+                <div id="particle_container">
+                </div>
+                <div class="mascote-balao">
+                    <div class="questionbox" id="balloon-mobilex">
+                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="result-balloon-mobile" class="resultsbubble">
+                            <h2 id="uxtool-heading" class="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
+                            <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
+                        </div>
+                    </div>
+                    <img src="imgs\helper_congrats.png" id="mascote-img">
+                    <div class="questionbox" id="ballon-desktopx">
+                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" class="resultsbubble" id="balloon-desktop">
+                            <h2 id="uxtool-heading" class="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
+                            <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
+                        </div>
+                    </div> 
                 </div>
                 <div class="img-resul-div">
                     <img src="assets/images/uxtool/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
                 </div>
                 <div class="container" id="bloco_what_about">
+                <img src="imgs\helper_congrats.png" id="mascote-img" style="margin-bottom: -102px; width: 10rem;">
                     <div class="row">
                         <div class="col">
                             <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>
@@ -278,13 +294,20 @@
                     </div>
                 </div>
 
+                
                 <div id="execucao">
                     <h4 class="heading-font" id="uxtool-exec-title">COMO EXECUTAR A FERRAMENTA/MÉTODO?</h4>
                     <div class="exec_center">
+                        
                         <div id="exec_content">
                             <p id="uxtool-exec-desc"> Reuna um conjunto de usuários que represente o público-alvo do projeto. Entregue a cada um deles material para desenho (papel, canetas, lápis de cor, etc).</p>
                         </div>
+
+                        <img src="imgs\helper_congrats.png" id="mascote-img" style="z-index: 0; position:relative; rotate:90deg; right:-100px; width: 10rem;">
+
                     </div>
+
+                    
                 </div>
             </div>
             <!-- Restart Game Button -->
@@ -335,6 +358,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
+    <script src="scripts\dom-particles.js" defer></script>
     <script src="scripts\loading.js"></script>
     <script src="scripts\perguntas_array.js"></script>
     <script src="scripts\uxtools_array.js"></script>
