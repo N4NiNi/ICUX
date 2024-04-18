@@ -31,6 +31,7 @@ function startGame(event) {
     const progressBar = document.getElementById("progressbar-fg");
     const restartGameBtn = document.getElementById("restart-game-btn");
     const timelinediv = document.getElementById("timeline");
+    const labeldiv = document.getElementById("label-timeline");
 
     const answer_qtd = [document.getElementById("0"), document.getElementById("1"), document.getElementById("2"), document.getElementById("3"), document.getElementById("4")];
     const icons_qtd = [document.getElementById("i-0"), document.getElementById("i-1"), document.getElementById("i-2"), document.getElementById("i-3"), document.getElementById("i-4")];
@@ -38,7 +39,7 @@ function startGame(event) {
     // declaring consts for Results DOM Objects
     const resultsDiv = document.getElementById("results-div");
     const resultsuxtool_ = document.getElementById("uxtool-heading-place");
-    const resultsImage = document.getElementById("results-image");
+    //const resultsImage = document.getElementById("results-image");
     const resultsTextP1 = document.getElementById("uxtool-text-para1");
     const resultsAboutMore = document.getElementById("about_more");
     const resultsMaterialDiv = document.getElementById("materials-cols");
@@ -53,6 +54,8 @@ function startGame(event) {
     let iconid = 0;
     let timelinecount = 0;
     let circles = Array.from(document.getElementsByClassName("circle"));
+    let labells = Array.from(document.getElementsByClassName("labelc"));
+    let contlabel = 1;
     
 
 
@@ -290,11 +293,26 @@ function startGame(event) {
 
         
         // populate question
-        
+        let cumprimento;
+        const agora = new Date();
+        const hora = agora.getHours();
 
-        for(let i=0; i < questionText.length; i++){
-            questionText[i].innerText = current_Question.questionText;
+        if (hora > 6 && hora < 12) {
+            cumprimento = "Bom dia, " + username.value + ".";
+        } else if (hora > 12 && hora < 18) {
+            cumprimento = "Boa tarde, " + username.value + ".";
+        } else {
+            cumprimento = "Boa noite, " + username.value + ".";
         }
+
+        for (let i = 0; i < questionText.length; i++) {
+            if (current_Question.questionNumber == 1) {
+                questionText[i].innerText = cumprimento + " " + current_Question.questionText;
+            } else {
+                questionText[i].innerText = current_Question.questionText;
+            }
+        }
+
 
         if(currentQuestion.questionNumber == 1 || currentQuestion.questionNumber == 2 || currentQuestion.questionNumber == 5 || currentQuestion.questionNumber == 13){
             for (let i = 0; i < choices.length; i++) {
@@ -392,15 +410,32 @@ function startGame(event) {
                 icontime.className = icons_qtd[iconid].className;
                 
                 circletime.className = "circle";
+                circletime.id = "circle-" + contlabel;
                 circletime.setAttribute('onmouseover', 'changeTextLine()');
-                circletime.setAttribute('onmouseout', 'originalText()');
+                circletime.setAttribute('onmouseout', 'originalText2()');
                 circletime.setAttribute('data-currentquestion', currentQuestion.questionNumber);
                 circletime.appendChild(icontime);
 
                 timelinediv.insertBefore(circletime, timelinediv.firstChild);
+
+                //labels
+                let labeltime = document.createElement('div');
+                let icontime2 = document.createElement('p');
+
+                icontime2.innerText = currentQuestion.labelTxt;
+                icontime2.classList.add('labeltimetxt');
+
+
+                labeltime.className = "labelc";
+                labeltime.id = "labelc-" + contlabel;
+                labeltime.appendChild(icontime2);
+                labeldiv.insertBefore(labeltime,labeldiv.firstChild);
+                contlabel++;
+
             }
-            timelinecount++;
+            timelinecount++; 
             circles = Array.from(document.getElementsByClassName("circle"));
+            labells = Array.from(document.getElementsByClassName("labelc"));
             
             backAnswer();
             console.log(circles);
@@ -441,6 +476,7 @@ function startGame(event) {
                 // Remover todos os círculos acima do círculo clicado
                 for(let i = 0; i < index; i++) {
                     circles[i].remove();
+                    labells[i].remove();
                 }
             });
         });
@@ -515,6 +551,7 @@ function startGame(event) {
         }
     }
 
+
     window.changeText = function(id) {
         let answers = currentQuestion.answers;
         let reacao;
@@ -531,6 +568,26 @@ function startGame(event) {
             reacao = verifyemotion("Duvida");
             mascote.src = reacao;
         }
+    };
+    window.originalText2 = function() {
+        
+        var circles_out = document.querySelectorAll('.circle');
+        circles_out.forEach(function(circle, i) {
+            circle.onmouseout = function() {
+                for(let i=0; i<questionText.length;i++){
+                    questionText[i].innerText = currentQuestion.questionText;
+                    reacao = verifyemotion("Duvida");
+                    mascote.src = reacao;
+                }
+                var id_out = circle.id;
+                console.log(id_out);
+                // Cortando os primeiros sete caracteres
+                var numero_out = id_out.slice(7);
+                var labepp_out = document.querySelector('#labelc-' + numero_out);
+                labepp_out.style.visibility = 'hidden';
+                labepp_out.style.opacity = '0';
+            };
+        });
     }
 
     window.changeTextLine = function() {
@@ -556,6 +613,13 @@ function startGame(event) {
                     }
                 }
                 // Atualiza o texto do elemento <p> com base no valor de 'data-currentquestion'
+                var id = circle.id;
+
+                // Cortando os primeiros sete caracteres
+                var numero = id.slice(7)
+                var labepp = document.querySelector('#labelc-' + numero);
+                labepp.style.visibility = 'visible';
+                labepp.style.opacity = '1';
                 
             };
         });
@@ -661,8 +725,8 @@ function startGame(event) {
             c.innerText = `${uxtool[UxToolIndex].name}!`;
         }
         
-        resultsImage.src = `${uxtool[UxToolIndex].image}`;
-        resultsImage.alt = uxtool[UxToolIndex].alt;
+        //resultsImage.src = `${uxtool[UxToolIndex].image}`;
+        //resultsImage.alt = uxtool[UxToolIndex].alt;
         resultsTextP1.innerHTML = uxtool[UxToolIndex].desc;
         resultsExec.innerHTML = uxtool[UxToolIndex].exec;
 
@@ -684,7 +748,7 @@ function startGame(event) {
 
             let card = document.createElement('div');
             card.className = 'card';
-            card.style.width = "18rem";
+            card.style.width = "15rem";
 
             let img_card = document.createElement('img');
             img_card.className = 'card-img-top';

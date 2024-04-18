@@ -128,6 +128,7 @@ if ($result->num_rows > 0) {
         $questions = array(
             "questionNumber" => $row["ID"],
             "questionText" => $row["Pergunta"],
+            "labelTxt" => $row["Labeltxt"],
             "answers" => $ux_answer
             // ... outros campos que você deseja incluir
         );

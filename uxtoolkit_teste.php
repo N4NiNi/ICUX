@@ -100,8 +100,13 @@
                 </div>
                 <div class="container">
                     <div class="row" id="answer-timeline">
+                        <div class="col-auto" id="label-timeline">
+                            <div class="labelc" id="labelc-0">
+                                <p class="labeltimetxt">Ponto inicial!</p>
+                            </div>
+                        </div> 
                         <div class="col-auto" id="timeline">
-                            <div onmouseover="changeTextLine()" onmouseout="originalText()" class="circle" data-currentquestion="1">
+                            <div id="circle-0" onmouseover="changeTextLine()" onmouseout="originalText2()" class="circle" data-currentquestion="1">
                                 <i class="fa fa-flag-o"></i>
                             </div>
                         </div>   
@@ -222,36 +227,23 @@
                     <img src="imgs\helper_congrats.png" id="mascote-img">
                     <div class="questionbox" id="ballon-desktopx">
                         <div speech-bubble pleft abottom style="--bbColor:#ffffff" class="resultsbubble" id="balloon-desktop">
-                            <h2 id="uxtool-heading" class="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
+                            <h2 id="uxtool-heading" class="uxtool-heading">VOCÊ PRECISA DISSO:</h2>
                             <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
                         </div>
                     </div> 
                 </div>
-                <div class="img-resul-div">
-                    <img src="assets/images/uxtool/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
-                </div>
-                <div class="container" id="bloco_what_about">
-                <img src="imgs\helper_congrats.png" id="mascote-img" style="margin-bottom: -102px; width: 10rem;">
-                    <div class="row">
-                        <div class="col">
-                            <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>
-                            <div id="what_is">
-                                <p id="uxtool-text-para1"></p>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <h4 class="heading-font uppercase" id="uxtool-about-title">Saiba mais com profissionais!</h4>
-                            <div id="about_more">
-                                <!--
-                                <p id="uxtool-about-text">Livro: Interação Humano-Computador (Simone Barbosa)</p>
-                                <p id="uxtool-about-text">Métodos criativos de User Research para Startups (Brasil UX Design).</p>
-                                -->
+                
+                    <div class="container" id="bloco_what_about">
+                        <img src="imgs\helper_question.png" id="mascote-img" style="margin-bottom: -94px; width: 10rem; margin-left: 1020px;">
+                        <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>    
+                        <div class="exec_center">
+                                
+                                <div id="what_is">
+                                    <p id="uxtool-text-para1"></p>
+                                </div>
                             </div>
 
-                        </div>
                     </div>
-                </div>
 
                 <div class="container materiais">
                     <div class="row">
@@ -259,44 +251,22 @@
                             <h4 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h4>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                        <p id="uxtool-materiais-desc">Para realizar a ferramenta/método você vai precisar de:</p>
-                        </div>
-                    </div>
-                    <div id="materials-cols" class="row">
-                        <!--
-                        <div id="card-col" class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="imgs\materiais\lapis.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 id="uxtool-materiais-title" class="card-title">Lápis</h5>
-                                </div>
+
+                    
+                    <p id="uxtool-materiais-desc">Para realizar a ferramenta/método você vai precisar de:</p>
+                    <div class="centraliza">
+                    
+                        <div id="materials-box">
+                            
+                            <div id="materials-cols" class="row">
                             </div>
                         </div>
-                        <div id="card-col" class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="imgs\materiais\caneta.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 id="uxtool-materiais-title" class="card-title">Caneta</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="card-col" class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="imgs\materiais\papel.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 id="uxtool-materiais-title" class="card-title">Papel</h5>
-                                </div>
-                            </div>
-                        </div>
-                        -->
                     </div>
                 </div>
 
                 
                 <div id="execucao">
-                    <h4 class="heading-font" id="uxtool-exec-title">COMO EXECUTAR A FERRAMENTA/MÉTODO?</h4>
+                    <h4 class="heading-font" id="uxtool-exec-title">COMO APLICAR?</h4>
                     <div class="exec_center">
                         
                         <div id="exec_content">
@@ -308,6 +278,13 @@
                     </div>
 
                     
+                </div>
+                <div class="container" id="aprenda_mais">
+                    <h4 class="heading-font uppercase" id="uxtool-about-title">Aprenda mais!</h4>
+                    <div class="centraliza">
+                        <div id="about_more">
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Restart Game Button -->
