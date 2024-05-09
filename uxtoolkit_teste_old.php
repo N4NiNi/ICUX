@@ -14,13 +14,11 @@
     <link rel="stylesheet" href="styles\estilo.css">
     <link rel="stylesheet" href="styles\style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="styles\dom-particles.css">
 </head>
 
 <body>
-
 <header id="header" class="">
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark " style="margin-bottom: 30px;">
             <div class="container-fluid">
                 <div class="logo_bloco mr-auto">
                     <img src="imgs\uxLerisLogo.15a026cd.svg" alt="Logo" class="navbar-logo">
@@ -42,25 +40,14 @@
         </nav>
     </header>
     <!-- Background Gradient & Logo -->
-    <div id="backgroundID" class="background-div2">
-    <div id="box-id" class="">
+    <div id="background-div">
        
         <div class="text-centre" id="welcome-div">
-
-            <div class="mascote-balao">
-                    <div class="questionbox" id="balloon-mobilex">
-                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="balloon-mobile">
-                            <h2 class="weight-500 body-font title question-text" id="question-text_inicio">Olá! Sou PedrUX. Vou te acompanhar nas escolhas das técnicas e ferramentas mais adequadas para o seu projeto. Que tal começarmos com o seu nome?</h2>
-                        </div>
-                    </div>
-                    <img src="imgs\helper_happy.png" id="mascote-img_inicio">
-                    <div class="questionbox" id="ballon-desktopx">
-                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" id="ballon-desktop_inicio">
-                            <h2 class="weight-500 body-font title question-text" id="question-text_inicio">Olá! Sou PedrUX. Vou te acompanhar nas escolhas das técnicas e ferramentas mais adequadas para o seu projeto. Que tal começarmos com o seu nome?</h2>
-                        </div>
-                    </div>
-            </div>
-
+            <h1 class="small-heading heading-font">UX TOOLKIT</h1>
+            <p>Olá, tudo bem meu nome é XXXX e vou te ajudar a escolher a melhor ferramenta/método para o seu trabalho!
+                <br><br>Farei algumas perguntas e com isso irei te direcionar para melhor ferramenta-método!
+                <br><br>Aperte em iniciar!
+            </p>
             <!-- Name Input & Start Game -->
             <div class="text-centre" id="start-button-div">
                 <form id="start-form" method="POST" onsubmit="startGame(event)">
@@ -88,7 +75,7 @@
                             <h2 class="weight-500 body-font title question-text" id="question-text">Question</h2>
                         </div>
                     </div>
-                    <img src="imgs\helper_question.png" id="mascote-img">
+                    <img src="imgs\helper.webp" id="mascote-img">
                     <div class="questionbox" id="ballon-desktopx">
                         <div speech-bubble pleft abottom style="--bbColor:#ffffff" id="balloon-desktop">
                             <h2 class="weight-500 body-font title question-text" id="question-text">Question</h2>
@@ -100,20 +87,11 @@
                 </div>
                 <div class="container">
                     <div class="row" id="answer-timeline">
-                        <div class="col-auto" id="label-timeline">
-                            
-                            <div class="labelc" id="labelc-0">
-                                <p class="labeltimetxt">Ponto inicial!</p>
+                        <div class="col-auto" id="timeline">
+                            <div class="circle" data-currentquestion="1">
+                                <i class="fa fa-flag-o"></i>
                             </div>
-                        </div> 
-                        <div class="col-auto">
-                            <div id="labelPath">Sua jornada:</div>
-                            <div id="timeline">
-                                <div id="circle-0" onmouseover="changeTextLine()" onmouseout="originalText2()" class="circle" data-currentquestion="1">
-                                    <i class="fa fa-flag-o"></i>
-                                </div>
-                            </div>
-                        </div>
+                        </div>   
                         <div class="col" id="answer-div">
                             <!--<button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>
                             <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
@@ -124,26 +102,23 @@
 
                             <div class="container" id="respostas_cont">
                                 <div class="row align-middle">
-                                    <div id="col1" class="col-md-6 col-lg-6 column" >
-                                        <div id="1-mask" class="btn_mask">
-                                            <div onmouseover="changeText(0)" onmouseout="originalText()" id="0" class="cardr squarecard gr-1 btn-choicex" >
-                                                <div class="txt">
-                                                    <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                                    
-                                                </div>
-                                                
-                                                <div class="ico-card">
-                                                    <i id="i-0" class="fa fa-lightbulb-o"></i>
-                                                </div>
+                                    <div onmouseover="changeText(0)" onmouseout="originalText()" class="col-md-6 col-lg-6 column" >
+                                        <div id="0" class="cardr card  gr-1 btn-choicex" >
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">Visual communication and problem-solving</p>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-0" class="fa fa-lightbulb-o"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="col2" class="col-md-6 col-lg-6 column">
-                                    <div id="2-mask" class="btn_mask">
-                                        <div onmouseover="changeText(1)" onmouseout="originalText()" id="1" class="cardr circlecard gr-2 btn-choicex">
+                                    <div onmouseover="changeText(1)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="1" class="cardr card gr-2 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                                
+                                                <p class="desc-choice-txt">How design is implemented on the web.</p>
                                             </div>
                                             
                                             <div class="ico-card">
@@ -151,14 +126,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
 
-                                    <div  id="col3" class="col-md-6 col-lg-6 column positionr">
-                                    <div id="3-mask" class="btn_mask">
-                                        <div onmouseover="changeText(2)" onmouseout="originalText()" id="2" class="cardr rombuscard gr-3 btn-choicex">
+                                    <div onmouseover="changeText(2)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="2" class="cardr card gr-3 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                                
+                                                <p class="desc-choice-txt">User Interface and User Experience Design.</p>
                                             </div>
                                             
                                             <div class="ico-card">
@@ -166,14 +139,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
 
-                                    <div id="col4" class="col-md-6 col-lg-6 column positionl">
-                                    <div id="4-mask" class="btn_mask">
-                                        <div onmouseover="changeText(3)" onmouseout="originalText()" id="3" class="cardr hexacard gr-4 btn-choicex">
+                                    <div onmouseover="changeText(3)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="3" class="cardr card gr-4 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
-                                                
+                                                <p class="desc-choice-txt">User Interface and User Experience Design.</p>
                                             </div>
                                             
                                             <div class="ico-card">
@@ -181,19 +152,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
 
-                                    <div id="col5" class="col-md-6 col-lg-6 column">
-                                        <div id="5-mask" class="btn_mask">
-                                        <div onmouseover="changeText(4)" onmouseout="originalText()" id="4" class="cardr squarecard gr-1 btn-choicex">
+                                    <div onmouseover="changeText(4)" onmouseout="originalText()" class="col-md-6 col-lg-6 column">
+                                        <div id="4" class="cardr card gr-4 btn-choicex">
                                             <div class="txt">
                                                 <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                <p class="desc-choice-txt">User Interface and User Experience Design.</p>
                                             </div>
                                             
                                             <div class="ico-card">
-                                                <i id="i-4" class="fa fa-desktop"></i>
+                                                <i id="i-4" class="fa fa-empire"></i>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
                                     
@@ -218,75 +187,82 @@
             <!-- Results -->
 
             <!-- uxtool Results - General -->
-            <div id="uxtoolbg" class="results-container uxtool-info-div uxtool-infoc-div" onload="createEmitter()">
-                <div id="particle_container">
+            <div class="results-container" id="uxtool-info-div">
+                <div class="text-centre heading-font">
+                    <h2 id="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
+                    <h3 id="uxtool-heading-place" class="uppercase">UXTOOL</h3>
                 </div>
-                <div class="mascote-balao">
-                    <div class="questionbox" id="balloon-mobilex">
-                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="result-balloon-mobile" class="resultsbubble">
-                            <h2 id="uxtool-heading" class="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
-                            <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
-                        </div>
-                    </div>
-                    <img src="imgs\helper_congrats.png" id="mascote-img">
-                    <div class="questionbox" id="ballon-desktopx">
-                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" class="resultsbubble" id="balloon-desktop">
-                            <h2 id="uxtool-heading" class="uxtool-heading">VOCÊ PRECISA DISSO:</h2>
-                            <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
-                        </div>
-                    </div> 
+                <div class="img-resul-div">
+                    <img src="assets/images/uxtool/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
                 </div>
-                
-                    <div class="container" id="bloco_what_about">
-                        <img src="imgs\helper_question.png" id="mascote-img" style="position: relative; left: 80%; margin-bottom: -94px; width: 10rem;">
-                        <h3 class="heading-font" id="uxtool-what-title">O QUE É?</h3>    
-                        <div class="exec_center">
-                                
-                                <div id="what_is">
-                                    <p id="uxtool-text-para1"></p>
-                                </div>
+                <div class="container" id="bloco_what_about">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>
+                            <div id="what_is">
+                                <p id="uxtool-text-para1"></p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <h4 class="heading-font uppercase" id="uxtool-about-title">Saiba mais com profissionais!</h4>
+                            <div id="about_more">
+                                <!--
+                                <p id="uxtool-about-text">Livro: Interação Humano-Computador (Simone Barbosa)</p>
+                                <p id="uxtool-about-text">Métodos criativos de User Research para Startups (Brasil UX Design).</p>
+                                -->
                             </div>
 
+                        </div>
                     </div>
+                </div>
 
                 <div class="container materiais">
                     <div class="row">
                         <div class="col">
-                            <h3 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h3>
+                            <h4 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h4>
                         </div>
                     </div>
-
-                    
-                    <p id="uxtool-materiais-desc">Para realizar a ferramenta/método você vai precisar de:</p>
-                    <div class="centraliza">
-                    
-                        <div id="materials-box">
-                            
-                            <div id="materials-cols" class="row" style="--bs-gutter-y: 1.5rem;">
+                    <div class="row">
+                        <div class="col">
+                        <p id="uxtool-materiais-desc">Para realizar a ferramenta/método você vai precisar de:</p>
+                        </div>
+                    </div>
+                    <div id="materials-cols" class="row">
+                        <!--
+                        <div id="card-col" class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="imgs\materiais\lapis.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 id="uxtool-materiais-title" class="card-title">Lápis</h5>
+                                </div>
                             </div>
                         </div>
+                        <div id="card-col" class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="imgs\materiais\caneta.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 id="uxtool-materiais-title" class="card-title">Caneta</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card-col" class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="imgs\materiais\papel.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 id="uxtool-materiais-title" class="card-title">Papel</h5>
+                                </div>
+                            </div>
+                        </div>
+                        -->
                     </div>
                 </div>
 
-                
                 <div id="execucao">
-                    <h3 class="heading-font" id="uxtool-exec-title">COMO APLICAR?</h3>
+                    <h4 class="heading-font" id="uxtool-exec-title">COMO EXECUTAR A FERRAMENTA/MÉTODO?</h4>
                     <div class="exec_center">
-                        
                         <div id="exec_content">
                             <p id="uxtool-exec-desc"> Reuna um conjunto de usuários que represente o público-alvo do projeto. Entregue a cada um deles material para desenho (papel, canetas, lápis de cor, etc).</p>
-                        </div>
-
-                        <img src="imgs\helper_congrats.png" id="mascote-img" style="z-index: 0; position:relative; rotate:90deg; right:-100px; width: 10rem;">
-
-                    </div>
-
-                    
-                </div>
-                <div class="container" id="aprenda_mais">
-                    <h3 class="heading-font uppercase" id="uxtool-about-title">Aprenda mais!</h3>
-                    <div class="centraliza">
-                        <div id="about_more">
                         </div>
                     </div>
                 </div>
@@ -305,7 +281,6 @@
 
             </div>
         </footer>
-    </div>
     </div>
     <footer class="rodape">
             <div class="container">
@@ -339,7 +314,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
-    <script src="scripts\dom-particles.js" defer></script>
     <script src="scripts\loading.js"></script>
     <script src="scripts\perguntas_array.js"></script>
     <script src="scripts\uxtools_array.js"></script>

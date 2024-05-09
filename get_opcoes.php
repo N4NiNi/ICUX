@@ -2,7 +2,7 @@
 include("conexao.php");
 
 $tipo = $_POST['tipo'];
-
+$pergunta_selec = $_POST['pergunta_selecionada'];
 
 // Conecte-se ao banco de dados e obtenha as opções apropriadas
 // ...
@@ -40,7 +40,8 @@ $tipo = $_POST['tipo'];
         }
 
         foreach ($perguntas as $pergunta) {
-            echo "<option value=\"{$pergunta['0']}\">{$pergunta['1']}</option>";
+            if ($pergunta['0'] != $pergunta_selec)
+                echo "<option value=\"{$pergunta['0']}\">{$pergunta['1']}</option>";
         }
     }
 ?>

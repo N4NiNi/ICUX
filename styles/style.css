@@ -122,9 +122,16 @@ a {
 
 
 /* Background */
-#background-div {
-    background: linear-gradient(180deg, #FBFBFB 1%, rgb(157, 109, 55)90%);
-    margin: 0 auto;
+.background-div2 {
+    background: linear-gradient(180deg, #ffffff 0%, rgb(157, 109, 55)30%);
+    padding-top: 50px;
+    
+}
+.box-div {
+    background-image: url("../imgs/toybox2.png");
+    background-position-x: center;
+    background-position-y: -230px;
+    
 }
 
 
@@ -189,7 +196,6 @@ a {
     width: 70%;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 60px;
 }
 
 #welcome-div h1 {
@@ -197,7 +203,7 @@ a {
 }
 
 #start-button-div {
-    margin: 60px 0;
+    margin: 20px 0;
 }
 
 #name-input {
@@ -244,12 +250,19 @@ a {
 
 #question-text {
     font-size: 26px;
-    margin-bottom: 40px;
+    padding: 0 25px;
+}
+#question-text_inicio{
+    font-size: 24px;
     padding: 0 25px;
 }
 
 #answer-div{
-    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 150px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
@@ -340,14 +353,54 @@ a {
     background-color: white;
 }
 
-#uxtool-info-div {
+.uxtool-infoc-div {
     background-color: rgb(226, 216, 205);
 }
 
 #uxtool-highlights-div {
     background-color: #407694;
 }
-#what_is,
+#aprenda_mais{
+    margin-top: 50px;
+}
+#materials-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border-top:5px solid;
+    border-top-color: rgb(157, 109, 55);
+    background-color: #fff;
+    box-shadow: 1px 5px 20px #888888;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    padding: 50px 0px 50px 0px;
+
+    margin-bottom: 30px;
+    width: 68.5rem;
+}
+#what_is{
+    z-index: 5;
+    border-radius: 5px;
+    border-top:5px solid;
+    border-top-color: rgb(157, 109, 55);
+    background-color: #fff;
+    box-shadow: 1px 5px 20px #888888;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-align: justify;
+    padding: 15px 100px 10px 100px;
+
+    margin-bottom: 30px;
+}
 #about_more{
     border-radius: 5px;
     border-top:5px solid;
@@ -361,8 +414,10 @@ a {
     padding-bottom: 10px;
 
     text-align: justify;
+    padding: 15px 100px 10px 100px;
 
     margin-bottom: 30px;
+    max-width: 60%;
 }
 
 #uxtool-materiais-title,
@@ -378,14 +433,17 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80%;
 }
 #card-col{
     max-width: max-content;
 }
 #execucao{
-    margin-top: 30px;
+    margin-top: 80px;
 }
 #exec_content{
+    z-index: 3;
+    margin-right: -165px;
     border-radius: 5px;
     padding: 15px 100px 10px 100px;
     border-top:5px solid;
@@ -408,6 +466,7 @@ a {
     display: flex;
 }
 .materiais{
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
 }
@@ -415,13 +474,13 @@ a {
 
 #personality-div,
 #uxtool-highlights-div,
-#uxtool-info-div {
+.uxtool-info-div {
     margin-left: 100px;
     margin-right: 100px;
 }
 
 #personality-div,
-#uxtool-info-div {
+.uxtool-info-div {
     margin-top: 60px;
 }
 
@@ -434,7 +493,7 @@ a {
     width: 100%;
 }
 
-#uxtool-info-div,
+.uxtool-info-div,
 #uxtool-highlights-div {
     padding: 50px 40px;
 }
@@ -520,23 +579,26 @@ a {
     font-size: 14px;
 }
 
-#uxtool-info-div {
+.uxtool-info-div {
     border-radius: 24px 24px 0 0;
 }
 
-#uxtool-heading {
+.uxtool-heading {
     font-size: 20px;
 }
 
-#uxtool-heading-place {
+.uxtool-heading-place {
     font-family: 'Righteous', sans-serif;
-    font-size: 64px;
+    font-size: 32px;
     line-height: 70px;
+    text-align: center;
 }
 
 #results-image {
     width: 50%;
-    margin: 40px 0;
+    z-index: 1;
+    margin-top: -105px;
+    margin-bottom: 45px;
     border-radius: 24px;
 }
 .img-resul-div{
@@ -665,7 +727,7 @@ a {
 
     #personality-div,
     #uxtool-highlights-div,
-    #uxtool-info-div {
+    .uxtool-info-div {
         margin-left: 60px;
         margin-right: 60px;
     }
@@ -691,7 +753,7 @@ a {
 
     #personality-div,
     #uxtool-highlights-div,
-    #uxtool-info-div {
+    .uxtool-info-div {
         margin-left: 40px;
         margin-right: 40px;
     }
@@ -789,7 +851,7 @@ a {
     /* Small Devices - Results */
     #personality-div,
     #uxtool-highlights-div,
-    #uxtool-info-div {
+    .uxtool-info-div {
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -804,11 +866,11 @@ a {
     }
 
     #personality-div,
-    #uxtool-info-div {
+    .uxtool-info-div {
         margin-top: 30px;
     }
 
-    #uxtool-info-div {
+    .uxtool-info-div {
         padding: 30px 20px;
     }
 
@@ -824,11 +886,11 @@ a {
         margin-top: 10px;
     }
 
-    #uxtool-heading {
+    .uxtool-heading {
         font-size: 14px;
     }
 
-    #uxtool-heading-place {
+    .uxtool-heading-place {
         font-size: 36px;
         line-height: 36px;
     }
@@ -884,6 +946,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 /* HTML: <div class="loader"></div> */
 /* HTML: <div class="loader"></div> */
@@ -914,4 +977,9 @@ a {
 
 .hidden {
     display: none;
+}
+.centraliza{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
