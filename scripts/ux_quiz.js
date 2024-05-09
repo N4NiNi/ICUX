@@ -753,6 +753,7 @@ function startGame(event) {
             let img_card = document.createElement('img');
             img_card.className = 'card-img-top';
             img_card.src = item.image;
+            img_card.style.height = '200px';
 
             let card_body = document.createElement('div');
             card_body.className = 'card-body';

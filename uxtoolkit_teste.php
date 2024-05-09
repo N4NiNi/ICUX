@@ -101,15 +101,19 @@
                 <div class="container">
                     <div class="row" id="answer-timeline">
                         <div class="col-auto" id="label-timeline">
+                            
                             <div class="labelc" id="labelc-0">
                                 <p class="labeltimetxt">Ponto inicial!</p>
                             </div>
                         </div> 
-                        <div class="col-auto" id="timeline">
-                            <div id="circle-0" onmouseover="changeTextLine()" onmouseout="originalText2()" class="circle" data-currentquestion="1">
-                                <i class="fa fa-flag-o"></i>
+                        <div class="col-auto">
+                            <div id="labelPath">Sua jornada:</div>
+                            <div id="timeline">
+                                <div id="circle-0" onmouseover="changeTextLine()" onmouseout="originalText2()" class="circle" data-currentquestion="1">
+                                    <i class="fa fa-flag-o"></i>
+                                </div>
                             </div>
-                        </div>   
+                        </div>
                         <div class="col" id="answer-div">
                             <!--<button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>
                             <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
@@ -234,8 +238,8 @@
                 </div>
                 
                     <div class="container" id="bloco_what_about">
-                        <img src="imgs\helper_question.png" id="mascote-img" style="margin-bottom: -94px; width: 10rem; margin-left: 1020px;">
-                        <h4 class="heading-font" id="uxtool-what-title">O QUE É?</h4>    
+                        <img src="imgs\helper_question.png" id="mascote-img" style="position: relative; left: 80%; margin-bottom: -94px; width: 10rem;">
+                        <h3 class="heading-font" id="uxtool-what-title">O QUE É?</h3>    
                         <div class="exec_center">
                                 
                                 <div id="what_is">
@@ -248,7 +252,7 @@
                 <div class="container materiais">
                     <div class="row">
                         <div class="col">
-                            <h4 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h4>
+                            <h3 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h3>
                         </div>
                     </div>
 
@@ -258,7 +262,7 @@
                     
                         <div id="materials-box">
                             
-                            <div id="materials-cols" class="row">
+                            <div id="materials-cols" class="row" style="--bs-gutter-y: 1.5rem;">
                             </div>
                         </div>
                     </div>
@@ -266,7 +270,7 @@
 
                 
                 <div id="execucao">
-                    <h4 class="heading-font" id="uxtool-exec-title">COMO APLICAR?</h4>
+                    <h3 class="heading-font" id="uxtool-exec-title">COMO APLICAR?</h3>
                     <div class="exec_center">
                         
                         <div id="exec_content">
@@ -280,7 +284,7 @@
                     
                 </div>
                 <div class="container" id="aprenda_mais">
-                    <h4 class="heading-font uppercase" id="uxtool-about-title">Aprenda mais!</h4>
+                    <h3 class="heading-font uppercase" id="uxtool-about-title">Aprenda mais!</h3>
                     <div class="centraliza">
                         <div id="about_more">
                         </div>

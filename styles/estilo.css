@@ -175,8 +175,8 @@
 	 height: 100vh !important;
 }
  .align-middle {
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 0px;
+  margin-right: 80px;
 	 position: relative;
 	 top: 50%;
 	 transform: translateY(-50%);
@@ -202,6 +202,9 @@
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
   
+}
+.fa{
+  font-size: 18px;
 }
 
  .cardr {
@@ -456,6 +459,23 @@
 #box_cont{
   min-height: 700px;
 }
+#labelPath{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgb(157, 109, 55) 10%, rgba(255,0,0,0) 90%);
+  border-radius: 5px;
+  color: white;
+  min-width: 120px;
+  min-height: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-left: -25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  
+}
 @media (max-width: 768px) {
 
   :root {
@@ -513,9 +533,9 @@
 }
 
 
-.circle {position: relative; border: 2px solid #999; border-radius: 100%; width: 50px; line-height: 50px; text-align: center; margin-top: 50px; background-color: #fff;z-index: 1;}
+.circle {position: relative; border: 2px solid #999; border-radius: 100%; width: 65px; line-height: 65px; text-align: center; margin-top: 50px; background-color: #fff;z-index: 1;}
 .circle:first-child {margin-top: 0;}
-.circle:before {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: -78%; z-index: 1; top: -62px; margin-left: -1px; border-color: transparent rgb(157, 109, 55) transparent transparent; border-radius: 50%; background-image: url("../imgs/pegadasmarrom.png"); background-repeat: no-repeat; background-size: 20%; background-position-y: center; background-position-x: right;}
+.circle:before {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: -50%; z-index: 1; top: -62px; margin-left: -1px; border-color: transparent rgb(157, 109, 55) transparent transparent; border-radius: 50%; background-image: url("../imgs/pegadasmarrom.png"); background-repeat: no-repeat; background-size: 20%; background-position-y: center; background-position-x: right;}
 .circle:after {position: absolute; border: 3px dashed; width: 70px; height: 45px; display: block; content: ''; left: 40%; z-index: 1; top: -37px; margin-left: -1px; border-color: transparent transparent transparent rgb(157, 109, 55); border-radius: 50%; background-image: url("../imgs/pegadasmarrom.png"); background-repeat: no-repeat; background-size: 20%; background-position-y: center;}
 .circle:first-child:before {display: none;}
 .circle:hover{
@@ -527,7 +547,7 @@
   z-index: 4;
 }
 
-.labelc {position: relative; border-radius: 6px ;border: 2px solid #999; height: 50px ;width: 150px; line-height: 50px; text-align: center; margin-top: 50px; background-color: #fff;z-index: 5; visibility: hidden; opacity: 0; transition: visibility 0s, opacity 0.4s linear;}
+.labelc {position: relative; top:5.5rem; border-radius: 6px ;border: 2px solid #999; height: 50px ;width: 150px; line-height: 50px; text-align: center; margin-top: 70px; background-color: #fff;z-index: 5; visibility: hidden; opacity: 0; transition: visibility 0s, opacity 0.4s linear;}
 .labelc:first-child {margin-top: 0;}
 .labelc:before {position: absolute; width: 70px; height: 45px; display: block; content: ''; left: -78%; z-index: 1; top: -62px; margin-left: -1px;}
 .labelc:after {position: absolute; width: 70px; height: 45px; display: block; content: ''; left: 40%; z-index: 1; top: -37px; margin-left: -1px; }
