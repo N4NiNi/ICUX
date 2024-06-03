@@ -1,3 +1,6 @@
+<?php
+    include('session_destroy.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +13,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles\estilo.css">
     <link rel="stylesheet" href="styles\style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles\dom-particles.css">
+
+        <!-- Hotjar Tracking Code for Site 5010361 (nome ausente) -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5010361,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </head>
+
 <body>
-<header id="header" class="fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark ">
+
+<header id="header" class="">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <div class="logo_bloco mr-auto">
                     <img src="imgs\uxLerisLogo.15a026cd.svg" alt="Logo" class="navbar-logo">
@@ -35,16 +54,25 @@
         </nav>
     </header>
     <!-- Background Gradient & Logo -->
-    <div id="background-div">
-        <div class="flex-center" id="logo-div"><img src="assets/images/quiz_logo_01.svg" alt="UXTOOL"></div>
-
-        <!-- Welcome -->
+    <div id="backgroundID" class="background-div2">
+    <div id="box-id" class="">
+       
         <div class="text-centre" id="welcome-div">
-            <h1 class="small-heading heading-font">UX TOOLKIT!</h1>
-            <p>Olá, tudo bem meu nome é XXXX e vou te ajudar a escolher a melhor ferramenta para o seu trabalho!
-                <br><br>Farei algumas perguntas e com isso irei te direcionar para melhor ferramenta!
-                <br><br>Aperte em iniciar!
-            </p>
+
+            <div class="mascote-balao">
+                    <div class="questionbox" id="balloon-mobilex">
+                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="balloon-mobile">
+                            <h2 class="weight-500 body-font title question-text" id="question-text_inicio">Olá! Sou PedrUX. Vou te acompanhar nas escolhas das técnicas e ferramentas mais adequadas para o seu projeto. Que tal começarmos com o seu nome?</h2>
+                        </div>
+                    </div>
+                    <img src="imgs\helper_happy.png" id="mascote-img_inicio">
+                    <div class="questionbox" id="ballon-desktopx">
+                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" id="ballon-desktop_inicio">
+                            <h2 class="weight-500 body-font title question-text" id="question-text_inicio">Olá! Sou PedrUX. Vou te acompanhar nas escolhas das técnicas e ferramentas mais adequadas para o seu projeto. Que tal começarmos com o seu nome?</h2>
+                        </div>
+                    </div>
+            </div>
+
             <!-- Name Input & Start Game -->
             <div class="text-centre" id="start-button-div">
                 <form id="start-form" method="POST" onsubmit="startGame(event)">
@@ -56,151 +84,240 @@
         </div>
 
         <!-- Game -->
+        
         <div class="text-centre hidden" id="game-div">
-            <div class="" id="progress-div">
+            <!--<div class="" id="progress-div">
                 <p id="progress-text"></p>
                 <div class="progressbar" id="progressbar-fg"></div>
                 <div class="progressbar" id="progressbar-bg"></div>
-            </div>
+            </div> -->
 
             <div class="" id="answer-div-hide">
-                <h2 class="weight-500 body-font" id="question-text">Question</h2>
-                <div id="answer-div">
-                    <button class="btn-choice weight-500 flex-center">Answer 1</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 2</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 3</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 4</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 5</button>
-                    <button class="btn-choice weight-500 flex-center">Answer 6</button>
+
+                <div class="mascote-balao">
+                    <div class="questionbox" id="balloon-mobilex">
+                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="balloon-mobile">
+                            <h2 class="weight-500 body-font title question-text" id="question-text">Question</h2>
+                        </div>
+                    </div>
+                    <img src="imgs\helper_question.png" id="mascote-img">
+                    <div class="questionbox" id="ballon-desktopx">
+                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" id="balloon-desktop">
+                            <h2 class="weight-500 body-font title question-text" id="question-text">Question</h2>
+                        </div>
+                    </div>
+                    
+                    
+                    
                 </div>
-            </div>
-            <div class="hidden" id="answer-tie-div-hide">
-                <h2 class="weight-600 body-font" id="tie-break-title">Tie Breaker!</h2>
-                <p id="tie-break-text">Uh oh! It seems like you have a split personality!<br>Choose the photo that looks
-                    most like your kind of holiday...</p>
-                <div class="flex-center" id="answer-tie-div">
-                    <button class="btn-choice-tie question-photo culture hidden" id="tie-btn1"
-                        aria-label="image of girl standing in front of ancient statues" data-type="culture"></button>
-                    <button class="btn-choice-tie question-photo foodie hidden" id="tie-btn2"
-                        aria-label="image of girl eating tasty food and smiling" data-type="food"></button>
-                    <button class="btn-choice-tie question-photo people hidden" id="tie-btn3"
-                        aria-label="image of girl standing on a busy city street" data-type="people"></button>
-                    <button class="btn-choice-tie question-photo remote hidden" id="tie-btn4"
-                        aria-label="image of man standing in an vast empty valley" data-type="remote"></button>
-                    <button class="btn-choice-tie question-photo thrill hidden" id="tie-btn5"
-                        aria-label="image of man on a tight-rope high in a ravine" data-type="thrill"></button>
-                    <button class="btn-choice-tie question-photo wildlife hidden" id="tie-btn6"
-                        aria-label="image of man holding out food to a small alpaca" data-type="wildlife"></button>
+                <div class="container">
+                    <div class="row" id="answer-timeline">
+                        <div class="col-auto" id="label-timeline">
+                            
+                            <div class="labelc" id="labelc-0">
+                                <p class="labeltimetxt">Ponto inicial!</p>
+                            </div>
+                        </div> 
+                        <div class="col-auto">
+                            <div id="labelPath">Sua jornada:</div>
+                            <div id="timeline">
+                                <div id="circle-0" onmouseover="changeTextLine()" onmouseout="originalText2()" class="circle" data-currentquestion="1">
+                                    <i class="fa fa-flag-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" id="answer-div">
+                            <!--<button id="0" class="btn-choice weight-500 flex-center">Answer 1</button>
+                            <button id="1" class="btn-choice weight-500 flex-center">Answer 2</button>
+                            <button id="2" class="btn-choice weight-500 flex-center">Answer 3</button>
+                            <button id="3" class="btn-choice weight-500 flex-center">Answer 4</button>
+                            <button id="4" class="btn-choice weight-500 flex-center">Answer 5</button> -->
+
+
+                            <div class="container" id="respostas_cont">
+                                <div class="row align-middle">
+                                    <div id="col1" class="col-md-6 col-lg-6 column" >
+                                        <div id="1-mask" class="btn_mask">
+                                            <div onmouseover="changeText(0)" onmouseout="originalText()" id="0" class="cardr squarecard gr-1 btn-choicex" >
+                                                <div class="txt">
+                                                    <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                    
+                                                </div>
+                                                
+                                                <div class="ico-card">
+                                                    <i id="i-0" class="fa fa-lightbulb-o"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="col2" class="col-md-6 col-lg-6 column">
+                                    <div id="2-mask" class="btn_mask">
+                                        <div onmouseover="changeText(1)" onmouseout="originalText()" id="1" class="cardr circlecard gr-2 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                            <i id="i-1" class="fa fa-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div  id="col3" class="col-md-6 col-lg-6 column positionr">
+                                    <div id="3-mask" class="btn_mask">
+                                        <div onmouseover="changeText(2)" onmouseout="originalText()" id="2" class="cardr rombuscard gr-3 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-2" class="fa fa-code-fork"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div id="col4" class="col-md-6 col-lg-6 column positionl">
+                                    <div id="4-mask" class="btn_mask">
+                                        <div onmouseover="changeText(3)" onmouseout="originalText()" id="3" class="cardr hexacard gr-4 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                                
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-3" class="fa fa-desktop"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div id="col5" class="col-md-6 col-lg-6 column">
+                                        <div id="5-mask" class="btn_mask">
+                                        <div onmouseover="changeText(4)" onmouseout="originalText()" id="4" class="cardr squarecard gr-1 btn-choicex">
+                                            <div class="txt">
+                                                <h1 class="btn-choice-txt">BRANDING AND CORPORATE DESIGN</h1>
+                                            </div>
+                                            
+                                            <div class="ico-card">
+                                                <i id="i-4" class="fa fa-desktop"></i>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="container" id="box_cont">
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
 
             <div class="" id="restart-button-div">
-                <button class="btn-game-main" id="restart-game-btn">Restart Quiz</button>
+                <button class="btn-game-main" id="restart-game-btn">Restart</button>
             </div>
         </div>
 
         <!-- Results -->
         <div class="hidden" id="results-div">
-            <!-- Personality Results -->
-            <div class="results-container" id="personality-div">
-                <h1 class="text-centre uppercase small-heading heading-font" id="personality-heading">Personality Heading</h1>
-                <div id="personality-stats-div">
-                    <h2 class="text-centre heading-font">YOUR VITAL STATISTICS</h2>
-                    <div class="flex-center" id="stats-key-chart-div">
+            <!-- Results -->
 
-                        <div id="pie-chart">
-                            <canvas id="myChart"></canvas>
-                        </div>
-                        <div class="uppercase">
-                            <div class="stat-key-div">
-                                <div class="stat-key"></div>
-                                <p><span class="stat-type"></span><span
-                                        class="stat-percent weight-600">0%</span></p>
-                            </div>
-                            <div class="stat-key-div">
-                                <div class="stat-key"></div>
-                                <p><span class="stat-type"></span><span
-                                        class="stat-percent weight-600">0%</span></p>
-                            </div>
-                            <div class="stat-key-div">
-                                <div class="stat-key"></div>
-                                <p><span class="stat-type"></span><span
-                                        class="stat-percent weight-600">0%</span></p>
-                            </div>
-                            <div class="stat-key-div">
-                                <div class="stat-key"></div>
-                                <p><span class="stat-type"></span><span
-                                        class="stat-percent weight-600">0%</span></p>
-                            </div>
-                            <div class="stat-key-div">
-                                <div class="stat-key"></div>
-                                <p><span class="stat-type"></span><span
-                                        class="stat-percent weight-600">0%</span></p>
-                            </div>
-                            <div class="stat-key-div">
-                                <div class="stat-key"></div>
-                                <p><span class="stat-type"></span><span
-                                        class="stat-percent weight-600">0%</span></p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- uxtool Results - General -->
+            <div id="uxtoolbg" class="results-container uxtool-info-div uxtool-infoc-div" onload="createEmitter()">
+                <div id="particle_container">
                 </div>
-                    <div>
-                        <p id="personality-text-p1"></p>
-                        <br>
-                        <p id="personality-text-p2"></p>
-                        <br>
-                        <p id="personality-text-p3"></p>
+                <div class="mascote-balao">
+                    <div class="questionbox" id="balloon-mobilex">
+                        <div speech-bubble pbottom acenter style="--bbColor:#ffffff" id="result-balloon-mobile" class="resultsbubble">
+                            <h2 id="uxtool-heading" class="uxtool-heading">A FERRAMENTA QUE VOCÊ PRECISA É:</h2>
+                            <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
+                        </div>
                     </div>
+                    <img src="imgs\helper_congrats.png" id="mascote-img">
+                    <div class="questionbox" id="ballon-desktopx">
+                        <div speech-bubble pleft abottom style="--bbColor:#ffffff" class="resultsbubble" id="balloon-desktop">
+                            <h2 id="uxtool-heading" class="uxtool-heading">VOCÊ PRECISA DISSO:</h2>
+                            <h3 id="uxtool-heading-place" class="uppercase uxtool-heading-place">UXTOOL</h3>
+                        </div>
+                    </div> 
+                </div>
+                
+                    <div class="container" id="bloco_what_about">
+                        <img src="imgs\helper_question.png" id="mascote-img" style="position: relative; left: 80%; margin-bottom: -94px; width: 10rem;">
+                        <h3 class="heading-font" id="uxtool-what-title">O QUE É?</h3>    
+                        <div class="exec_center">
+                                
+                                <div id="what_is">
+                                    <p id="uxtool-text-para1"></p>
+                                </div>
+                            </div>
+
+                    </div>
+
+                <div class="container materiais">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="heading-font" id="uxtool-materiais-title">MATERIAIS UTILIZADOS</h3>
+                        </div>
+                    </div>
+
                     
-
-            </div>
-
-            <!-- Country Results - General -->
-            <div class="results-container" id="country-info-div">
-                <div class="text-centre heading-font">
-                    <h2 id="country-heading">WE RECOMMEND:</h2>
-                    <h3 id="country-heading-place" class="uppercase">Winning Country</h3>
+                    <p id="uxtool-materiais-desc">Para realizar a ferramenta/método você vai precisar de:</p>
+                    <div class="centraliza">
+                    
+                        <div id="materials-box">
+                            
+                            <div id="materials-cols" class="row" style="--bs-gutter-y: 1.5rem;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <img src="assets/images/countries/main/nz_main.jpg" id="results-image" alt="Mt Cook and Lake Tekapo, New Zealand">
-                <p id="country-text-para1"></p>
-                <br>
-                <p id="country-text-para2"></p>
-            </div>
-            <!-- Country Results - Highlights -->
-            <div class="results-container" id="country-highlights-div">
-                <h2 class="text-centre small-heading heading-font">HIGHLIGHTS</h2>
-                <p class="text-centre">Click on a pin to find out more about what <span id="highlight-country-name"></span> has to offer!</p>
-                <div class="results-container" id="country-map-div">
-                    <div id="map"></div>
-                    <div id="highlight-info-div" class="hidden">
-                        <div id="highlight-content-div">
-                            <h3 class="weight-700 body-font" id="highlight-title">Highlight name</h3>
-                            <p id="highlight-text"></p>
+                
+                <div id="execucao">
+                    <h3 class="heading-font" id="uxtool-exec-title">COMO APLICAR?</h3>
+                    <div class="exec_center">
+                        
+                        <div id="exec_content">
+                            <p id="uxtool-exec-desc"> Reuna um conjunto de usuários que represente o público-alvo do projeto. Entregue a cada um deles material para desenho (papel, canetas, lápis de cor, etc).</p>
                         </div>
-                        <div class="flex-center" id="highlight-photo-div">
-                            <img class="highlight-photo" id="highlight-photo-1" src="assets/images/countries/highlights/nz_queenstown1.jpeg" alt="Highlight Photo 1">
-                            <img class="highlight-photo" id="highlight-photo-2" src="assets/images/countries/highlights/nz_queenstown2.jpeg" alt="Highlight Photo 2">
-                            <img class="highlight-photo" id="highlight-photo-3" src="assets/images/countries/highlights/nz_queenstown3.jpeg" alt="Highlight Photo 3">
-                            <img class="highlight-photo" id="highlight-photo-4" src="assets/images/countries/highlights/nz_queenstown4.jpeg" alt="Highlight Photo 4">
+
+                        <img src="imgs\helper_congrats.png" id="mascote-img" style="z-index: 0; position:relative; rotate:90deg; right:-100px; width: 10rem;">
+
+                    </div>
+
+                    
+                </div>
+                <div class="container" id="aprenda_mais">
+                    <h3 class="heading-font uppercase" id="uxtool-about-title">Aprenda mais!</h3>
+                    <div class="centraliza">
+                        <div id="about_more">
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Restart Game Button -->
             <div class="text-centre" id="start-again-button-div">
-                <p class="weight-600">Want to have another go at the quiz?</p>
-                <button class="btn-game-main" id="start-again-btn">Start Again</button>
+                <p class="weight-600">Precisa de outra ajuda?</p>
+                <button class="btn-game-main" id="start-again-btn">Refazer</button>
             </div>
         </div>
+
+        
 
         <footer class="rodape2">
             <div id="cloud-div">
 
             </div>
         </footer>
+    </div>
     </div>
     <footer class="rodape">
             <div class="container">
@@ -234,19 +351,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
-    <script src="scripts\questions_array.js"></script>
-    <script src="scripts\countries_array.js"></script>
-    <script src="scripts\personalities_array.js"></script>
-    <script src="scripts\personalities_array.js"></script>
+    <script src="scripts\dom-particles.js" defer></script>
+    <script src="scripts\loading.js"></script>
+    <script src="scripts\perguntas_array.js"></script>
+    <script src="scripts\uxtools_array.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp3bbw0F5d1sjzp5iet_vlxKb0RrevMCA&callback=initMap">
-    </script>
+    <script src="scripts\ux_quiz.js"></script>
 
-    <script src="scripts\quiz.js"></script>
-
-
+    
 </body>
+<!-- Loading -->
+
 </html>
