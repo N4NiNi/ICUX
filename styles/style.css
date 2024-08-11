@@ -363,6 +363,9 @@ a {
 #aprenda_mais{
     margin-top: 50px;
 }
+#ferr_uxleris{
+    margin-top: 50px;
+}
 #materials-box{
     display: flex;
     align-items: center;
@@ -418,6 +421,37 @@ a {
 
     margin-bottom: 30px;
     max-width: 60%;
+}
+#uxtoolleris{
+    border-radius: 5px;
+    border-top:5px solid;
+    border-top-color: rgb(157, 109, 55);
+    background-color: #fff;
+    box-shadow: 1px 5px 20px #888888;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-align: justify;
+    padding: 15px 100px 10px 100px;
+
+    margin-bottom: 30px;
+    max-width: 60%;
+
+    color: rgb(157, 109, 55);
+    text-decoration: none;
+    font-weight: bold;
+
+    background-image: url('../imgs/logo-uxleris.png');
+    background-repeat: no-repeat;
+    background-position: left 0px top 0px;
+    background-size: 8cap;
+}
+#uxtoolleris p{
+    color: rgb(77, 42, 3);;
+    padding-left: 30px;
 }
 
 #uxtool-materiais-title,
