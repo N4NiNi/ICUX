@@ -1017,3 +1017,7 @@ a {
     align-items: center;
     justify-content: center;
 }
+
+.card:hover{
+    transform: scale(1.1);
+}
