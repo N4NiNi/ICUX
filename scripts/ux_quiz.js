@@ -736,6 +736,7 @@ function startGame(event) {
             p.id = 'uxtool-about-text';
             let a = document.createElement('a');
             a.href = item.Link;
+            a.target = '_blank';
             a.textContent = item.Descricao;
             p.appendChild(a);
             resultsAboutMore.appendChild(p);
