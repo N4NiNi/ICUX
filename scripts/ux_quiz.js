@@ -26,6 +26,7 @@ function startGame(event) {
     const backgrounddiv = document.getElementById("backgroundID");
     const backgroundresult = document.getElementById("uxtoolbg");
     
+    
     //const desc_choices = Array.from(document.getElementsByClassName("desc-choice-txt"));
     const progressText = document.getElementById("progress-text");
     const progressBar = document.getElementById("progressbar-fg");
@@ -56,6 +57,7 @@ function startGame(event) {
     let circles = Array.from(document.getElementsByClassName("circle"));
     let labells = Array.from(document.getElementsByClassName("labelc"));
     let contlabel = 1;
+    let nametop = document.getElementById("nametop");
     
 
 
@@ -201,12 +203,14 @@ function startGame(event) {
 
     // capturing user name
     username = document.getElementById("name-input");
+    
 
     if (username.value === "") {
         // alert if no username entered
         alert(`Insira seu nome!`);
     } else {
         // starts gameplay
+        nametop.innerText = username.value;
         boxDiv.classList.toggle("box-div");
         welcomeDiv.classList.toggle("hidden");
         gameDiv.classList.toggle("hidden");
