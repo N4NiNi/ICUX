@@ -204,7 +204,7 @@ function startGame(event) {
 
     if (username.value === "") {
         // alert if no username entered
-        alert(`Please enter your name to play, real or imaginary!`);
+        alert(`Insira seu nome!`);
     } else {
         // starts gameplay
         boxDiv.classList.toggle("box-div");
@@ -467,10 +467,8 @@ function startGame(event) {
                 currentQuestion = ux_pergunta[id_question];
                 addQuestionContent(1);
                 setTimeout(scrollToTop, 500);
-                console.log("---");
                 // Remover todos os círculos acima do círculo clicado
                 for(let i = 0; i < index; i++) {
-                    console.log(i);
                     if(circles[i].id != 'circle-0'){
                     circles[i].remove();
                     labells[i].remove();
