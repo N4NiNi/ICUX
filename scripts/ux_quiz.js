@@ -126,7 +126,6 @@ function startGame(event) {
       
       
       function createEmitter() {
-        console.log("teste");
         var max_particles = 100;
         var max_distance = 300;
         var fixed_position = [45, 30];
@@ -265,10 +264,8 @@ function startGame(event) {
         let qtd_question = answer_qtd.length - answers.length;
         if(answers.length < answer_qtd.length){
             for(let i=0; i < qtd_question; i++){
-                console.log(answers.length);
                 col_qtd[answer_qtd.length - i - 1].classList.toggle("hidden");
                 answer_qtd[answer_qtd.length - i - 1].classList.toggle("hidden");
-                console.log(i);
                 
                 
             }
@@ -276,7 +273,6 @@ function startGame(event) {
 
         for(let i=0; i< answers.length; i++){
             if (i == answers.length - 1 && answers.length % 2 != 0) {
-                    console.log("entrei");
                     col_qtd[i].classList.remove("col-md-6", "col-lg-6");
                     col_qtd[i].classList.add("col-md-12", "col-lg-12");
                     boxDiv.style.backgroundPositionY = "-20px";
@@ -438,7 +434,7 @@ function startGame(event) {
             labells = Array.from(document.getElementsByClassName("labelc"));
             
             backAnswer();
-            console.log(circles);
+            //console.log(circles);
             //timelinediv.appendChild(circletime);
         }
 
@@ -471,12 +467,14 @@ function startGame(event) {
                 currentQuestion = ux_pergunta[id_question];
                 addQuestionContent(1);
                 setTimeout(scrollToTop, 500);
-                console.log(index);
                 console.log("---");
                 // Remover todos os círculos acima do círculo clicado
                 for(let i = 0; i < index; i++) {
+                    console.log(i);
+                    if(circles[i].id != 'circle-0'){
                     circles[i].remove();
                     labells[i].remove();
+                    }
                 }
             });
         });
@@ -580,7 +578,7 @@ function startGame(event) {
                     mascote.src = reacao;
                 }
                 var id_out = circle.id;
-                console.log(id_out);
+                //console.log(id_out);
                 // Cortando os primeiros sete caracteres
                 var numero_out = id_out.slice(7);
                 var labepp_out = document.querySelector('#labelc-' + numero_out);
