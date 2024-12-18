@@ -57,7 +57,6 @@ function startGame(event) {
     let circles = Array.from(document.getElementsByClassName("circle"));
     let labells = Array.from(document.getElementsByClassName("labelc"));
     let contlabel = 1;
-    let nametop = document.getElementById("nametop");
     
 
 
@@ -210,7 +209,6 @@ function startGame(event) {
         alert(`Insira seu nome!`);
     } else {
         // starts gameplay
-        nametop.innerText = username.value;
         boxDiv.classList.toggle("box-div");
         welcomeDiv.classList.toggle("hidden");
         gameDiv.classList.toggle("hidden");
